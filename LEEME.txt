@@ -1,0 +1,26 @@
+NIX27_PERFUMES - PAGINA DE CATALOGO (paquete completo, con fotos)
+===================================================================
+
+Esta carpeta ya trae todo en su lugar. No muevas nada:
+
+  nix27_perfumes/
+    index.html
+    styles.css
+    app.js
+    config.js        <- aqui cambias tu numero de WhatsApp y el nombre
+    catalogo.json    <- perfumes, precios y descripciones
+    assets/
+      perfumes/ ...  <- las fotos
+      marca/logo.png
+
+COMO VERLA EN TU COMPUTADOR
+  1. Descomprime el zip.
+  2. En VS Code: Archivo > Abrir carpeta > elige "nix27_perfumes"
+     (la carpeta que contiene index.html, NO una carpeta de mas arriba).
+  3. Instala la extension "Live Server" (Ritwick Dey).
+  4. Clic derecho en index.html > "Open with Live Server".
+
+PARA GITHUB PAGES
+  Sube el contenido de esta carpeta tal cual (index.html debe quedar en la raiz del repositorio).
+  Los nombres de carpetas y archivos estan en minuscula y sin tildes ni ñ; no los cambies.
+

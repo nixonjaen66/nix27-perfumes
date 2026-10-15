@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfumes de diseñador, árabes y de nicho</title>
+  <meta name="description" content="Perfumes originales de diseñador, árabes y de nicho. Elige y pide por WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="barra">
+  <div class="contenedor barra__fila">
+    <a class="marca-tienda" href="#" id="nombre-tienda">Mi Perfumería</a>
+    <button class="btn-carrito" id="btn-carrito" type="button" aria-label="Ver mi pedido">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7zm3 0a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span>Mi pedido</span>
+      <span class="contador" id="contador" hidden>0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <section class="portada">
+    <div class="contenedor portada__grid">
+      <div class="portada__texto">
+        <h1>Perfumes de diseñador, árabes y de nicho</h1>
+        <p>Sellados y testers originales. Elige los que te gusten y envía tu pedido por WhatsApp.</p>
+        <a class="btn-principal" href="#catalogo">Ver el catálogo</a>
+      </div>
+      <div class="estante" id="estante" aria-label="Algunos perfumes del catálogo"></div>
+    </div>
+  </section>
+
+  <section class="catalogo" id="catalogo">
+    <div class="contenedor">
+      <div class="controles">
+        <div class="buscar">
+          <label class="visually-hidden" for="buscar">Buscar perfume o marca</label>
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <input id="buscar" type="search" placeholder="Buscar por nombre o marca" autocomplete="off">
+        </div>
+        <button class="btn-filtros" id="btn-filtros" type="button" aria-expanded="false" aria-controls="filtros">Filtros</button>
+
+        <div class="filtros" id="filtros">
+          <div class="grupo" role="group" aria-label="Para quién">
+            <span class="grupo__titulo">Para</span>
+            <div class="segmentos" id="f-genero">
+              <button type="button" data-v="todos" aria-pressed="true">Todos</button>
+              <button type="button" data-v="mujer" aria-pressed="false">Mujer</button>
+              <button type="button" data-v="hombre" aria-pressed="false">Hombre</button>
+            </div>
+          </div>
+          <div class="grupo" role="group" aria-label="Categoría">
+            <span class="grupo__titulo">Categoría</span>
+            <div class="segmentos" id="f-categoria">
+              <button type="button" data-v="todas" aria-pressed="true">Todas</button>
+              <button type="button" data-v="Diseñador" aria-pressed="false">Diseñador</button>
+              <button type="button" data-v="Árabe" aria-pressed="false">Árabe</button>
+              <button type="button" data-v="Nicho" aria-pressed="false">Nicho</button>
+            </div>
+          </div>
+          <div class="grupo" role="group" aria-label="Presentación">
+            <span class="grupo__titulo">Presentación</span>
+            <div class="segmentos" id="f-tipo">
+              <button type="button" data-v="todos" aria-pressed="true">Todas</button>
+              <button type="button" data-v="Sellado" aria-pressed="false">Sellados</button>
+              <button type="button" data-v="Tester" aria-pressed="false">Testers</button>
+            </div>
+          </div>
+          <div class="grupo grupo--selects">
+            <label>Marca
+              <select id="f-marca"><option value="todas">Todas las marcas</option></select>
+            </label>
+            <label>Ordenar por
+              <select id="f-orden">
+                <option value="marca">Marca (A–Z)</option>
+                <option value="precio-asc">Precio: menor a mayor</option>
+                <option value="precio-desc">Precio: mayor a menor</option>
+              </select>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="error" id="error" hidden></div>
+
+      <p class="resultado" id="resultado" aria-live="polite"></p>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="vacio" id="vacio" hidden>
+        <p>No encontramos perfumes con esos filtros.</p>
+        <button class="btn-secundario" id="btn-limpiar" type="button">Quitar filtros</button>
+      </div>
+
+      <div class="mas">
+        <button class="btn-secundario" id="btn-mas" type="button" hidden>Mostrar más</button>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <p id="pie-texto"></p>
+  </div>
+</footer>
+
+<!-- Ficha del perfume -->
+<dialog id="ficha" class="ficha" aria-labelledby="ficha-nombre">
+  <button class="cerrar" id="ficha-cerrar" type="button" aria-label="Cerrar">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  </button>
+  <div class="ficha__cuerpo" id="ficha-cuerpo"></div>
+</dialog>
+
+<!-- Mi pedido -->
+<dialog id="carrito" class="panel" aria-labelledby="carrito-titulo">
+  <div class="panel__cab">
+    <h2 id="carrito-titulo">Mi pedido</h2>
+    <button class="cerrar" id="carrito-cerrar" type="button" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="panel__lista" id="carrito-lista"></div>
+  <div class="panel__pie" id="carrito-pie"></div>
+</dialog>
+
+<div class="aviso" id="aviso" role="status" aria-live="polite" hidden></div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
