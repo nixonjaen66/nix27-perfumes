@@ -2,45 +2,132 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Perfumes de diseñador, árabes y de nicho</title>
-  <meta name="description" content="Perfumes originales de diseñador, árabes y de nicho. Elige y pide por WhatsApp.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>nix27_perfumes | Perfumes de diseñador, árabes y de nicho</title>
+  <meta name="description" content="Catálogo de perfumes de diseñador, árabes y de nicho, sellados y testers. Elige tus perfumes y haz tu pedido por WhatsApp.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="nix27_perfumes | Perfumes de diseñador, árabes y de nicho">
+  <meta property="og:description" content="Elige tus perfumes y haz tu pedido por WhatsApp.">
+  <meta property="og:image" content="assets/marca/og-image.jpg">
+  <link rel="icon" type="image/png" href="assets/marca/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-<header class="barra">
-  <div class="contenedor barra__fila">
-    <a class="marca-tienda" href="#" id="nombre-tienda">Mi Perfumería</a>
-    <button class="btn-carrito" id="btn-carrito" type="button" aria-label="Ver mi pedido">
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7zm3 0a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
-      <span>Mi pedido</span>
-      <span class="contador" id="contador" hidden>0</span>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-buscar" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="i-bolsa" viewBox="0 0 24 24"><path d="M6 8h12l-1 12H7L6 8z M9 8a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="i-cerrar" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="i-estrella" viewBox="0 0 24 24"><path d="M12 1l2.4 8.6L23 12l-8.6 2.4L12 23l-2.4-8.6L1 12l8.6-2.4z" fill="currentColor"/></symbol>
+  <symbol id="i-nota" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z" fill="currentColor"/></symbol>
+  <symbol id="i-izq" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-der" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+</svg>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<div class="aviso-top">
+  <p>Elige tus perfumes y haz tu pedido por WhatsApp <a href="#" data-wa data-wa-tipo="consulta"><span data-tel>+506 7214 0221</span></a></p>
+</div>
+
+<header class="navbar" id="navbar">
+  <div class="navbar__fila">
+    <button class="btn-menu" id="btn-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <svg class="ico"><use href="#i-menu"/></svg>
     </button>
+
+    <a class="logo" href="#inicio" aria-label="nix27_perfumes, ir al inicio">
+      <img src="assets/marca/icono.png" alt="" width="40" height="64">
+      <span class="logo__texto"><b>nix27</b>_perfumes</span>
+    </a>
+
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#catalogo" data-filtro="genero:mujer">Mujer</a>
+      <a href="#catalogo" data-filtro="genero:hombre">Hombre</a>
+      <a href="#catalogo" data-filtro="categoria:Árabe">Árabes</a>
+      <a href="#catalogo" data-filtro="categoria:Nicho">Nicho</a>
+      <a href="#catalogo" data-filtro="tipo:Tester">Testers</a>
+      <a href="#preguntas">Preguntas</a>
+      <a href="#como-pedir">Cómo pedir</a>
+    </nav>
+
+    <div class="acciones">
+      <form class="buscar-nav" id="form-buscar" role="search">
+        <label class="visually-hidden" for="buscar-nav">Buscar perfume o marca</label>
+        <input id="buscar-nav" type="search" placeholder="Buscar perfume o marca" autocomplete="off">
+        <button type="submit" aria-label="Buscar"><svg class="ico"><use href="#i-buscar"/></svg></button>
+      </form>
+      <button class="btn-pedido" id="btn-carrito" type="button" aria-label="Ver mi pedido">
+        <svg class="ico"><use href="#i-bolsa"/></svg>
+        <span class="btn-pedido__texto">Mi pedido</span>
+        <span class="contador" id="contador" hidden>0</span>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
-  <section class="portada">
-    <div class="contenedor portada__grid">
-      <div class="portada__texto">
-        <h1>Perfumes de diseñador, árabes y de nicho</h1>
-        <p>Sellados y testers originales. Elige los que te gusten y envía tu pedido por WhatsApp.</p>
-        <a class="btn-principal" href="#catalogo">Ver el catálogo</a>
+<main id="contenido">
+
+  <!-- Portada -->
+  <section class="hero" id="inicio">
+
+    <div class="contenedor hero__grid">
+      <div class="hero__texto">
+        <h1><span>Tu próximo</span> <span>perfume está aquí</span></h1>
+        <p class="hero__sub">Diseñador, árabes y nicho, en botella sellada o tester. Elige lo que te guste y haz tu pedido por WhatsApp.</p>
+        <div class="hero__acciones">
+          <a class="btn btn--oro" href="#catalogo">Ver el catálogo</a>
+          <a class="btn btn--linea" href="#" data-wa data-wa-tipo="consulta"><svg class="ico"><use href="#i-wa"/></svg>Escríbenos</a>
+        </div>
+        <p class="hero__dato" id="hero-dato"></p>
       </div>
-      <div class="estante" id="estante" aria-label="Algunos perfumes del catálogo"></div>
+      <div class="hero__vitrinas" id="hero-vitrinas" aria-label="Algunos perfumes del catálogo"></div>
     </div>
   </section>
 
+  <!-- Cinta de marcas -->
+  <section class="marcas" aria-label="Marcas del catálogo">
+    <p class="marcas__ayuda">Toca el nombre de una marca para ver sus perfumes</p>
+    <div class="cinta cinta--marcas" id="cinta-marcas"></div>
+  </section>
+
+  <!-- En la vitrina -->
+  <section class="vitrina" id="vitrina">
+    <div class="contenedor vitrina__cab">
+      <div>
+        <h2>En la vitrina</h2>
+        <p>Una muestra de lo que hay en el catálogo. Toca un perfume para ver su ficha.</p>
+      </div>
+      <a class="btn btn--azul" href="#catalogo" data-filtro="todo:1">Ver todo el catálogo</a>
+    </div>
+    <div class="cinta cinta--fotos" id="cinta-1"></div>
+    <div class="cinta cinta--fotos cinta--inversa" id="cinta-2"></div>
+  </section>
+
+  <!-- Categorías -->
+  <section class="categorias" id="categorias">
+    <div class="contenedor">
+      <h2>Elige por dónde empezar</h2>
+      <div class="categorias__grid" id="categorias-grid"></div>
+    </div>
+  </section>
+
+  <!-- Catálogo -->
   <section class="catalogo" id="catalogo">
     <div class="contenedor">
+      <h2>Catálogo</h2>
       <div class="controles">
         <div class="buscar">
           <label class="visually-hidden" for="buscar">Buscar perfume o marca</label>
-          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <svg class="ico"><use href="#i-buscar"/></svg>
           <input id="buscar" type="search" placeholder="Buscar por nombre o marca" autocomplete="off">
         </div>
         <button class="btn-filtros" id="btn-filtros" type="button" aria-expanded="false" aria-controls="filtros">Filtros</button>
@@ -87,45 +174,136 @@
       </div>
 
       <div class="error" id="error" hidden></div>
-
       <p class="resultado" id="resultado" aria-live="polite"></p>
-
       <div class="grid" id="grid"></div>
 
       <div class="vacio" id="vacio" hidden>
         <p>No encontramos perfumes con esos filtros.</p>
-        <button class="btn-secundario" id="btn-limpiar" type="button">Quitar filtros</button>
+        <button class="btn btn--azul" id="btn-limpiar" type="button">Quitar filtros</button>
       </div>
-
       <div class="mas">
-        <button class="btn-secundario" id="btn-mas" type="button" hidden>Mostrar más</button>
+        <button class="btn btn--linea-azul" id="btn-mas" type="button" hidden>Mostrar más</button>
       </div>
+    </div>
+  </section>
 
+  <!-- Cómo pedir -->
+  <section class="pedir" id="como-pedir">
+    <div class="contenedor pedir__grid">
+      <div class="pedir__intro">
+        <h2>Pedir es así de simple</h2>
+        <p>Sin registros ni formularios largos: armas tu lista y la envías por WhatsApp.</p>
+        <a class="btn btn--oro" href="#catalogo">Empezar a elegir</a>
+      </div>
+      <ol class="pasos" id="pasos-lista"></ol>
+    </div>
+  </section>
+
+  <!-- Reseñas -->
+  <section class="resenas" id="resenas" hidden>
+    <div class="contenedor">
+      <div class="resenas__cab">
+        <div>
+          <h2>Lo que dicen los clientes</h2>
+          <p class="resenas__resumen" id="resenas-resumen"></p>
+        </div>
+        <div class="resenas__acciones">
+          <a class="btn btn--azul" href="#" data-wa data-wa-tipo="resena"><svg class="ico"><use href="#i-wa"/></svg>Deja tu reseña</a>
+          <div class="flechas">
+            <button type="button" id="resenas-prev" aria-label="Reseñas anteriores"><svg class="ico"><use href="#i-izq"/></svg></button>
+            <button type="button" id="resenas-next" aria-label="Más reseñas"><svg class="ico"><use href="#i-der"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="resenas__pista" id="resenas-pista" tabindex="0" aria-label="Reseñas de clientes"></div>
+  </section>
+
+  <!-- Preguntas frecuentes -->
+  <section class="faq" id="preguntas">
+    <div class="contenedor faq__grid">
+      <div class="faq__intro">
+        <h2>Preguntas frecuentes</h2>
+        <p>Lo que más nos preguntan antes de pedir.</p>
+      </div>
+      <div class="faq__lista" id="faq-lista"></div>
+    </div>
+  </section>
+
+  <!-- Cierre -->
+  <section class="cierre">
+    <div class="contenedor cierre__caja">
+      <h2>¿No encuentras tu perfume?</h2>
+      <p>Escríbenos y te contamos si lo tenemos o podemos conseguirlo.</p>
+      <div class="cierre__acciones">
+        <a class="btn btn--oro" href="#" data-wa data-wa-tipo="consulta"><svg class="ico"><use href="#i-wa"/></svg>Escribir por WhatsApp</a>
+        <a class="btn btn--linea" href="#" data-ig target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg>Ver Instagram</a>
+      </div>
     </div>
   </section>
 </main>
 
 <footer class="pie">
-  <div class="contenedor">
+  <div class="contenedor pie__grid">
+    <div class="pie__marca">
+      <a class="logo logo--pie" href="#inicio" aria-label="nix27_perfumes, ir al inicio">
+        <img src="assets/marca/icono.png" alt="" width="44" height="70">
+        <span class="logo__texto"><b>nix27</b>_perfumes</span>
+      </a>
+      <p>Perfumes de diseñador, árabes y de nicho, sellados y testers.</p>
+      <p class="pie__contacto">
+        <a href="#" data-wa data-wa-tipo="consulta">WhatsApp <span data-tel>+506 7214 0221</span></a><br>
+        <a href="#" data-ig target="_blank" rel="noopener">Instagram @<span data-ig-nombre>nix27_perfumes</span></a>
+      </p>
+    </div>
+    <div class="pie__col">
+      <h3>Comprar</h3>
+      <a href="#catalogo" data-filtro="genero:mujer">Perfumes mujer</a>
+      <a href="#catalogo" data-filtro="genero:hombre">Perfumes hombre</a>
+      <a href="#catalogo" data-filtro="categoria:Diseñador">Diseñador</a>
+      <a href="#catalogo" data-filtro="categoria:Árabe">Árabes</a>
+      <a href="#catalogo" data-filtro="categoria:Nicho">Nicho</a>
+      <a href="#catalogo" data-filtro="tipo:Tester">Testers</a>
+    </div>
+    <div class="pie__col">
+      <h3>Ayuda</h3>
+      <a href="#como-pedir">Cómo pedir</a>
+      <a href="#preguntas">Preguntas frecuentes</a>
+      <a href="#" data-wa data-wa-tipo="consulta">Contáctanos</a>
+    </div>
+    <div class="pie__col">
+      <h3>Síguenos</h3>
+      <div class="redes">
+        <a class="red" href="#" data-ig target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico"><use href="#i-ig"/></svg></a>
+        <a class="red" href="#" data-wa data-wa-tipo="consulta" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="contenedor pie__pagos">
+    <span class="pie__pagos-titulo">Métodos de pago</span>
+    <ul class="pagos">
+      <li>Efectivo</li>
+      <li>SINPE Móvil 7214 0221</li>
+      <li>Transferencia bancaria</li>
+    </ul>
+  </div>
+  <div class="contenedor pie__base">
+    <p>© <span id="anio">2026</span> nix27_perfumes</p>
     <p id="pie-texto"></p>
   </div>
 </footer>
 
-<!-- Ficha del perfume -->
+<a class="wa-flotante" href="#" data-wa data-wa-tipo="consulta" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+
 <dialog id="ficha" class="ficha" aria-labelledby="ficha-nombre">
-  <button class="cerrar" id="ficha-cerrar" type="button" aria-label="Cerrar">
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-  </button>
+  <button class="cerrar" id="ficha-cerrar" type="button" aria-label="Cerrar"><svg class="ico"><use href="#i-cerrar"/></svg></button>
   <div class="ficha__cuerpo" id="ficha-cuerpo"></div>
 </dialog>
 
-<!-- Mi pedido -->
 <dialog id="carrito" class="panel" aria-labelledby="carrito-titulo">
   <div class="panel__cab">
     <h2 id="carrito-titulo">Mi pedido</h2>
-    <button class="cerrar" id="carrito-cerrar" type="button" aria-label="Cerrar">
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-    </button>
+    <button class="cerrar cerrar--plano" id="carrito-cerrar" type="button" aria-label="Cerrar"><svg class="ico"><use href="#i-cerrar"/></svg></button>
   </div>
   <div class="panel__lista" id="carrito-lista"></div>
   <div class="panel__pie" id="carrito-pie"></div>
@@ -133,7 +311,45 @@
 
 <div class="aviso" id="aviso" role="status" aria-live="polite" hidden></div>
 
-<script src="config.js"></script>
-<script src="app.js"></script>
+<script src="js/config.js"></script>
+<script>
+// Enlaces de WhatsApp e Instagram: funcionan aunque el resto del código falle.
+(function () {
+  var c = window.CONFIG || {};
+  var numero = String(c.whatsapp || '50672140221').replace(/\D/g, '');
+  var usuario = c.instagram || 'nix27_perfumes';
+  var mensaje = encodeURIComponent(c.mensajeConsulta || 'Hola nix27_perfumes, quisiera consultar por un perfume.');
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.href = 'https://wa.me/' + numero + '?text=' + mensaje; a.target = '_blank'; a.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-ig]').forEach(function (a) {
+    a.href = 'https://www.instagram.com/' + usuario + '/'; a.target = '_blank'; a.rel = 'noopener';
+  });
+  // Si algo no carga, avisa qué revisar.
+  function avisarFallo(html) {
+    var d = document.createElement('div');
+    d.style.cssText = 'position:fixed;left:12px;right:12px;bottom:12px;z-index:200;background:#FFF8E6;border:1px solid #CD9A33;border-radius:12px;padding:14px 16px;font:14px/1.5 system-ui,sans-serif;color:#0F1E3D;max-width:640px';
+    d.innerHTML = html;
+    document.body.appendChild(d);
+  }
+  window.addEventListener('load', function () {
+    var faltan = [];
+    if (!window.CONFIG) faltan.push('js/config.js');
+    if (!window.__nix27) faltan.push('js/app.js');
+    if (faltan.length) {
+      avisarFallo('<strong>La página no pudo cargar su código.</strong><br>No se encontró o tiene un error: <code>' + faltan.join(', ') +
+        '</code>. Revisa que esos archivos existan en esas carpetas. Pulsa F12 y abre la pestaña Console para ver el mensaje en rojo.');
+      return;
+    }
+    setTimeout(function () {
+      var g = document.getElementById('grid'), e = document.getElementById('error');
+      if (g && !g.children.length && e && e.hidden) {
+        avisarFallo('<strong>No se pudieron mostrar los perfumes.</strong><br>Pulsa F12, abre la pestaña Console y revisa el mensaje en rojo.');
+      }
+    }, 3000);
+  });
+})();
+</script>
+<script src="js/app.js"></script>
 </body>
 </html>
