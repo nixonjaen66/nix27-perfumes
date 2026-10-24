@@ -9,6 +9,7 @@ window.CONFIG = {
   instagram: "nix27_perfumes",          // usuario de Instagram, sin @
   moneda: "₡",
   carpetaImagenes: "assets",            // carpeta que contiene "perfumes" y "marca"
+  diasNuevo: 30,                        // días que un perfume sale como "Nuevo" (cuenta desde su "nuevoDesde")
 
   mensajePedido: "Hola nix27_perfumes, quisiera hacer este pedido:",
   mensajeConsulta: "Hola nix27_perfumes, quisiera consultar por un perfume.",

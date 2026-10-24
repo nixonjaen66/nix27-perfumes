@@ -1,26 +1,58 @@
-NIX27_PERFUMES - PAGINA DE CATALOGO (paquete completo, con fotos)
-===================================================================
+NIX27_PERFUMES - PAGINA DE CATALOGO
+===================================
 
-Esta carpeta ya trae todo en su lugar. No muevas nada:
+ARCHIVOS
+  index.html        <- inicio y catálogo
+  perfume.html      <- página de cada perfume (perfume.html?p=nombre-del-perfume)
+  css/estilos.css   <- diseño (incluye modo oscuro automático)
+  js/config.js      <- tu WhatsApp, Instagram, textos, preguntas frecuentes
+  js/app.js         <- lógica de la página (no hace falta tocarlo)
+  data/catalogo.json <- perfumes, precios, fotos
+  data/fichas.json  <- notas, acordes y día/noche de cada perfume
+  assets/           <- fotos y logo
 
-  nix27_perfumes/
-    index.html
-    styles.css
-    app.js
-    config.js        <- aqui cambias tu numero de WhatsApp y el nombre
-    catalogo.json    <- perfumes, precios y descripciones
-    assets/
-      perfumes/ ...  <- las fotos
-      marca/logo.png
+VERLA EN TU COMPUTADOR
+  VS Code > Abrir carpeta > clic derecho en index.html > "Open with Live Server".
+  (Con doble clic no carga el catálogo.)
 
-COMO VERLA EN TU COMPUTADOR
-  1. Descomprime el zip.
-  2. En VS Code: Archivo > Abrir carpeta > elige "nix27_perfumes"
-     (la carpeta que contiene index.html, NO una carpeta de mas arriba).
-  3. Instala la extension "Live Server" (Ritwick Dey).
-  4. Clic derecho en index.html > "Open with Live Server".
+PUBLICAR
+  Haz commit y push a GitHub; Cloudflare Pages la publica sola en 1-2 minutos.
 
-PARA GITHUB PAGES
-  Sube el contenido de esta carpeta tal cual (index.html debe quedar en la raiz del repositorio).
-  Los nombres de carpetas y archivos estan en minuscula y sin tildes ni ñ; no los cambies.
+NUEVOS LANZAMIENTOS  (data/catalogo.json)
+  Para perfumes recién lanzados al mercado (no solo nuevos en tu tienda), agrega  "nuevo": true
+  Salen con la etiqueta "Nuevo" y en la sección "Nuevos lanzamientos" hasta que borres esa línea.
+  (Opcional: "nuevoDesde": "2026-11-15" lo muestra como nuevo solo por los días de diasNuevo en js/config.js)
 
+OFERTAS  (data/catalogo.json)
+  Pon el precio rebajado en "precio" y el precio anterior en "precioAntes":
+    "precio": 25000, "precioAntes": 32000
+  La página calcula el % de descuento y muestra la sección "Ofertas".
+  Para quitar la oferta, borra "precioAntes" y deja el precio normal.
+
+NOTAS Y ACORDES  (data/fichas.json)  -- por ahora vacío: {}  (el bloque no aparece hasta que agregues fichas)
+  Cada perfume se busca por "Marca|Nombre", exactamente como en catalogo.json.
+  El tester y el sellado del mismo perfume comparten la misma ficha.
+    "Lattafa|Khamrah": {
+      "acordes": [["cálido especiado",100],["dulce",90],["avainillado",75]],
+      "dia": 25, "noche": 100,
+      "notas": { "salida": ["Canela","Bergamota"], "corazon": ["Dátiles"], "fondo": ["Vainilla"] },
+      "anio": 2022
+    }
+  - acordes: nombre y fuerza de 0 a 100 (el primero es el más fuerte). Los colores salen solos.
+  - dia / noche: de 0 a 100.
+  - Si el perfume no tiene pirámide, usa  "notas": { "generales": ["...", "..."] }
+  - Si un perfume no tiene ficha, su página se ve igual pero sin ese bloque.
+  - Cuida comillas y comas: un error impide que carguen las fichas.
+
+PERFUME NUEVO
+  1) Agrégalo en catalogo.json (copia un bloque y cambia "id", nombre, marca, precio e imagen).
+  2) Agrega su ficha en fichas.json con la misma "Marca|Nombre".
+
+FOTOS
+  Las fotos acostadas (cajas horizontales) se muestran completas sobre un fondo difuminado.
+  Van en assets/perfumes/... Las fotos verticales (3:4) son las que mejor se ven.
+  Nombres en minúscula, sin tildes ni espacios; GitHub distingue mayúsculas.
+
+LOGO DE SINPE MÓVIL
+  Guarda el logo oficial como  assets/marca/sinpe-movil.png  (fondo transparente o blanco).
+  Si el archivo no está, el pie de página muestra el texto "SINPE Móvil" con un ícono.
