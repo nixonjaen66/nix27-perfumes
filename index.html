@@ -73,6 +73,7 @@
       <a href="#catalogo" data-filtro="categoria:Nicho">Nicho</a>
       <a href="#catalogo" data-filtro="tipo:Tester">Testers</a>
       <a href="#sets" data-solo="sets" hidden>Sets</a>
+      <a href="#corporal" data-solo="corporal" hidden>Corporal</a>
       <a href="#preguntas">Preguntas</a>
       <a href="#como-pedir">Cómo pedir</a>
     </nav>
@@ -158,6 +159,21 @@
     <div class="carril" id="carril-sets"></div>
   </section>
 
+  <!-- Cuidado corporal (aparece solo si hay productos con "tipo": "Corporal") -->
+  <section class="fila" id="corporal" hidden>
+    <div class="contenedor fila__cab">
+      <div>
+        <h2>Cuidado corporal</h2>
+        <p>Body mist, splash, cremas y body spray para llevar tu aroma todo el día.</p>
+      </div>
+      <div class="fila__acciones">
+        <a class="ver-todos" href="#catalogo" data-filtro="tipo:Corporal">Ver todos ›</a>
+        <div class="flechas"><button type="button" data-carril="carril-corporal" data-dir="-1" aria-label="Anteriores"><svg class="ico"><use href="#i-izq"/></svg></button><button type="button" data-carril="carril-corporal" data-dir="1" aria-label="Siguientes"><svg class="ico"><use href="#i-der"/></svg></button></div>
+      </div>
+    </div>
+    <div class="carril" id="carril-corporal"></div>
+  </section>
+
   <!-- En la vitrina -->
   <section class="vitrina" id="vitrina">
     <div class="contenedor vitrina__cab">
@@ -216,6 +232,7 @@
               <button type="button" data-v="Sellado" aria-pressed="false">Sellados</button>
               <button type="button" data-v="Tester" aria-pressed="false">Testers</button>
               <button type="button" data-v="Set" aria-pressed="false" data-solo="sets" hidden>Sets</button>
+              <button type="button" data-v="Corporal" aria-pressed="false" data-solo="corporal" hidden>Corporal</button>
             </div>
           </div>
           <div class="grupo" role="group" aria-label="Mostrar" id="g-especial" hidden>
@@ -337,6 +354,7 @@
       <a href="#catalogo" data-filtro="categoria:Nicho">Nicho</a>
       <a href="#catalogo" data-filtro="tipo:Tester">Testers</a>
       <a href="#sets" data-solo="sets" hidden>Sets y estuches</a>
+      <a href="#corporal" data-solo="corporal" hidden>Cuidado corporal</a>
     </div>
     <div class="pie__col">
       <h3>Ayuda</h3>

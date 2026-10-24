@@ -16,6 +16,9 @@
     return String(texto == null ? '' : texto).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   }
   function esSet(p) { return p.tipo === 'Set'; }
+  // Cuidado corporal: body mist, cremas, body spray... (no se mezclan con los perfumes salvo que se pidan)
+  function esCorporal(p) { return p.tipo === 'Corporal'; }
+  function noCorporal(p) { return !esCorporal(p); }
   // Los sets se muestran aunque todavía no tengan foto (sale una tarjeta de regalo)
   function esVisible(p) { return !!p && p.activo !== false && (!!p.imagen || esSet(p)); }
   function coincideGenero(p, genero) {
@@ -54,11 +57,12 @@
       if (!coincideGenero(p, e.genero)) return false;
       if (e.categoria !== 'todas' && p.categoria !== e.categoria) return false;
       if (e.tipo !== 'todos' && p.tipo !== e.tipo) return false;
+      if (e.tipo === 'todos' && esCorporal(p) && !terminos.length && e.marca === 'todas') return false;
       if (e.marca !== 'todas' && p.marca !== e.marca) return false;
       if (e.especial === 'oferta' && !enOferta(p)) return false;
       if (e.especial === 'nuevo' && !esNuevo(p)) return false;
       if (terminos.length) {
-        var pajar = normalizar([p.marca, p.nombre, p.categoria, p.tipo, esSet(p) ? 'set estuche regalo ' + (p.contenido || []).join(' ') : '', textoFicha(fichas && fichas[claveFicha(p)])].join(' '));
+        var pajar = normalizar([p.marca, p.nombre, p.categoria, p.tipo, p.linea || '', esCorporal(p) ? 'cuidado corporal' : '', esSet(p) ? 'set estuche regalo ' + (p.contenido || []).join(' ') : '', textoFicha(fichas && fichas[claveFicha(p)])].join(' '));
         for (var i = 0; i < terminos.length; i++) if (pajar.indexOf(terminos[i]) === -1) return false;
       }
       return true;
@@ -113,6 +117,7 @@
   function descripcionCorta(p) {
     return p.marca + ' ' + p.nombre + (p.tipo === 'Tester' ? ' (Tester)' : '') + (p.ml && !esSet(p) ? ' ' + p.ml + ' ml' : '');
   }
+  function nombreTipo(p) { return p.tipo === 'Tester' ? 'Tester' : esSet(p) ? 'Set' : esCorporal(p) ? (p.linea || 'Cuidado corporal') : 'Sellado'; }
   function totalPedido(carrito, porId) {
     var total = 0, sinPrecio = 0, unidades = 0;
     Object.keys(carrito).forEach(function (id) {
@@ -176,7 +181,7 @@
       if (claveGrupo(x) === claveGrupo(p)) return;
       var fx = fichas[claveFicha(x)] || {};
       var comunes = (fx.acordes || []).slice(0, 4).filter(function (a) { return acordesP.indexOf(a[0]) !== -1; }).length;
-      var s = (x.marca === p.marca ? 4 : 0) + (esSet(x) === esSet(p) ? 0.5 : -1.5) + comunes * 1.5 + (x.genero === p.genero ? 1.5 : x.genero === 'Unisex' ? 0.7 : -2) + (x.categoria === p.categoria ? 0.5 : 0);
+      var s = (x.marca === p.marca ? 4 : 0) + (esSet(x) === esSet(p) ? 0.5 : -1.5) + (esCorporal(x) === esCorporal(p) ? (esCorporal(p) && x.linea === p.linea ? 2 : 0) : -6) + comunes * 1.5 + (x.genero === p.genero ? 1.5 : x.genero === 'Unisex' ? 0.7 : -2) + (x.categoria === p.categoria ? 0.5 : 0);
       var k = claveGrupo(x);
       if (!mejores[k] || mejores[k].s < s || (mejores[k].s === s && x.tipo === 'Sellado')) mejores[k] = { x: x, s: s };
     });
@@ -316,7 +321,7 @@
     formatoPrecio: formatoPrecio, rutaImagen: rutaImagen, escapar: escapar, totalPedido: totalPedido,
     mensajeWhatsApp: mensajeWhatsApp, enlaceWhatsApp: enlaceWhatsApp, elegirAlAzar: elegirAlAzar,
     marcasPorCantidad: marcasPorCantidad, atajoAEstado: atajoAEstado, resumenResenas: resumenResenas, estrellasHTML: estrellasHTML,
-    slug: slug, esNuevo: esNuevo, claveFicha: claveFicha, claveGrupo: claveGrupo, esSet: esSet, enOferta: enOferta, descuento: descuento, relacionados: relacionados,
+    slug: slug, esNuevo: esNuevo, claveFicha: claveFicha, claveGrupo: claveGrupo, esSet: esSet, esCorporal: esCorporal, enOferta: enOferta, descuento: descuento, relacionados: relacionados,
     familiaNota: familiaNota, colorAcorde: colorAcorde, relevancia: relevancia
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = puro;
@@ -431,7 +436,7 @@
     }
     // Muestra los enlaces de Nuevos y Ofertas solo si hay perfumes marcados
     function marcarSecciones() {
-      var hay = { nuevos: todos.some(function (p) { return esNuevo(p); }), ofertas: todos.some(enOferta), sets: todos.some(esSet) };
+      var hay = { nuevos: todos.some(function (p) { return esNuevo(p); }), ofertas: todos.some(enOferta), sets: todos.some(esSet), corporal: todos.some(esCorporal) };
       doc.querySelectorAll('[data-solo]').forEach(function (el) { el.hidden = !hay[el.getAttribute('data-solo')]; });
       if ($('g-especial')) $('g-especial').hidden = !(hay.nuevos || hay.ofertas);
     }
@@ -455,6 +460,7 @@
       var etiquetas = '';
       if (p.tipo === 'Tester') etiquetas += '<span class="etiqueta etiqueta--tester">Tester</span>';
       if (esSet(p)) etiquetas += '<span class="etiqueta etiqueta--set">Set' + (p.contenido && p.contenido.length > 1 ? ' · ' + p.contenido.length + ' piezas' : '') + '</span>';
+      else if (esCorporal(p)) etiquetas += '<span class="etiqueta etiqueta--corporal">' + escapar(p.linea || 'Cuidado corporal') + '</span>';
       else if (p.ml) etiquetas += '<span class="etiqueta">' + p.ml + ' ml</span>';
       var sellos = (esNuevo(p) ? '<span class="sello sello--nuevo">Nuevo</span>' : '') +
         (enOferta(p) ? '<span class="sello sello--oferta">-' + descuento(p) + '%</span>' : '');
@@ -502,14 +508,15 @@
         lista.map(function (m) { return '<option value="' + escapar(m) + '">' + escapar(m) + '</option>'; }).join('');
     }
     function pintarHero() {
-      var conFoto = todos.filter(function (p) { return !!p.imagen; });
+      var conFoto = todos.filter(function (p) { return !!p.imagen && noCorporal(p); });
       var elegidos = elegirAlAzar(conFoto, 5, null, true);
       $('hero-vitrinas').innerHTML = elegidos.map(function (p, i) {
         return '<a class="frasco" href="' + enlacePerfume(p) + '" style="--i:' + i + '" aria-label="Ver ' + escapar(p.marca + ' ' + p.nombre) + '">' +
           '<img src="' + rutaImagen(p, cfg) + '" alt="" width="300" height="400" decoding="async"></a>';
       }).join('');
       var nMarcas = marcasPorCantidad(todos).length;
-      $('hero-dato').textContent = 'El catálogo reúne ' + todos.length + ' perfumes de ' + nMarcas + ' marcas.';
+      var nPerfumes = todos.filter(noCorporal).length;
+      $('hero-dato').textContent = 'El catálogo reúne ' + nPerfumes + ' perfumes de ' + nMarcas + ' marcas.';
     }
     function cinta(id, htmlUnaVez, segundosPorItem, n) {
       $(id).innerHTML = '<div class="cinta__pista" style="--dur:' + Math.max(30, Math.round(n * segundosPorItem)) + 's">' +
@@ -525,7 +532,7 @@
       }, 2.6, marcas.length);
     }
     function pintarCintaFotos(id) {
-      var items = elegirAlAzar(todos.filter(function (p) { return !!p.imagen; }), 16, null, false);
+      var items = elegirAlAzar(todos.filter(function (p) { return !!p.imagen && noCorporal(p); }), 16, null, false);
       cinta(id, function (oculto) {
         return items.map(function (p) {
           return '<a class="foto-item" href="' + enlacePerfume(p) + '"' + (oculto ? ' aria-hidden="true" tabindex="-1"' : '') + '>' +
@@ -546,6 +553,11 @@
       var sets = todos.filter(esSet).sort(function (a, b) { return (b.imagen ? 1 : 0) - (a.imagen ? 1 : 0) || (b.id - a.id); });
       $('sets').hidden = !sets.length;
       $('carril-sets').innerHTML = sets.slice(0, 20).map(tarjeta).join('');
+      if ($('corporal')) {
+        var corp = elegirAlAzar(todos.filter(function (p) { return esCorporal(p) && p.imagen; }), 20, null, false);
+        $('corporal').hidden = !corp.length;
+        $('carril-corporal').innerHTML = corp.map(tarjeta).join('');
+      }
     }
     function pintarCategorias() {
       var defs = [
@@ -556,7 +568,7 @@
       ];
       var fotosFijas = cfg.fotosCategorias || {};
       $('categorias-grid').innerHTML = defs.map(function (d) {
-        var lista = todos.filter(d.pred);
+        var lista = todos.filter(function (p) { return noCorporal(p) && d.pred(p); });
         if (!lista.length) return '';
         var src = fotosFijas[d.titulo];
         if (!src) {
@@ -582,7 +594,7 @@
       $('grid').innerHTML = mostrar.map(tarjeta).join('');
       var total = resultado.length;
       $('resultado').textContent = total === 0 ? '' :
-        (estado.tipo === 'Set' ? (total === 1 ? '1 set' : total + ' sets') : (total === 1 ? '1 perfume' : total + ' perfumes')) + (mostrar.length < total ? ', mostrando ' + mostrar.length : '');
+        (estado.tipo === 'Set' ? (total === 1 ? '1 set' : total + ' sets') : (estado.tipo === 'Corporal' || estado.q) ? (total === 1 ? '1 producto' : total + ' productos') : (total === 1 ? '1 perfume' : total + ' perfumes')) + (mostrar.length < total ? ', mostrando ' + mostrar.length : '');
       $('vacio').hidden = total !== 0;
       var restantes = total - mostrar.length;
       var mas = $('btn-mas');
@@ -671,7 +683,7 @@
       var opciones = variantes.length > 1 ? '<div><p class="opciones__titulo">Presentación</p><div class="opciones">' +
         variantes.map(function (x) {
           return '<a class="opcion" href="' + enlacePerfume(x) + '"' + (x === p ? ' aria-current="page"' : '') + '>' +
-            '<b>' + (x.tipo === 'Tester' ? 'Tester' : esSet(x) ? 'Set' : 'Sellado') + (x.ml && !esSet(x) ? ' ' + x.ml + ' ml' : '') + '</b>' +
+            '<b>' + nombreTipo(x) + (x.ml && !esSet(x) ? ' ' + x.ml + ' ml' : '') + '</b>' +
             '<span>' + (x.precio == null ? 'Consultar' : formatoPrecio(x.precio, cfg.moneda)) + '</span></a>';
         }).join('') + '</div></div>' : '';
 
@@ -681,7 +693,7 @@
         (enOferta(p) ? '<span class="producto__ahorro">Ahorras ' + formatoPrecio(p.precioAntes - p.precio, cfg.moneda) + '</span>' : '') + '</div>';
 
       var etiquetas = '<span class="etiqueta">' + escapar(generoTxt) + '</span><span class="etiqueta">' + escapar(p.categoria) + '</span>' +
-        (p.tipo === 'Tester' ? '<span class="etiqueta etiqueta--tester">Tester</span>' : esSet(p) ? '<span class="etiqueta etiqueta--set">Set</span>' : '<span class="etiqueta">Sellado</span>') +
+        (p.tipo === 'Tester' ? '<span class="etiqueta etiqueta--tester">Tester</span>' : esSet(p) ? '<span class="etiqueta etiqueta--set">Set</span>' : esCorporal(p) ? '<span class="etiqueta etiqueta--corporal">' + escapar(p.linea || 'Cuidado corporal') + '</span>' : '<span class="etiqueta">Sellado</span>') +
         (p.ml && !esSet(p) ? '<span class="etiqueta">' + p.ml + ' ml</span>' : '') +
         (esNuevo(p) ? '<span class="sello sello--nuevo">Nuevo</span>' : '');
 
@@ -840,11 +852,11 @@
         cuerpo.innerHTML = '<p class="buscador__vacio">No encontramos «' + escapar(q) + '».<br>Escríbenos por WhatsApp y te decimos si lo podemos conseguir.</p>';
         return;
       }
-      cuerpo.innerHTML = '<p class="buscador__titulo">' + (r.length === 1 ? '1 perfume' : r.length + ' perfumes') + '</p>' +
+      cuerpo.innerHTML = '<p class="buscador__titulo">' + (r.length === 1 ? '1 resultado' : r.length + ' resultados') + '</p>' +
         r.slice(0, 8).map(function (p) {
           return '<a class="sugerencia" href="' + enlacePerfume(p) + '">' +
             (p.imagen ? '<img src="' + rutaImagen(p, cfg) + '" alt="" loading="lazy" width="52" height="64">' : '<span class="sin-foto sin-foto--mini"><svg class="ico" aria-hidden="true"><use href="#i-regalo"/></svg></span>') +
-            '<span><span class="sugerencia__marca">' + escapar(p.marca) + (p.tipo === 'Tester' ? ' · Tester' : esSet(p) ? ' · Set' : '') + '</span>' +
+            '<span><span class="sugerencia__marca">' + escapar(p.marca) + (p.tipo === 'Tester' ? ' · Tester' : esSet(p) ? ' · Set' : esCorporal(p) ? ' · ' + escapar(p.linea || '') : '') + '</span>' +
             '<span class="sugerencia__nombre">' + escapar(p.nombre) + '</span></span>' +
             '<span class="sugerencia__precio">' + (p.precio == null ? 'Consultar' : formatoPrecio(p.precio, cfg.moneda)) + '</span></a>';
         }).join('') +
