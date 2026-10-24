@@ -3270,8 +3270,7 @@
     "tipo": "Sellado",
     "precio": 32000,
     "imagen": "/perfumes/masculino/arabes/hawas-london.jpg",
-    "descripcion": "Elegante y sobria, con un aire clásico y sofisticado.",
-    "nuevo": true
+    "descripcion": "Elegante y sobria, con un aire clásico y sofisticado."
   },
   {
     "id": 298,
@@ -4332,12 +4331,11 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 31000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/armaf-set-odyssey-3-x-30-ml.jpg",
     "descripcion": "Tres Odyssey en tamaño de viaje para probar y combinar según el día.",
     "contenido": [
       "3 perfumes Odyssey de 30 ml"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 391,
@@ -4347,15 +4345,14 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 31500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/lattafa-set-yara-tous.jpg",
     "descripcion": "El tropical cremoso de Yara Tous en perfume, versión de bolso y bruma para el cabello.",
     "contenido": [
       "Perfume 100 ml",
       "Decant 12 ml",
       "Hair mist 50 ml"
     ],
-    "ficha": "Lattafa|Yara Tous",
-    "activo": false
+    "ficha": "Lattafa|Yara Tous"
   },
   {
     "id": 392,
@@ -4365,9 +4362,8 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 30000,
-    "imagen": null,
-    "descripcion": "Set del floral frutal 360° Coral, alegre y fresco para el día.",
-    "activo": false
+    "imagen": "/perfumes/sets/perry-ellis-set-360-coral.jpg",
+    "descripcion": "Set del floral frutal 360° Coral, alegre y fresco para el día."
   },
   {
     "id": 393,
@@ -4377,13 +4373,12 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 37000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/armaf-set-yum-yum.jpg",
     "descripcion": "Dulce y divertido, con su decant para llevar a todas partes.",
     "contenido": [
       "Perfume",
       "Decant"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 394,
@@ -4393,13 +4388,12 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 37500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/armaf-set-island-bliss.jpg",
     "descripcion": "Frutal tropical y luminoso, con decant de bolso.",
     "contenido": [
       "Perfume",
       "Decant"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 395,
@@ -4409,14 +4403,13 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 37500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/armaf-set-club-de-nuit-sillage.jpg",
     "descripcion": "Cítrico limpio y elegante, con decant para retocarte en el día.",
     "contenido": [
       "Perfume",
       "Decant"
     ],
-    "ficha": "Armaf|Club de Nuit Sillage",
-    "activo": false
+    "ficha": "Armaf|Club de Nuit Sillage"
   },
   {
     "id": 396,
@@ -4426,9 +4419,8 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 29000,
-    "imagen": null,
-    "descripcion": "Set femenino de Tag Her, dulce y floral.",
-    "activo": false
+    "imagen": "/perfumes/sets/armaf-set-tag-her.jpg",
+    "descripcion": "Set femenino de Tag Her, dulce y floral."
   },
   {
     "id": 397,
@@ -4438,14 +4430,13 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 38000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/armaf-set-club-de-nuit-maleka.jpg",
     "descripcion": "Dulce floral con decant de bolso.",
     "contenido": [
       "Perfume",
       "Decant"
     ],
-    "ficha": "Armaf|Club de Nuit Maleka",
-    "activo": false
+    "ficha": "Armaf|Club de Nuit Maleka"
   },
   {
     "id": 398,
@@ -4455,13 +4446,12 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 38000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/armaf-set-club-de-nuit-milestone.jpg",
     "descripcion": "Fresco y frutal con fondo almizclado, con decant para llevar.",
     "contenido": [
       "Perfume",
       "Decant"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 399,
@@ -4471,14 +4461,13 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 67000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/carolina-herrera-set-la-bomba.jpg",
     "descripcion": "La Bomba en su presentación de regalo, con versión de viaje.",
     "contenido": [
       "Perfume 80 ml",
       "Decant 10 ml"
     ],
-    "ficha": "Carolina Herrera|La Bomba",
-    "activo": false
+    "ficha": "Carolina Herrera|La Bomba"
   },
   {
     "id": 400,
@@ -4488,15 +4477,14 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 60500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/giorgio-armani-set-acqua-di-gioia.jpg",
     "descripcion": "Fresco acuático con limón y menta, con crema corporal a juego.",
     "contenido": [
       "Perfume 100 ml",
       "Crema corporal 50 ml",
       "Decant 10 ml"
     ],
-    "ficha": "Giorgio Armani|Acqua di Gioia",
-    "activo": false
+    "ficha": "Giorgio Armani|Acqua di Gioia"
   },
   {
     "id": 401,
@@ -4506,15 +4494,14 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 29000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/lattafa-set-asad.jpg",
     "descripcion": "Especiado y avainillado, para oler a Asad en la piel y en tu espacio.",
     "contenido": [
       "Perfume",
       "Body spray",
       "Ambientador"
     ],
-    "ficha": "Lattafa|Asad",
-    "activo": false
+    "ficha": "Lattafa|Asad"
   },
   {
     "id": 402,
@@ -4524,13 +4511,12 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 39000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/moschino-set-toy-2-3-piezas.jpg",
     "descripcion": "El osito de Moschino en set de regalo: limpio, floral y fresco.",
     "contenido": [
       "3 piezas"
     ],
-    "ficha": "Moschino|Toy 2",
-    "activo": false
+    "ficha": "Moschino|Toy 2"
   },
   {
     "id": 403,
@@ -4540,10 +4526,9 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 44500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/dolce-gabbana-set-light-blue-mujer.jpg",
     "descripcion": "El cítrico mediterráneo más famoso, en set de regalo.",
-    "ficha": "Dolce & Gabbana|Light Blue",
-    "activo": false
+    "ficha": "Dolce & Gabbana|Light Blue"
   },
   {
     "id": 404,
@@ -4553,14 +4538,13 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 42000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/dolce-gabbana-set-light-blue-pour-homme.jpg",
     "descripcion": "Dos tamaños del fresco cítrico de Light Blue: uno para casa y otro para el bolso.",
     "contenido": [
       "Perfume 100 ml",
       "Perfume 50 ml"
     ],
-    "ficha": "Dolce & Gabbana|Light Blue Pour Homme",
-    "activo": false
+    "ficha": "Dolce & Gabbana|Light Blue Pour Homme"
   },
   {
     "id": 405,
@@ -4570,15 +4554,14 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 45000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/orientica-set-amber-rouge.jpg",
     "descripcion": "Ámbar dulce y especiado en cuatro piezas para capas de aroma.",
     "contenido": [
       "Eau de parfum 80 ml",
       "Eau de parfum 10 ml",
       "Body mist 115 ml",
       "Loción corporal 115 ml"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 406,
@@ -4588,14 +4571,13 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 64500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/yves-saint-laurent-set-myslf.jpg",
     "descripcion": "Floral amaderado moderno con versión de viaje y bolso de regalo.",
     "contenido": [
       "Perfume 100 ml",
       "Decant 10 ml",
       "Bolso"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 407,
@@ -4605,13 +4587,12 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 61500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/giorgio-armani-set-my-way-3-piezas.jpg",
     "descripcion": "Floral blanco luminoso de Armani en presentación de regalo.",
     "contenido": [
       "3 piezas"
     ],
-    "ficha": "Giorgio Armani|My Way",
-    "activo": false
+    "ficha": "Giorgio Armani|My Way"
   },
   {
     "id": 408,
@@ -4621,9 +4602,8 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 32500,
-    "imagen": null,
-    "descripcion": "Set de la línea Odyssey Spectra.",
-    "activo": false
+    "imagen": "/perfumes/sets/armaf-set-odyssey-spectra.jpg",
+    "descripcion": "Set de la línea Odyssey Spectra."
   },
   {
     "id": 409,
@@ -4633,13 +4613,12 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 40000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/ariana-grande-set-ari-3-piezas.jpg",
     "descripcion": "El dulce de malvavisco y frutas de Ari, en set de regalo.",
     "contenido": [
       "3 piezas"
     ],
-    "ficha": "Ariana Grande|Ari",
-    "activo": false
+    "ficha": "Ariana Grande|Ari"
   },
   {
     "id": 410,
@@ -4649,15 +4628,14 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 68000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/carolina-herrera-set-good-girl-blush.jpg",
     "descripcion": "Floral atalcado con vainilla, con decant y labial de regalo.",
     "contenido": [
       "Perfume 80 ml",
       "Decant 10 ml",
       "Labial"
     ],
-    "ficha": "Carolina Herrera|Good Girl Blush",
-    "activo": false
+    "ficha": "Carolina Herrera|Good Girl Blush"
   },
   {
     "id": 411,
@@ -4667,10 +4645,9 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 28000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/lattafa-set-oud-for-glory.jpg",
     "descripcion": "Oud especiado y amaderado en set de regalo.",
-    "ficha": "Lattafa|Oud for Glory",
-    "activo": false
+    "ficha": "Lattafa|Oud for Glory"
   },
   {
     "id": 412,
@@ -4680,14 +4657,13 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 39000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/ariana-grande-set-thank-u-next.jpg",
     "descripcion": "Coco cremoso y frutas, con producto corporal a juego.",
     "contenido": [
       "Perfume",
       "Producto corporal"
     ],
-    "ficha": "Ariana Grande|Thank U Next",
-    "activo": false
+    "ficha": "Ariana Grande|Thank U Next"
   },
   {
     "id": 413,
@@ -4697,10 +4673,9 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 62000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/giorgio-armani-set-acqua-di-gio-profondo.jpg",
     "descripcion": "Marino profundo y aromático, en set de regalo.",
-    "ficha": "Giorgio Armani|Acqua di Giò Profondo",
-    "activo": false
+    "ficha": "Giorgio Armani|Acqua di Giò Profondo"
   },
   {
     "id": 414,
@@ -4710,13 +4685,12 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 28000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/lattafa-set-khamrah-3-piezas.jpg",
     "descripcion": "Dátiles, canela y vainilla en set de tres piezas.",
     "contenido": [
       "3 piezas"
     ],
-    "ficha": "Lattafa|Khamrah",
-    "activo": false
+    "ficha": "Lattafa|Khamrah"
   },
   {
     "id": 415,
@@ -4726,10 +4700,9 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 29000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/afnan-set-9am-dive.jpg",
     "descripcion": "Fresco cítrico y acuático, ideal para el día, en set de regalo.",
-    "ficha": "Afnan|9AM Dive",
-    "activo": false
+    "ficha": "Afnan|9AM Dive"
   },
   {
     "id": 416,
@@ -4739,7 +4712,7 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 39500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/carolina-herrera-set-minis-good-girl.jpg",
     "descripcion": "Cinco minis de la familia Good Girl para descubrir tu favorito.",
     "contenido": [
       "Good Girl 7 ml",
@@ -4747,8 +4720,7 @@
       "Very Good Girl 7 ml",
       "Very Good Girl Elixir 7 ml",
       "Good Girl EDP 7 ml"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 417,
@@ -4758,13 +4730,12 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 44500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/french-avenue-set-vulcan-feu-liquid-brun.jpg",
     "descripcion": "Dos de los más pedidos de French Avenue juntos a precio especial.",
     "contenido": [
       "Vulcan Feu",
       "Liquid Brun"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 418,
@@ -4774,10 +4745,9 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 52500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/carolina-herrera-set-212-men.jpg",
     "descripcion": "El clásico verde y especiado de 212 Men en set de regalo.",
-    "ficha": "Carolina Herrera|212 Men NYC",
-    "activo": false
+    "ficha": "Carolina Herrera|212 Men NYC"
   },
   {
     "id": 419,
@@ -4787,10 +4757,9 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 54000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/jeroboam-set-game-of-spades-full-house.jpg",
     "descripcion": "Set de Full House de la colección Game of Spades.",
-    "ficha": "Jeroboam|Game of Spades Full House",
-    "activo": false
+    "ficha": "Jeroboam|Game of Spades Full House"
   },
   {
     "id": 420,
@@ -4800,12 +4769,11 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 45000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/giorgio-armani-set-minis-si.jpg",
     "descripcion": "Cuatro minis de la familia Sì de Armani.",
     "contenido": [
       "4 minis de 7 ml"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 421,
@@ -4815,10 +4783,9 @@
     "categoria": "Diseñador",
     "tipo": "Set",
     "precio": 52500,
-    "imagen": null,
+    "imagen": "/perfumes/sets/giorgio-armani-set-acqua-di-gio-edt.jpg",
     "descripcion": "El acuático más clásico, en set de regalo.",
-    "ficha": "Giorgio Armani|Acqua di Giò Pour Homme",
-    "activo": false
+    "ficha": "Giorgio Armani|Acqua di Giò Pour Homme"
   },
   {
     "id": 422,
@@ -4828,13 +4795,12 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 32000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/lattafa-set-asad-bourbon-3-piezas.jpg",
     "descripcion": "Asad con toque de bourbon y especias, en set de tres piezas.",
     "contenido": [
       "3 piezas"
     ],
-    "ficha": "Lattafa|Asad Bourbon",
-    "activo": false
+    "ficha": "Lattafa|Asad Bourbon"
   },
   {
     "id": 423,
@@ -4844,12 +4810,11 @@
     "categoria": "Árabe",
     "tipo": "Set",
     "precio": 25000,
-    "imagen": null,
+    "imagen": "/perfumes/sets/lattafa-set-minis-yara.jpg",
     "descripcion": "Cuatro minis de la familia Yara para probarlos todos.",
     "contenido": [
       "4 minis de 5 ml"
-    ],
-    "activo": false
+    ]
   },
   {
     "id": 424,
