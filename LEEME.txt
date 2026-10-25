@@ -56,3 +56,42 @@ FOTOS
 LOGO DE SINPE MÓVIL
   Guarda el logo oficial como  assets/marca/sinpe-movil.png  (fondo transparente o blanco).
   Si el archivo no está, el pie de página muestra el texto "SINPE Móvil" con un ícono.
+
+ALTERNATIVAS ("Inspirado en...")
+- Archivo: data/inspirados.json
+- Formato:  "Marca|Nombre del árabe": { "original": "Nombre del perfume famoso", "enCatalogo": "Marca|Nombre" }
+- "enCatalogo" es opcional: ponlo solo si el original también se vende en la página.
+  Así sale "Ver el original" en el árabe y "Alternativas más económicas" en el original.
+- Marca y nombre tienen que estar escritos igual que en catalogo.json.
+
+TEST "ENCUENTRA TU PERFUME"
+- Usa el género, el precio y las palabras de la descripción de cada perfume
+  (fresco, cítrico, vainilla, dulce, floral, rosa, amaderado, oud, especiado...).
+  Mientras mejor la descripción, mejores los resultados.
+
+FAVORITOS
+- Se guardan en el navegador de cada cliente; no hay que configurar nada.
+
+COMBOS Y REGALOS POR PRESUPUESTO
+- Los combos están en catalogo.json con "tipo": "Combo".
+  "incluye": lista de ids de los productos que trae.
+  "valorSuelto": lo que costarían por separado (se muestra tachado).
+  "precio": precio del combo. Hoy: ₡1.000 menos si son 2 piezas, ₡1.500 si son 3.
+- Para quitar un combo: "activo": false.
+- La sección "Regalos por presupuesto" muestra combos y sets según el rango
+  (hasta ₡20.000, ₡30.000, ₡40.000, ₡50.000 y más de ₡50.000).
+- Las fotos de los combos están en assets/perfumes/combos.
+
+VISTA PREVIA AL COMPARTIR (functions/_middleware.js)
+- Cuando se comparte el enlace de un perfume por WhatsApp, Instagram o Facebook,
+  sale la foto, el nombre y el precio de ese perfume.
+- Lo hace Cloudflare automáticamente con la carpeta "functions". No hay que configurar nada
+  y lee los datos de catalogo.json, así que siempre está al día.
+- WhatsApp guarda la vista previa de un enlace por un tiempo; si la cambias, prueba con otro perfume.
+
+GOOGLE (SEO)
+- robots.txt le indica a Google dónde está el mapa del sitio.
+- https://nix27-perfumes.pages.dev/sitemap.xml se genera solo con todos los productos (functions/_middleware.js).
+- Cada perfume lleva sus datos para Google (marca, precio en colones, foto) y su enlace oficial.
+- Para pedirle a Google que la revise: Google Search Console > Agregar propiedad > Prefijo de URL
+  > https://nix27-perfumes.pages.dev/ y luego en "Sitemaps" enviar: sitemap.xml

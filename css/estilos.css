@@ -124,6 +124,8 @@ p{margin:0}
 .menu a:last-child{border-bottom:0}
 .menu a:hover{color:var(--oro-texto)}
 .menu .menu__destacado{color:var(--oferta)}
+.menu__abrir{display:none}
+.menu__sub,.menu__grupo{display:contents}
 .acciones{display:flex;align-items:center;gap:6px}
 .buscar-nav{display:none}
 .btn-pedido{position:relative;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:var(--azul);flex:none}
@@ -134,7 +136,8 @@ p{margin:0}
 .btn-pedido.salto{animation:salto .5s}
 @keyframes salto{30%{transform:scale(1.18)}60%{transform:scale(.94)}}
 
-@media (max-width:380px){.logo__texto{font-size:1.02rem}.logo img{height:40px}}
+@media (max-width:480px){.logo{gap:6px;overflow:hidden}.logo__texto{font-size:1.02rem;overflow:hidden;text-overflow:clip}.logo img{height:40px}.acciones{gap:0}.acciones .btn-pedido,.acciones .btn-lupa{width:40px;height:40px}.navbar__fila{gap:6px}}
+@media (max-width:360px){.logo__texto{display:none}}
 @media (min-width:1080px){
   .btn-menu,.btn-lupa{display:none}
   .logo{margin-right:12px}
@@ -142,8 +145,20 @@ p{margin:0}
   .menu a{padding:6px 0;border:0;font-size:.86rem;position:relative;white-space:nowrap}
   .menu a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--oro);transform:scaleX(0);transform-origin:left;transition:transform .2s}
   .menu a:hover::after{transform:scaleX(1)}
+  .menu{gap:26px}
+  .menu__grupo{display:block;position:relative}
+  .menu__abrir{display:flex;align-items:center;gap:4px;padding:6px 0;border:0;background:none;font:inherit;font-size:.86rem;font-weight:500;color:var(--tinta);cursor:pointer}
+  .menu__abrir .ico{width:14px;height:14px;transform:rotate(90deg);transition:transform .2s}
+  .menu__sub{display:none;position:absolute;left:-16px;top:100%;margin-top:8px;min-width:210px;flex-direction:column;padding:8px;background:var(--fondo);border:1px solid var(--linea);border-radius:14px;box-shadow:0 18px 34px var(--sombra);z-index:30}
+  .menu__sub::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+  .menu__sub a{padding:9px 12px;border-radius:9px}
+  .menu__sub a::after{display:none}
+  .menu__sub a:hover{background:var(--bruma)}
+  .menu__sub a:last-child{border-top:1px solid var(--linea);border-radius:0 0 9px 9px;margin-top:4px;color:var(--azul);font-weight:600}
+  .menu__grupo:hover .menu__sub,.menu__grupo:focus-within .menu__sub,.menu__grupo.abierto .menu__sub{display:flex}
+  .menu__grupo:hover .menu__abrir .ico,.menu__grupo.abierto .menu__abrir .ico{transform:rotate(-90deg)}
   /* En computadora se ve como campo de texto, pero abre el buscador */
-  .buscar-nav{display:flex;align-items:center;gap:8px;width:250px;height:42px;padding:0 16px;background:var(--bruma);border:1px solid var(--linea);border-radius:999px;color:var(--suave);font-size:.86rem;text-align:left}
+  .buscar-nav{display:flex;align-items:center;gap:8px;width:230px;height:42px;padding:0 16px;background:var(--bruma);border:1px solid var(--linea);border-radius:999px;color:var(--suave);font-size:.86rem;text-align:left}
   .buscar-nav:hover{border-color:var(--primario)}
   .buscar-nav span{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .buscar-nav .ico{width:19px;height:19px;color:var(--azul)}
@@ -550,3 +565,69 @@ dialog::backdrop{background:var(--velo)}
 .pagos li.con-logo{padding:0 14px 0 8px}
 .pagos li.con-logo .ico,.pagos li.con-logo .pago-texto{display:none}
 @media (prefers-color-scheme:dark){:root:not([data-tema="claro"]) .pagos li.con-logo{background:#fff;color:#1f2a44}}
+
+/* Favoritos */
+.btn-fav{position:absolute;right:8px;top:8px;z-index:2;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#8a1c3c;box-shadow:0 3px 10px rgba(0,0,0,.18);cursor:pointer;transition:transform .2s}
+.btn-fav .ico{width:20px;height:20px}
+.btn-fav:hover{transform:scale(1.1)}
+.btn-fav[aria-pressed="true"]{--relleno-corazon:#d62653;color:#d62653}
+.btn-fav[aria-pressed="true"] .ico{animation:latido .35s}
+@keyframes latido{50%{transform:scale(1.3)}}
+.btn-fav--grande{position:static;width:50px;height:50px;flex:none;background:var(--superficie);border:1.5px solid var(--linea);box-shadow:none}
+.btn-fav--grande .ico{width:24px;height:24px}
+#btn-favs .ico{width:24px;height:24px}
+#btn-favs:has(.contador:not([hidden])) .ico{--relleno-corazon:#d62653;color:#d62653}
+
+/* Inspirado en / alternativas */
+.tarjeta__inspirado{font-size:.74rem;font-weight:600;color:var(--oro-texto,#9a6b12);line-height:1.25}
+.inspirado{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:linear-gradient(135deg,rgba(212,168,74,.16),rgba(212,168,74,.05));border:1px solid rgba(212,168,74,.45)}
+.inspirado__ico{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:50%;background:#d4a84a;color:#1b1406}
+.inspirado__ico .ico{width:18px;height:18px}
+.inspirado__titulo{font-size:1rem}
+.inspirado__sub{font-size:.88rem;color:var(--suave);margin-top:2px}
+.inspirado__ver{display:inline-block;margin-top:6px;font-weight:600;font-size:.9rem;color:var(--azul)}
+.alternativas{display:grid;gap:8px}
+.alternativa{display:flex;align-items:center;gap:12px;padding:8px 12px 8px 8px;border:1px solid var(--linea);border-radius:12px;background:var(--superficie);text-decoration:none;color:inherit;transition:border-color .2s}
+.alternativa:hover{border-color:var(--oro)}
+.alternativa img{width:52px;height:64px;object-fit:cover;border-radius:8px;flex:none}
+.alternativa>span:nth-child(2){flex:1;display:grid}
+.alternativa__marca{font-size:.76rem;color:var(--suave)}
+.alternativa__nombre{font-family:var(--display);font-size:1.02rem}
+.alternativa__ahorro{font-size:.76rem;font-weight:700;color:#1d7a46}
+.alternativa__precio{font-weight:700;color:var(--azul)}
+
+/* Test */
+.test{width:min(720px,100% - 24px);max-width:none;max-height:min(760px,100dvh - 24px);margin:auto;padding:0;border:0;border-radius:22px;background:var(--fondo);color:var(--tinta);box-shadow:0 24px 60px var(--sombra);overflow:hidden;flex-direction:column}
+.test[open]{display:flex}
+.test__cab{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 14px 22px;border-bottom:1px solid var(--linea)}
+.test__cab h2{font-size:1.5rem}
+.test__cuerpo{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:22px}
+.test__progreso{display:flex;gap:6px;margin-bottom:16px}
+.test__progreso span{flex:1;height:5px;border-radius:5px;background:var(--linea)}
+.test__progreso span.hecho{background:var(--oro)}
+.test__paso{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--suave)}
+.test__pregunta{font-family:var(--display);font-size:clamp(1.5rem,4vw,2rem);font-weight:500;margin:4px 0 18px}
+.test__opciones{display:grid;gap:10px}
+.test__opcion{text-align:left;padding:16px 18px;border-radius:14px;border:1.5px solid var(--linea);background:var(--superficie);color:var(--tinta);font-size:1.02rem;font-weight:500;cursor:pointer;transition:border-color .2s,transform .2s}
+.test__opcion:hover{border-color:var(--oro);transform:translateX(4px)}
+.test__atras{margin-top:16px;border:0;background:none;color:var(--suave);font-weight:600;cursor:pointer;padding:6px 0}
+.test__resultados{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.test__resultados .tarjeta:hover{transform:none}
+.test__fin{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.test__fin .btn{flex:1;min-width:220px}
+@media (max-width:520px){.test__resultados{grid-template-columns:1fr 1fr;gap:10px}.test__cuerpo{padding:18px 14px}}
+
+/* Regalos y combos */
+.etiqueta--combo{background:#FFF1D6;color:#8A5300}
+@media (prefers-color-scheme:dark){:root:not([data-tema="claro"]) .etiqueta--combo{background:#4A3410;color:#F6D9A0}}
+.precio--combo{color:var(--azul)}
+.regalos__filtros{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-bottom:18px}
+.regalos__filtros .segmentos{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%}
+.regalos__filtros .segmentos::-webkit-scrollbar{display:none}
+.regalos__filtros .segmentos button{white-space:nowrap}
+.regalos__vacio{padding:30px 4px;color:var(--suave)}
+.incluye--combo{display:grid;gap:8px}
+
+.link-compartir{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:none;color:var(--azul);font-weight:600;font-size:.92rem;padding:4px 0;cursor:pointer;justify-self:center}
+.link-compartir .ico{width:18px;height:18px}
+.link-compartir:hover{text-decoration:underline}

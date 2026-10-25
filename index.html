@@ -9,6 +9,25 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#06122A" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://nix27-perfumes.pages.dev/">
+  <link rel="canonical" href="https://nix27-perfumes.pages.dev/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "nix27_perfumes",
+    "url": "https://nix27-perfumes.pages.dev/",
+    "logo": "https://nix27-perfumes.pages.dev/assets/marca/icono.png",
+    "image": "https://nix27-perfumes.pages.dev/assets/marca/og-image.jpg",
+    "description": "Perfumes originales de diseñador, árabes y de nicho, sellados y testers, con envíos a todo Costa Rica.",
+    "telephone": "+50672140221",
+    "priceRange": "₡₡",
+    "currenciesAccepted": "CRC",
+    "paymentAccepted": "SINPE Móvil, transferencia, efectivo",
+    "areaServed": { "@type": "Country", "name": "Costa Rica" },
+    "address": { "@type": "PostalAddress", "addressCountry": "CR" },
+    "sameAs": ["https://www.instagram.com/nix27_perfumes/"]
+  }
+  </script>
   <meta property="og:url" content="https://nix27-perfumes.pages.dev/">
   <meta property="og:site_name" content="nix27_perfumes">
   <meta property="og:locale" content="es_CR">
@@ -42,6 +61,7 @@
   <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6l7-3z M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></symbol>
   <symbol id="i-camion" viewBox="0 0 24 24"><path d="M2.5 6.5h11v9h-11z M13.5 9.5h4l3 3v3h-7 M6.5 18.5a1.6 1.6 0 1 0 0-.01 M17 18.5a1.6 1.6 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
   <symbol id="i-sinpe" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 18h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-corazon" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.9 3.8 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.4 0 5.5 3.4 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z" fill="var(--relleno-corazon,none)" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
   <symbol id="i-regalo" viewBox="0 0 24 24"><path d="M4 11h16v9.5H4zM3 7.5h18V11H3zM12 7.5v13M12 7.5C10.5 4 7 4 7 6s3 1.5 5 1.5zm0 0c1.5-3.5 5-3.5 5-1.5s-3 1.5-5 1.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
   <symbol id="i-efectivo" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 9.5v5M18 9.5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="i-banco" viewBox="0 0 24 24"><path d="M3 9.5L12 4l9 5.5M5 10v7M9.5 10v7M14.5 10v7M19 10v7M3.5 20h17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -67,20 +87,32 @@
     <nav class="menu" id="menu" aria-label="Principal">
       <a href="#nuevos" data-solo="nuevos" hidden>Nuevos</a>
       <a href="#ofertas" class="menu__destacado" data-solo="ofertas" hidden>Ofertas</a>
-      <a href="#catalogo" data-filtro="genero:mujer">Mujer</a>
-      <a href="#catalogo" data-filtro="genero:hombre">Hombre</a>
-      <a href="#catalogo" data-filtro="categoria:Árabe">Árabes</a>
-      <a href="#catalogo" data-filtro="categoria:Nicho">Nicho</a>
-      <a href="#catalogo" data-filtro="tipo:Tester">Testers</a>
-      <a href="#sets" data-solo="sets" hidden>Sets</a>
+      <div class="menu__grupo">
+        <button class="menu__abrir" type="button" aria-expanded="false" aria-haspopup="true">Perfumes<svg class="ico" aria-hidden="true"><use href="#i-der"/></svg></button>
+        <div class="menu__sub">
+          <a href="#catalogo" data-filtro="genero:mujer">Mujer</a>
+          <a href="#catalogo" data-filtro="genero:hombre">Hombre</a>
+          <a href="#catalogo" data-filtro="categoria:Árabe">Árabes</a>
+          <a href="#catalogo" data-filtro="categoria:Nicho">Nicho</a>
+          <a href="#catalogo" data-filtro="tipo:Tester">Testers</a>
+          <a href="#regalos" data-solo="regalos" hidden>Regalos por presupuesto</a>
+      <a href="#sets" data-solo="sets" hidden>Sets y estuches</a>
+          <a href="#catalogo" data-filtro="todo:1">Ver todo el catálogo</a>
+        </div>
+      </div>
+      <a href="#regalos" data-solo="regalos" hidden>Regalos</a>
       <a href="#corporal" data-solo="corporal" hidden>Corporal</a>
-      <a href="#preguntas">Preguntas</a>
+      <a href="?test=1" data-abrir-test>Test</a>
       <a href="#como-pedir">Cómo pedir</a>
     </nav>
 
     <div class="acciones">
       <button class="buscar-nav" type="button" data-abrir-buscador aria-label="Buscar perfume o marca"><svg class="ico"><use href="#i-buscar"/></svg><span>Buscar perfumes o marcas</span></button>
       <button class="btn-lupa" type="button" data-abrir-buscador aria-label="Buscar perfume o marca"><svg class="ico"><use href="#i-buscar"/></svg></button>
+      <button class="btn-pedido" id="btn-favs" type="button" aria-label="Ver mis favoritos" title="Favoritos">
+        <svg class="ico"><use href="#i-corazon"/></svg>
+        <span class="contador" id="contador-fav" hidden>0</span>
+      </button>
       <button class="btn-pedido" id="btn-carrito" type="button" aria-label="Ver mi pedido" title="Mi pedido">
         <svg class="ico"><use href="#i-bolsa"/></svg>
         <span class="contador" id="contador" hidden>0</span>
@@ -100,6 +132,7 @@
         <p class="hero__sub">Diseñador, árabes y nicho, en botella sellada o tester. Elige lo que te guste y haz tu pedido por WhatsApp.</p>
         <div class="hero__acciones">
           <a class="btn btn--oro" href="#catalogo">Ver el catálogo</a>
+          <button class="btn btn--linea" type="button" data-abrir-test>¿Cuál es para mí? Haz el test</button>
           <a class="btn btn--linea" href="#" data-wa data-wa-tipo="consulta"><svg class="ico"><use href="#i-wa"/></svg>Escríbenos</a>
         </div>
         <p class="hero__dato" id="hero-dato"></p>
@@ -144,6 +177,34 @@
     <div class="carril" id="carril-ofertas"></div>
   </section>
 
+  <!-- Regalos por presupuesto: combos (tipo "Combo") y sets -->
+  <section class="fila regalos" id="regalos" hidden>
+    <div class="contenedor fila__cab">
+      <div>
+        <h2>Regalos por presupuesto</h2>
+        <p>Combos armados y sets listos para regalar. Elige cuánto quieres gastar.</p>
+      </div>
+      <div class="fila__acciones">
+        <div class="flechas"><button type="button" data-carril="carril-regalos" data-dir="-1" aria-label="Anteriores"><svg class="ico"><use href="#i-izq"/></svg></button><button type="button" data-carril="carril-regalos" data-dir="1" aria-label="Siguientes"><svg class="ico"><use href="#i-der"/></svg></button></div>
+      </div>
+    </div>
+    <div class="contenedor regalos__filtros">
+      <div class="segmentos" id="regalos-tabs" role="group" aria-label="Presupuesto">
+        <button type="button" data-tope="20000" aria-pressed="true">Hasta ₡20.000</button>
+        <button type="button" data-tope="30000" aria-pressed="false">Hasta ₡30.000</button>
+        <button type="button" data-tope="40000" aria-pressed="false">Hasta ₡40.000</button>
+        <button type="button" data-tope="50000" aria-pressed="false">Hasta ₡50.000</button>
+        <button type="button" data-tope="0" aria-pressed="false">Más de ₡50.000</button>
+      </div>
+      <div class="segmentos segmentos--chico" id="regalos-para" role="group" aria-label="Para quién">
+        <button type="button" data-para="todos" aria-pressed="true">Todos</button>
+        <button type="button" data-para="mujer" aria-pressed="false">Para ella</button>
+        <button type="button" data-para="hombre" aria-pressed="false">Para él</button>
+      </div>
+    </div>
+    <div class="carril" id="carril-regalos"></div>
+  </section>
+
   <!-- Sets y estuches (aparece solo si hay perfumes con "tipo": "Set") -->
   <section class="fila" id="sets" hidden>
     <div class="contenedor fila__cab">
@@ -172,6 +233,20 @@
       </div>
     </div>
     <div class="carril" id="carril-corporal"></div>
+  </section>
+
+  <!-- Alternativas: perfumes árabes inspirados en perfumes de lujo (data/inspirados.json) -->
+  <section class="fila fila--bruma" id="alternativas" hidden>
+    <div class="contenedor fila__cab">
+      <div>
+        <h2>Alternativas de lujo</h2>
+        <p>Árabes inspirados en los perfumes más famosos, por mucho menos.</p>
+      </div>
+      <div class="fila__acciones">
+        <div class="flechas"><button type="button" data-carril="carril-alternativas" data-dir="-1" aria-label="Anteriores"><svg class="ico"><use href="#i-izq"/></svg></button><button type="button" data-carril="carril-alternativas" data-dir="1" aria-label="Siguientes"><svg class="ico"><use href="#i-der"/></svg></button></div>
+      </div>
+    </div>
+    <div class="carril" id="carril-alternativas"></div>
   </section>
 
   <!-- En la vitrina -->
@@ -233,6 +308,7 @@
               <button type="button" data-v="Tester" aria-pressed="false">Testers</button>
               <button type="button" data-v="Set" aria-pressed="false" data-solo="sets" hidden>Sets</button>
               <button type="button" data-v="Corporal" aria-pressed="false" data-solo="corporal" hidden>Corporal</button>
+              <button type="button" data-v="Combo" aria-pressed="false" data-solo="regalos" hidden>Combos</button>
             </div>
           </div>
           <div class="grupo" role="group" aria-label="Mostrar" id="g-especial" hidden>
@@ -353,6 +429,7 @@
       <a href="#catalogo" data-filtro="categoria:Árabe">Árabes</a>
       <a href="#catalogo" data-filtro="categoria:Nicho">Nicho</a>
       <a href="#catalogo" data-filtro="tipo:Tester">Testers</a>
+      <a href="#regalos" data-solo="regalos" hidden>Regalos por presupuesto</a>
       <a href="#sets" data-solo="sets" hidden>Sets y estuches</a>
       <a href="#corporal" data-solo="corporal" hidden>Cuidado corporal</a>
     </div>
@@ -394,6 +471,23 @@
     <button class="cerrar" id="buscador-cerrar" type="button" aria-label="Cerrar"><svg class="ico"><use href="#i-cerrar"/></svg></button>
   </form>
   <div class="buscador__cuerpo" id="buscador-cuerpo"></div>
+</dialog>
+
+<dialog id="favoritos" class="panel" aria-labelledby="favoritos-titulo">
+  <div class="panel__cab">
+    <h2 id="favoritos-titulo">Mis favoritos</h2>
+    <button class="cerrar cerrar--plano" id="favoritos-cerrar" type="button" aria-label="Cerrar"><svg class="ico"><use href="#i-cerrar"/></svg></button>
+  </div>
+  <div class="panel__lista" id="favoritos-lista"></div>
+  <div class="panel__pie" id="favoritos-pie"></div>
+</dialog>
+
+<dialog id="test" class="test" aria-labelledby="test-titulo">
+  <div class="test__cab">
+    <h2 id="test-titulo">Encuentra tu perfume</h2>
+    <button class="cerrar cerrar--plano" id="test-cerrar" type="button" aria-label="Cerrar"><svg class="ico"><use href="#i-cerrar"/></svg></button>
+  </div>
+  <div class="test__cuerpo" id="test-cuerpo"></div>
 </dialog>
 
 <dialog id="carrito" class="panel" aria-labelledby="carrito-titulo">

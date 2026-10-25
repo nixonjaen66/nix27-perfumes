@@ -40,6 +40,8 @@
   <symbol id="i-escudo" viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6l7-3z M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></symbol>
   <symbol id="i-camion" viewBox="0 0 24 24"><path d="M2.5 6.5h11v9h-11z M13.5 9.5h4l3 3v3h-7 M6.5 18.5a1.6 1.6 0 1 0 0-.01 M17 18.5a1.6 1.6 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
   <symbol id="i-sinpe" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 18h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-corazon" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.7 7.9 3.8 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.4 0 5.5 3.4 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z" fill="var(--relleno-corazon,none)" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+  <symbol id="i-compartir" viewBox="0 0 24 24"><path d="M12 15V3.5M7.5 8L12 3.5 16.5 8M5 12.5V19a1.5 1.5 0 0 0 1.5 1.5h11A1.5 1.5 0 0 0 19 19v-6.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-regalo" viewBox="0 0 24 24"><path d="M4 11h16v9.5H4zM3 7.5h18V11H3zM12 7.5v13M12 7.5C10.5 4 7 4 7 6s3 1.5 5 1.5zm0 0c1.5-3.5 5-3.5 5-1.5s-3 1.5-5 1.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
   <symbol id="i-efectivo" viewBox="0 0 24 24"><rect x="2.5" y="6" width="19" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M6 9.5v5M18 9.5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
   <symbol id="i-banco" viewBox="0 0 24 24"><path d="M3 9.5L12 4l9 5.5M5 10v7M9.5 10v7M14.5 10v7M19 10v7M3.5 20h17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
@@ -65,20 +67,32 @@
     <nav class="menu" id="menu" aria-label="Principal">
       <a href="index.html#nuevos" data-solo="nuevos" hidden>Nuevos</a>
       <a href="index.html#ofertas" class="menu__destacado" data-solo="ofertas" hidden>Ofertas</a>
-      <a href="index.html#catalogo" data-filtro="genero:mujer">Mujer</a>
-      <a href="index.html#catalogo" data-filtro="genero:hombre">Hombre</a>
-      <a href="index.html#catalogo" data-filtro="categoria:Árabe">Árabes</a>
-      <a href="index.html#catalogo" data-filtro="categoria:Nicho">Nicho</a>
-      <a href="index.html#catalogo" data-filtro="tipo:Tester">Testers</a>
-      <a href="index.html#sets" data-solo="sets" hidden>Sets</a>
+      <div class="menu__grupo">
+        <button class="menu__abrir" type="button" aria-expanded="false" aria-haspopup="true">Perfumes<svg class="ico" aria-hidden="true"><use href="#i-der"/></svg></button>
+        <div class="menu__sub">
+          <a href="index.html#catalogo" data-filtro="genero:mujer">Mujer</a>
+          <a href="index.html#catalogo" data-filtro="genero:hombre">Hombre</a>
+          <a href="index.html#catalogo" data-filtro="categoria:Árabe">Árabes</a>
+          <a href="index.html#catalogo" data-filtro="categoria:Nicho">Nicho</a>
+          <a href="index.html#catalogo" data-filtro="tipo:Tester">Testers</a>
+          <a href="index.html#regalos" data-solo="regalos" hidden>Regalos por presupuesto</a>
+      <a href="index.html#sets" data-solo="sets" hidden>Sets y estuches</a>
+          <a href="index.html#catalogo" data-filtro="todo:1">Ver todo el catálogo</a>
+        </div>
+      </div>
+      <a href="index.html#regalos" data-solo="regalos" hidden>Regalos</a>
       <a href="index.html#corporal" data-solo="corporal" hidden>Corporal</a>
-      <a href="index.html#preguntas">Preguntas</a>
+      <a href="index.html?test=1" data-abrir-test>Test</a>
       <a href="index.html#como-pedir">Cómo pedir</a>
     </nav>
 
     <div class="acciones">
       <button class="buscar-nav" type="button" data-abrir-buscador aria-label="Buscar perfume o marca"><svg class="ico"><use href="#i-buscar"/></svg><span>Buscar perfumes o marcas</span></button>
       <button class="btn-lupa" type="button" data-abrir-buscador aria-label="Buscar perfume o marca"><svg class="ico"><use href="#i-buscar"/></svg></button>
+      <button class="btn-pedido" id="btn-favs" type="button" aria-label="Ver mis favoritos" title="Favoritos">
+        <svg class="ico"><use href="#i-corazon"/></svg>
+        <span class="contador" id="contador-fav" hidden>0</span>
+      </button>
       <button class="btn-pedido" id="btn-carrito" type="button" aria-label="Ver mi pedido" title="Mi pedido">
         <svg class="ico"><use href="#i-bolsa"/></svg>
         <span class="contador" id="contador" hidden>0</span>
@@ -117,6 +131,7 @@
       <a href="index.html#catalogo" data-filtro="categoria:Árabe">Árabes</a>
       <a href="index.html#catalogo" data-filtro="categoria:Nicho">Nicho</a>
       <a href="index.html#catalogo" data-filtro="tipo:Tester">Testers</a>
+      <a href="index.html#regalos" data-solo="regalos" hidden>Regalos por presupuesto</a>
       <a href="index.html#sets" data-solo="sets" hidden>Sets y estuches</a>
       <a href="index.html#corporal" data-solo="corporal" hidden>Cuidado corporal</a>
     </div>
@@ -158,6 +173,15 @@
     <button class="cerrar" id="buscador-cerrar" type="button" aria-label="Cerrar"><svg class="ico"><use href="#i-cerrar"/></svg></button>
   </form>
   <div class="buscador__cuerpo" id="buscador-cuerpo"></div>
+</dialog>
+
+<dialog id="favoritos" class="panel" aria-labelledby="favoritos-titulo">
+  <div class="panel__cab">
+    <h2 id="favoritos-titulo">Mis favoritos</h2>
+    <button class="cerrar cerrar--plano" id="favoritos-cerrar" type="button" aria-label="Cerrar"><svg class="ico"><use href="#i-cerrar"/></svg></button>
+  </div>
+  <div class="panel__lista" id="favoritos-lista"></div>
+  <div class="panel__pie" id="favoritos-pie"></div>
 </dialog>
 
 <dialog id="carrito" class="panel" aria-labelledby="carrito-titulo">

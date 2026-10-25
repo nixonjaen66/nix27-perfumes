@@ -7,6 +7,7 @@
 
   var PAGINA = 48;
   var CLAVE_PEDIDO = 'nix27_pedido_v1';
+  var CLAVE_FAVORITOS = 'nix27_favoritos_v1';
   var ETIQUETA_GENERO = { Femenino: 'Mujer', Masculino: 'Hombre', Unisex: 'Unisex' };
   var DIAS_NUEVO = 30; // se cambia en js/config.js (diasNuevo)
 
@@ -18,7 +19,9 @@
   function esSet(p) { return p.tipo === 'Set'; }
   // Cuidado corporal: body mist, cremas, body spray... (no se mezclan con los perfumes salvo que se pidan)
   function esCorporal(p) { return p.tipo === 'Corporal'; }
-  function noCorporal(p) { return !esCorporal(p); }
+  // Combos armados por la tienda (regalos): varios productos del catálogo a un precio un poco menor
+  function esCombo(p) { return p.tipo === 'Combo'; }
+  function noCorporal(p) { return !esCorporal(p) && !esCombo(p); }
   // Los sets se muestran aunque todavía no tengan foto (sale una tarjeta de regalo)
   function esVisible(p) { return !!p && p.activo !== false && (!!p.imagen || esSet(p)); }
   function coincideGenero(p, genero) {
@@ -57,12 +60,12 @@
       if (!coincideGenero(p, e.genero)) return false;
       if (e.categoria !== 'todas' && p.categoria !== e.categoria) return false;
       if (e.tipo !== 'todos' && p.tipo !== e.tipo) return false;
-      if (e.tipo === 'todos' && esCorporal(p) && !terminos.length && e.marca === 'todas') return false;
+      if (e.tipo === 'todos' && (esCorporal(p) || esCombo(p)) && !terminos.length && e.marca === 'todas') return false;
       if (e.marca !== 'todas' && p.marca !== e.marca) return false;
       if (e.especial === 'oferta' && !enOferta(p)) return false;
       if (e.especial === 'nuevo' && !esNuevo(p)) return false;
       if (terminos.length) {
-        var pajar = normalizar([p.marca, p.nombre, p.categoria, p.tipo, p.linea || '', esCorporal(p) ? 'cuidado corporal' : '', esSet(p) ? 'set estuche regalo ' + (p.contenido || []).join(' ') : '', textoFicha(fichas && fichas[claveFicha(p)])].join(' '));
+        var pajar = normalizar([p.marca, p.nombre, p.categoria, p.tipo, p.linea || '', p._inspirado || '', esCorporal(p) ? 'cuidado corporal' : '', esCombo(p) ? 'combo regalo ' + (p.contenido || []).join(' ') : '', esSet(p) ? 'set estuche regalo ' + (p.contenido || []).join(' ') : '', textoFicha(fichas && fichas[claveFicha(p)])].join(' '));
         for (var i = 0; i < terminos.length; i++) if (pajar.indexOf(terminos[i]) === -1) return false;
       }
       return true;
@@ -117,7 +120,7 @@
   function descripcionCorta(p) {
     return p.marca + ' ' + p.nombre + (p.tipo === 'Tester' ? ' (Tester)' : '') + (p.ml && !esSet(p) ? ' ' + p.ml + ' ml' : '');
   }
-  function nombreTipo(p) { return p.tipo === 'Tester' ? 'Tester' : esSet(p) ? 'Set' : esCorporal(p) ? (p.linea || 'Cuidado corporal') : 'Sellado'; }
+  function nombreTipo(p) { return p.tipo === 'Tester' ? 'Tester' : esSet(p) ? 'Set' : esCombo(p) ? 'Combo' : esCorporal(p) ? (p.linea || 'Cuidado corporal') : 'Sellado'; }
   function totalPedido(carrito, porId) {
     var total = 0, sinPrecio = 0, unidades = 0;
     Object.keys(carrito).forEach(function (id) {
@@ -181,7 +184,7 @@
       if (claveGrupo(x) === claveGrupo(p)) return;
       var fx = fichas[claveFicha(x)] || {};
       var comunes = (fx.acordes || []).slice(0, 4).filter(function (a) { return acordesP.indexOf(a[0]) !== -1; }).length;
-      var s = (x.marca === p.marca ? 4 : 0) + (esSet(x) === esSet(p) ? 0.5 : -1.5) + (esCorporal(x) === esCorporal(p) ? (esCorporal(p) && x.linea === p.linea ? 2 : 0) : -6) + comunes * 1.5 + (x.genero === p.genero ? 1.5 : x.genero === 'Unisex' ? 0.7 : -2) + (x.categoria === p.categoria ? 0.5 : 0);
+      var s = (x.marca === p.marca ? 4 : 0) + (esSet(x) === esSet(p) ? 0.5 : -1.5) + (esCorporal(x) === esCorporal(p) ? (esCorporal(p) && x.linea === p.linea ? 2 : 0) : -6) + (esCombo(x) === esCombo(p) ? 0 : -6) + comunes * 1.5 + (x.genero === p.genero ? 1.5 : x.genero === 'Unisex' ? 0.7 : -2) + (x.categoria === p.categoria ? 0.5 : 0);
       var k = claveGrupo(x);
       if (!mejores[k] || mejores[k].s < s || (mejores[k].s === s && x.tipo === 'Sellado')) mejores[k] = { x: x, s: s };
     });
@@ -316,13 +319,49 @@
     return '<span class="nota__ico" style="--n-bg:' + ico[0] + '"><svg viewBox="0 0 40 40" aria-hidden="true">' + ico[1] + '</svg></span>';
   }
 
+  // Familias olfativas aproximadas a partir de la descripción (para el test)
+  var FAMILIAS = {
+    fresco: /fresc|citric|acuat|marin|limon|bergamot|verde|menta|lavand|aromatic|limpi|ocean|brisa|agua|azul/,
+    dulce: /dulce|vainill|gourmand|caramel|chocolat|azucar|algodon|pralin|cafe|miel|golosin|malvavisco|tonka|cereza|pistach|coco|frutal|tropical/,
+    floral: /floral|flor|rosa|jazmin|peoni|nardo|azahar|iris|violeta|orquide/,
+    intenso: /amader|madera|oud|cuero|tabaco|ambar|especi|intens|oscur|ahumad|cedro|incienso|almizcl|nocturn|seductor|calid/
+  };
+  function familiasDe(p) {
+    var t = normalizar((p.descripcion || '') + ' ' + p.nombre);
+    return Object.keys(FAMILIAS).filter(function (k) { return FAMILIAS[k].test(t); });
+  }
+  // r = { para: 'mujer'|'hombre'|'todos', momento: 'dia'|'noche'|'siempre', estilo: 'fresco'|'dulce'|'floral'|'intenso', tope: número o 0 }
+  function puntajeTest(p, r) {
+    var fam = familiasDe(p);
+    var s = 0;
+    if (fam.indexOf(r.estilo) !== -1) s += 4 - (fam.length - 1) * 0.5;
+    if (r.momento === 'dia' && (fam.indexOf('fresco') !== -1 || fam.indexOf('floral') !== -1)) s += 1.5;
+    if (r.momento === 'noche' && (fam.indexOf('intenso') !== -1 || fam.indexOf('dulce') !== -1)) s += 1.5;
+    if (r.para !== 'todos') s += p.genero === 'Unisex' ? 0.5 : 1;
+    if (p.tipo === 'Sellado') s += 0.6;
+    return s;
+  }
+  function recomendar(items, r, cantidad) {
+    var base = items.filter(function (p) {
+      if (esSet(p) || esCorporal(p) || esCombo(p) || !p.imagen || p.precio == null) return false;
+      return coincideGenero(p, r.para === 'todos' ? 'todos' : r.para);
+    });
+    var conTope = r.tope ? base.filter(function (p) { return p.precio <= r.tope && (!r.piso || p.precio > r.piso); }) : base;
+    if (conTope.length >= cantidad) base = conTope;
+    var vistos = {};
+    return base.map(function (p) { return { p: p, s: puntajeTest(p, r) }; })
+      .sort(function (a, b) { return b.s - a.s || ((a.p.id * 7919) % 97) - ((b.p.id * 7919) % 97); })
+      .filter(function (x) { var k = claveGrupo(x.p); if (vistos[k]) return false; vistos[k] = 1; return true; })
+      .slice(0, cantidad).map(function (x) { return x.p; });
+  }
+
   var puro = {
     normalizar: normalizar, esVisible: esVisible, estadoInicial: estadoInicial, filtrar: filtrar, ordenar: ordenar,
     formatoPrecio: formatoPrecio, rutaImagen: rutaImagen, escapar: escapar, totalPedido: totalPedido,
     mensajeWhatsApp: mensajeWhatsApp, enlaceWhatsApp: enlaceWhatsApp, elegirAlAzar: elegirAlAzar,
     marcasPorCantidad: marcasPorCantidad, atajoAEstado: atajoAEstado, resumenResenas: resumenResenas, estrellasHTML: estrellasHTML,
-    slug: slug, esNuevo: esNuevo, claveFicha: claveFicha, claveGrupo: claveGrupo, esSet: esSet, esCorporal: esCorporal, enOferta: enOferta, descuento: descuento, relacionados: relacionados,
-    familiaNota: familiaNota, colorAcorde: colorAcorde, relevancia: relevancia
+    slug: slug, esNuevo: esNuevo, claveFicha: claveFicha, claveGrupo: claveGrupo, esSet: esSet, esCorporal: esCorporal, esCombo: esCombo, enOferta: enOferta, descuento: descuento, relacionados: relacionados,
+    familiaNota: familiaNota, familiasDe: familiasDe, recomendar: recomendar, colorAcorde: colorAcorde, relevancia: relevancia
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = puro;
 
@@ -340,7 +379,8 @@
     var $ = function (id) { return doc.getElementById(id); };
     var esInicio = !!$('grid');
     var esPerfume = !!$('pagina-perfume');
-    var todos = [], porId = {}, porSlug = {}, fichas = {}, resultado = [];
+    var todos = [], porId = {}, porSlug = {}, fichas = {}, inspirados = {}, resultado = [];
+    var favoritos = cargarFavoritos();
     var estado = estadoInicial();
     var carrito = cargarPedido();
 
@@ -350,6 +390,28 @@
         var obj = crudo ? JSON.parse(crudo) : {};
         return obj && typeof obj === 'object' ? obj : {};
       } catch (e) { return {}; }
+    }
+    function cargarFavoritos() {
+      try {
+        var crudo = root.localStorage && root.localStorage.getItem(CLAVE_FAVORITOS);
+        var arr = crudo ? JSON.parse(crudo) : [];
+        return Array.isArray(arr) ? arr.map(String) : [];
+      } catch (e) { return []; }
+    }
+    function guardarFavoritos() {
+      try { root.localStorage && root.localStorage.setItem(CLAVE_FAVORITOS, JSON.stringify(favoritos)); } catch (e) { /* sin guardado */ }
+    }
+    function esFavorito(id) { return favoritos.indexOf(String(id)) !== -1; }
+    function alternarFavorito(id) {
+      id = String(id);
+      var i = favoritos.indexOf(id);
+      if (i === -1) {
+        favoritos.push(id);
+        var b = $('btn-favs');
+        if (b) { b.classList.remove('salto'); void b.offsetWidth; b.classList.add('salto'); }
+      } else favoritos.splice(i, 1);
+      guardarFavoritos();
+      pintarFavoritos();
     }
     function guardarPedido() {
       try { root.localStorage && root.localStorage.setItem(CLAVE_PEDIDO, JSON.stringify(carrito)); } catch (e) { /* sin guardado */ }
@@ -401,8 +463,10 @@
       return Promise.all([
         json('data/catalogo.json'),
         json('data/fichas.json', {}),
-        esInicio ? json('data/resenas.json', []) : Promise.resolve([])
+        esInicio ? json('data/resenas.json', []) : Promise.resolve([]),
+        json('data/inspirados.json', {})
       ]).then(function (res) {
+        inspirados = res[3] && typeof res[3] === 'object' ? res[3] : {};
         fichas = res[1] && typeof res[1] === 'object' ? res[1] : {};
         todos = res[0].filter(esVisible);
         todos.forEach(function (p) {
@@ -410,8 +474,21 @@
           var s = slug(p);
           if (porSlug[s]) s = s + '-' + p.id;
           p._slug = s; porSlug[s] = p;
+          var ins = inspirados[claveGrupo(p)];
+          if (ins && ins.original) p._inspirado = ins.original;
+        });
+        // Al revés: en el perfume original, cuáles son sus alternativas
+        todos.forEach(function (p) {
+          var ins = inspirados[claveGrupo(p)];
+          if (!ins || !ins.enCatalogo) return;
+          todos.forEach(function (o) {
+            if (claveGrupo(o) !== ins.enCatalogo) return;
+            (o._alternativas = o._alternativas || []).push(p);
+          });
         });
         limpiarPedidoInvalido();
+        favoritos = favoritos.filter(function (id) { return porId[id]; });
+        pintarFavoritos();
         marcarSecciones();
         pintarPedido();
         if (esInicio) iniciarInicio(Array.isArray(res[2]) ? res[2] : []);
@@ -436,7 +513,7 @@
     }
     // Muestra los enlaces de Nuevos y Ofertas solo si hay perfumes marcados
     function marcarSecciones() {
-      var hay = { nuevos: todos.some(function (p) { return esNuevo(p); }), ofertas: todos.some(enOferta), sets: todos.some(esSet), corporal: todos.some(esCorporal) };
+      var hay = { nuevos: todos.some(function (p) { return esNuevo(p); }), ofertas: todos.some(enOferta), sets: todos.some(esSet), corporal: todos.some(esCorporal), regalos: todos.some(esCombo), alternativas: todos.some(function (p) { return p._inspirado && p.imagen; }) };
       doc.querySelectorAll('[data-solo]').forEach(function (el) { el.hidden = !hay[el.getAttribute('data-solo')]; });
       if ($('g-especial')) $('g-especial').hidden = !(hay.nuevos || hay.ofertas);
     }
@@ -450,16 +527,26 @@
     }
     function htmlPrecio(p) {
       if (p.precio == null) return '<span class="precio precio--consulta">Consultar precio</span>';
+      if (esCombo(p) && p.valorSuelto > p.precio) {
+        return '<span class="precio precio--combo"><span class="precio-antes">' + formatoPrecio(p.valorSuelto, cfg.moneda) + '</span>' +
+          formatoPrecio(p.precio, cfg.moneda) + '</span>';
+      }
       if (enOferta(p)) {
         return '<span class="precio precio--oferta"><span class="precio-antes">' + formatoPrecio(p.precioAntes, cfg.moneda) + '</span>' +
           formatoPrecio(p.precio, cfg.moneda) + '</span>';
       }
       return '<span class="precio">' + formatoPrecio(p.precio, cfg.moneda) + '</span>';
     }
+    function botonFavorito(p, grande) {
+      var si = esFavorito(p.id);
+      return '<button class="btn-fav' + (grande ? ' btn-fav--grande' : '') + '" type="button" data-fav="' + p.id + '" aria-pressed="' + si + '" aria-label="' + (si ? 'Quitar de favoritos' : 'Guardar en favoritos') + '" title="Favoritos">' +
+        '<svg class="ico"><use href="#i-corazon"/></svg></button>';
+    }
     function tarjeta(p) {
       var etiquetas = '';
       if (p.tipo === 'Tester') etiquetas += '<span class="etiqueta etiqueta--tester">Tester</span>';
       if (esSet(p)) etiquetas += '<span class="etiqueta etiqueta--set">Set' + (p.contenido && p.contenido.length > 1 ? ' · ' + p.contenido.length + ' piezas' : '') + '</span>';
+      else if (esCombo(p)) etiquetas += '<span class="etiqueta etiqueta--combo">Combo · ' + (p.incluye || []).length + ' piezas</span>';
       else if (esCorporal(p)) etiquetas += '<span class="etiqueta etiqueta--corporal">' + escapar(p.linea || 'Cuidado corporal') + '</span>';
       else if (p.ml) etiquetas += '<span class="etiqueta">' + p.ml + ' ml</span>';
       var sellos = (esNuevo(p) ? '<span class="sello sello--nuevo">Nuevo</span>' : '') +
@@ -470,8 +557,9 @@
             htmlFoto(p, 300, 400, true) + '</span>' +
           '<span class="tarjeta__info"><span class="tarjeta__marca">' + escapar(p.marca) + '</span>' +
             '<span class="tarjeta__nombre">' + escapar(p.nombre) + '</span>' +
+            (p._inspirado ? '<span class="tarjeta__inspirado">Inspirado en ' + escapar(p._inspirado) + '</span>' : '') +
             '<span class="etiquetas">' + etiquetas + '</span></span>' +
-        '</a>' +
+        '</a>' + botonFavorito(p, false) +
         '<div class="tarjeta__pie">' + htmlPrecio(p) +
           '<button class="btn-agregar" type="button" data-agregar="' + p.id + '" aria-label="Agregar ' + escapar(p.marca + ' ' + p.nombre) + ' a mi pedido">Agregar</button>' +
         '</div></article>';
@@ -553,11 +641,37 @@
       var sets = todos.filter(esSet).sort(function (a, b) { return (b.imagen ? 1 : 0) - (a.imagen ? 1 : 0) || (b.id - a.id); });
       $('sets').hidden = !sets.length;
       $('carril-sets').innerHTML = sets.slice(0, 20).map(tarjeta).join('');
+      if ($('regalos')) { $('regalos').hidden = !todos.some(esCombo); pintarRegalos(); }
+      if ($('alternativas')) {
+        var alt = todos.filter(function (p) { return p._inspirado && p.imagen && p.tipo === 'Sellado'; })
+          .sort(function (a, b) { return comparar(a.marca + a.nombre, b.marca + b.nombre); });
+        $('alternativas').hidden = !alt.length;
+        $('carril-alternativas').innerHTML = alt.map(tarjeta).join('');
+      }
       if ($('corporal')) {
         var corp = elegirAlAzar(todos.filter(function (p) { return esCorporal(p) && p.imagen; }), 20, null, false);
         $('corporal').hidden = !corp.length;
         $('carril-corporal').innerHTML = corp.map(tarjeta).join('');
       }
+    }
+    var regalo = { tope: 20000, para: 'todos' };
+    var TOPES = [20000, 30000, 40000, 50000, 0];
+    function pintarRegalos() {
+      var i = TOPES.indexOf(regalo.tope);
+      var piso = i > 0 ? TOPES[i - 1] : 0;
+      var lista = todos.filter(function (p) {
+        if (!esCombo(p) && !esSet(p)) return false;
+        if (!p.imagen || p.precio == null) return false;
+        if (regalo.para !== 'todos' && !coincideGenero(p, regalo.para)) return false;
+        if (regalo.tope === 0) return p.precio > 50000;
+        return p.precio > piso && p.precio <= regalo.tope;
+      }).sort(function (a, b) { return (esCombo(b) - esCombo(a)) || a.precio - b.precio; });
+      $('regalos-tabs').querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', Number(b.getAttribute('data-tope')) === regalo.tope ? 'true' : 'false'); });
+      $('regalos-para').querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-para') === regalo.para ? 'true' : 'false'); });
+      $('carril-regalos').innerHTML = lista.length ? lista.map(tarjeta).join('') :
+        '<p class="regalos__vacio">No hay regalos armados en este rango todavía. Escríbenos y te armamos uno a tu medida.</p>';
+      $('carril-regalos').scrollLeft = 0;
+      pintarFavoritos();
     }
     function pintarCategorias() {
       var defs = [
@@ -690,10 +804,11 @@
       var precio = p.precio == null ? '<div class="producto__precio">Consultar precio</div>' :
         '<div class="producto__precio">' + (enOferta(p) ? '<span class="precio-antes">' + formatoPrecio(p.precioAntes, cfg.moneda) + '</span>' : '') +
         '<span' + (enOferta(p) ? ' class="precio--oferta"' : '') + '>' + formatoPrecio(p.precio, cfg.moneda) + '</span>' +
-        (enOferta(p) ? '<span class="producto__ahorro">Ahorras ' + formatoPrecio(p.precioAntes - p.precio, cfg.moneda) + '</span>' : '') + '</div>';
+        (enOferta(p) ? '<span class="producto__ahorro">Ahorras ' + formatoPrecio(p.precioAntes - p.precio, cfg.moneda) + '</span>' : '') +
+        (esCombo(p) && p.valorSuelto > p.precio ? '<span class="producto__ahorro">Por separado ' + formatoPrecio(p.valorSuelto, cfg.moneda) + ' · ahorras ' + formatoPrecio(p.valorSuelto - p.precio, cfg.moneda) + '</span>' : '') + '</div>';
 
       var etiquetas = '<span class="etiqueta">' + escapar(generoTxt) + '</span><span class="etiqueta">' + escapar(p.categoria) + '</span>' +
-        (p.tipo === 'Tester' ? '<span class="etiqueta etiqueta--tester">Tester</span>' : esSet(p) ? '<span class="etiqueta etiqueta--set">Set</span>' : esCorporal(p) ? '<span class="etiqueta etiqueta--corporal">' + escapar(p.linea || 'Cuidado corporal') + '</span>' : '<span class="etiqueta">Sellado</span>') +
+        (p.tipo === 'Tester' ? '<span class="etiqueta etiqueta--tester">Tester</span>' : esCombo(p) ? '<span class="etiqueta etiqueta--combo">Combo regalo</span>' : esSet(p) ? '<span class="etiqueta etiqueta--set">Set</span>' : esCorporal(p) ? '<span class="etiqueta etiqueta--corporal">' + escapar(p.linea || 'Cuidado corporal') + '</span>' : '<span class="etiqueta">Sellado</span>') +
         (p.ml && !esSet(p) ? '<span class="etiqueta">' + p.ml + ' ml</span>' : '') +
         (esNuevo(p) ? '<span class="sello sello--nuevo">Nuevo</span>' : '');
 
@@ -707,14 +822,26 @@
             '<div class="etiquetas">' + etiquetas + '</div>' +
             precio + opciones +
             (p.descripcion ? '<p class="producto__desc">' + escapar(p.descripcion) + '</p>' : '') +
+            htmlInspirado(p) +
+            (esCombo(p) && p.incluye ? '<div class="incluye incluye--combo"><p class="opciones__titulo">Incluye</p>' +
+              p.incluye.map(function (id) {
+                var x = porId[id];
+                if (!x) return '';
+                return '<a class="alternativa" href="' + enlacePerfume(x) + '">' +
+                  (x.imagen ? '<img src="' + rutaImagen(x, cfg) + '" alt="" loading="lazy" width="52" height="64">' : '') +
+                  '<span><span class="alternativa__marca">' + escapar(x.marca) + '</span><span class="alternativa__nombre">' + escapar(x.nombre) + '</span></span>' +
+                  '<span class="alternativa__precio">' + formatoPrecio(x.precio, cfg.moneda) + '</span></a>';
+              }).join('') + '</div>' : '') +
             (esSet(p) && p.contenido && p.contenido.length ? '<div class="incluye"><p class="opciones__titulo">Incluye</p><ul>' +
               p.contenido.map(function (c) { return '<li>' + escapar(c) + '</li>'; }).join('') + '</ul></div>' : '') +
             (p.tipo === 'Tester' && cfg.notaTester ? '<p class="producto__nota">' + escapar(cfg.notaTester) + '</p>' : '') +
             '<div class="comprar">' +
               '<div class="cantidad" role="group" aria-label="Cantidad"><button type="button" id="cant-menos" aria-label="Una menos">−</button><output id="cant" aria-live="polite">1</output><button type="button" id="cant-mas" aria-label="Una más">+</button></div>' +
               '<button class="btn btn--azul" type="button" id="btn-agregar-perfume">Agregar a mi pedido</button>' +
+              botonFavorito(p, true) +
             '</div>' +
             '<a class="btn btn--wa-linea" id="btn-wa-perfume" href="' + wa(mensajeWhatsApp(uno, porId, cfg)) + '" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Pedir solo este por WhatsApp</a>' +
+            '<button class="link-compartir" type="button" id="btn-compartir"><svg class="ico"><use href="#i-compartir"/></svg>Compartir este perfume</button>' +
             '<div class="producto__garantias">' +
               '<span><svg class="ico"><use href="#i-escudo"/></svg>100% original</span>' +
               '<span><svg class="ico"><use href="#i-camion"/></svg>Envíos a todo Costa Rica</span>' +
@@ -732,6 +859,14 @@
         var m = {}; m[p.id] = cant;
         $('btn-wa-perfume').setAttribute('href', wa(mensajeWhatsApp(m, porId, cfg)));
       }
+      $('btn-compartir').addEventListener('click', function () {
+        var enlace = root.location.origin + root.location.pathname + '?p=' + encodeURIComponent(p._slug);
+        var datos = { title: p.nombre + ' de ' + p.marca, text: p.nombre + ' de ' + p.marca + (p.precio != null ? ' · ' + formatoPrecio(p.precio, cfg.moneda) : ''), url: enlace };
+        if (root.navigator.share) { root.navigator.share(datos).catch(function () {}); return; }
+        var copiado = function () { avisar('Enlace copiado'); };
+        if (root.navigator.clipboard) root.navigator.clipboard.writeText(enlace).then(copiado, function () { root.prompt('Copia el enlace:', enlace); });
+        else root.prompt('Copia el enlace:', enlace);
+      });
       $('cant-menos').addEventListener('click', function () { ponerCant(cant - 1); });
       $('cant-mas').addEventListener('click', function () { ponerCant(cant + 1); });
       $('btn-agregar-perfume').addEventListener('click', function () {
@@ -739,6 +874,34 @@
         guardarPedido(); pintarPedido();
         abrirCarrito();
       });
+    }
+    // "Inspirado en..." en el árabe y "Alternativas" en el original
+    function htmlInspirado(p) {
+      var html = '';
+      if (p._inspirado) {
+        var ins = inspirados[claveGrupo(p)] || {};
+        var orig = ins.enCatalogo ? todos.filter(function (o) { return claveGrupo(o) === ins.enCatalogo; })
+          .sort(function (a, b) { return (a.tipo === 'Tester') - (b.tipo === 'Tester'); })[0] : null;
+        html += '<div class="inspirado"><span class="inspirado__ico" aria-hidden="true"><svg class="ico"><use href="#i-estrella"/></svg></span><div>' +
+          '<p class="inspirado__titulo">Inspirado en <b>' + escapar(p._inspirado) + '</b></p>' +
+          '<p class="inspirado__sub">Un aroma de la misma familia por una fracción del precio.' +
+          (orig && orig.precio && p.precio && orig.precio > p.precio ? ' Ahorras ' + formatoPrecio(orig.precio - p.precio, cfg.moneda) + ' frente al original.' : '') + '</p>' +
+          (orig ? '<a class="inspirado__ver" href="' + enlacePerfume(orig) + '">Ver el original ›</a>' : '') +
+          '</div></div>';
+      }
+      if (p._alternativas && p._alternativas.length) {
+        var vistos = {};
+        var alts = p._alternativas.filter(function (a) { var k = claveGrupo(a); if (vistos[k]) return false; vistos[k] = 1; return true; });
+        html += '<div class="alternativas"><p class="opciones__titulo">Alternativas más económicas</p>' +
+          alts.map(function (a) {
+            return '<a class="alternativa" href="' + enlacePerfume(a) + '">' +
+              (a.imagen ? '<img src="' + rutaImagen(a, cfg) + '" alt="" loading="lazy" width="52" height="64">' : '') +
+              '<span><span class="alternativa__marca">' + escapar(a.marca) + '</span><span class="alternativa__nombre">' + escapar(a.nombre) + '</span>' +
+              (p.precio && a.precio && p.precio > a.precio ? '<span class="alternativa__ahorro">Ahorras ' + formatoPrecio(p.precio - a.precio, cfg.moneda) + '</span>' : '') + '</span>' +
+              '<span class="alternativa__precio">' + (a.precio == null ? 'Consultar' : formatoPrecio(a.precio, cfg.moneda)) + '</span></a>';
+          }).join('') + '</div>';
+      }
+      return html;
     }
     function htmlFicha(p, f) {
       if (!f) return '';
@@ -830,6 +993,68 @@
       pie.innerHTML = '<div class="total"><span>Total</span><strong>' + formatoPrecio(t.total, cfg.moneda) + '</strong></div>' + aviso +
         '<a class="btn btn-wa" href="' + wa(mensajeWhatsApp(carrito, porId, cfg)) + '" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>' +
         '<button class="link-vaciar" type="button" id="btn-vaciar">Vaciar pedido</button>';
+    }
+
+    /* ----- Favoritos ----- */
+    function pintarFavoritos() {
+      doc.querySelectorAll('[data-fav]').forEach(function (b) {
+        var si = esFavorito(b.getAttribute('data-fav'));
+        b.setAttribute('aria-pressed', si ? 'true' : 'false');
+        b.setAttribute('aria-label', si ? 'Quitar de favoritos' : 'Guardar en favoritos');
+      });
+      var c = $('contador-fav');
+      if (c) { c.textContent = favoritos.length; c.hidden = favoritos.length === 0; }
+      var lista = $('favoritos-lista'), pie = $('favoritos-pie');
+      if (!lista) return;
+      var items = favoritos.map(function (id) { return porId[id]; }).filter(Boolean);
+      if (!items.length) {
+        lista.innerHTML = '<div class="panel__vacio">Todavía no tienes favoritos.<br>Toca el corazón de un perfume para guardarlo aquí.</div>';
+        pie.innerHTML = '';
+        return;
+      }
+      lista.innerHTML = items.map(function (p) {
+        return '<div class="linea-pedido">' +
+          (p.imagen ? '<img src="' + rutaImagen(p, cfg) + '" alt="" loading="lazy">' : '<span class="sin-foto sin-foto--mini"><svg class="ico" aria-hidden="true"><use href="#i-regalo"/></svg></span>') +
+          '<div><h3><a href="' + enlacePerfume(p) + '">' + escapar(p.nombre) + '</a></h3>' +
+            '<p class="sub">' + escapar(p.marca) + (p.tipo === 'Tester' ? ', tester' : '') + '</p>' +
+            '<div class="linea-pedido__fila"><strong>' + (p.precio == null ? 'Consultar precio' : formatoPrecio(p.precio, cfg.moneda)) + '</strong>' +
+              '<button class="btn-agregar" type="button" data-agregar="' + p.id + '">Agregar</button></div>' +
+            '<button class="quitar" type="button" data-fav="' + p.id + '">Quitar</button>' +
+          '</div></div>';
+      }).join('');
+      pie.innerHTML = '<button class="btn btn--azul" type="button" id="btn-favs-todos">Agregar todos a mi pedido</button>';
+    }
+
+    /* ----- Test: encuentra tu perfume ----- */
+    var PREGUNTAS = [
+      { k: 'para', t: '¿Para quién es?', o: [['mujer', 'Para ella'], ['hombre', 'Para él'], ['todos', 'Me da igual / unisex']] },
+      { k: 'momento', t: '¿Cuándo lo vas a usar más?', o: [['dia', 'De día, trabajo o clases'], ['noche', 'De noche y salidas'], ['siempre', 'Para todo']] },
+      { k: 'estilo', t: '¿Qué tipo de aroma te gusta?', o: [['fresco', 'Fresco y cítrico'], ['dulce', 'Dulce y goloso'], ['floral', 'Floral y delicado'], ['intenso', 'Amaderado e intenso']] },
+      { k: 'tope', t: '¿Cuánto quieres invertir?', o: [['30000', 'Hasta ₡30.000'], ['45000', 'Hasta ₡45.000'], ['70000', 'Hasta ₡70.000'], ['0', 'Sin límite']] }
+    ];
+    var respuestas = {}, paso = 0;
+    function pintarTest() {
+      var cuerpo = $('test-cuerpo');
+      if (!cuerpo) return;
+      if (paso < PREGUNTAS.length) {
+        var q = PREGUNTAS[paso];
+        cuerpo.innerHTML = '<div class="test__progreso" aria-hidden="true">' + PREGUNTAS.map(function (_, i) { return '<span' + (i <= paso ? ' class="hecho"' : '') + '></span>'; }).join('') + '</div>' +
+          '<p class="test__paso">Pregunta ' + (paso + 1) + ' de ' + PREGUNTAS.length + '</p>' +
+          '<h3 class="test__pregunta">' + q.t + '</h3>' +
+          '<div class="test__opciones">' + q.o.map(function (o) {
+            return '<button type="button" class="test__opcion" data-resp="' + o[0] + '">' + o[1] + '</button>';
+          }).join('') + '</div>' +
+          (paso > 0 ? '<button type="button" class="test__atras" data-test-atras>‹ Atrás</button>' : '');
+        return;
+      }
+      var r = { para: respuestas.para, momento: respuestas.momento, estilo: respuestas.estilo, tope: Number(respuestas.tope) || 0 };
+      var lista = recomendar(todos, r, 6);
+      cuerpo.innerHTML = '<p class="test__paso">Tu resultado</p><h3 class="test__pregunta">Estos te van a encantar</h3>' +
+        (lista.length ? '<div class="test__resultados">' + lista.map(tarjeta).join('') + '</div>' :
+          '<p class="panel__vacio">No encontramos perfumes con esas respuestas. Prueba con otro presupuesto.</p>') +
+        '<div class="test__fin"><button type="button" class="btn btn--linea-azul" data-test-reiniciar>Volver a empezar</button>' +
+        '<a class="btn btn--azul" href="' + wa('Hola, hice el test de la página y me interesa: ' + lista.map(function (p) { return p.marca + ' ' + p.nombre; }).join(', ') + '. ¿Me ayudan a elegir?') + '" target="_blank" rel="noopener"><svg class="ico"><use href="#i-wa"/></svg>Pedir ayuda por WhatsApp</a></div>';
+      pintarFavoritos();
     }
 
     /* ----- Buscador (ventana) ----- */
@@ -954,6 +1179,13 @@
         aplicarEstado(v === 'todo:1' ? estadoInicial() : atajoAEstado(v), true);
         return;
       }
+      var grupo = el.closest('.menu__abrir');
+      if (grupo) {
+        var g = grupo.parentNode, abierto = g.classList.toggle('abierto');
+        grupo.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+        return;
+      }
+      doc.querySelectorAll('.menu__grupo.abierto').forEach(function (g) { g.classList.remove('abierto'); g.querySelector('.menu__abrir').setAttribute('aria-expanded', 'false'); });
       if (el.closest('#menu a')) cerrarMenu();
       var flecha = el.closest('[data-carril]');
       if (flecha) {
@@ -961,6 +1193,22 @@
         if (carril) carril.scrollBy({ left: Number(flecha.getAttribute('data-dir')) * carril.clientWidth * 0.8, behavior: 'smooth' });
         return;
       }
+      var tope = el.closest('[data-tope]');
+      if (tope) { regalo.tope = Number(tope.getAttribute('data-tope')); pintarRegalos(); return; }
+      var para = el.closest('[data-para]');
+      if (para) { regalo.para = para.getAttribute('data-para'); pintarRegalos(); return; }
+      var fav = el.closest('[data-fav]');
+      if (fav) { e.preventDefault(); alternarFavorito(fav.getAttribute('data-fav')); return; }
+      if (el.closest('#btn-favs-todos')) {
+        favoritos.forEach(function (id) { if (porId[id]) carrito[id] = Math.min(99, (carrito[id] || 0) + 1); });
+        guardarPedido(); pintarPedido(); $('favoritos').close(); abrirCarrito();
+        return;
+      }
+      if (el.closest('[data-abrir-test]')) { e.preventDefault(); cerrarMenu(); abrirTestDesdeLink(); return; }
+      var resp = el.closest('[data-resp]');
+      if (resp) { respuestas[PREGUNTAS[paso].k] = resp.getAttribute('data-resp'); paso++; pintarTest(); return; }
+      if (el.closest('[data-test-atras]')) { paso = Math.max(0, paso - 1); pintarTest(); return; }
+      if (el.closest('[data-test-reiniciar]')) { paso = 0; respuestas = {}; pintarTest(); return; }
       var add = el.closest('[data-agregar]');
       if (add) { agregar(add.getAttribute('data-agregar')); return; }
       var mas = el.closest('[data-mas]'), menos = el.closest('[data-menos]'), quitar = el.closest('[data-quitar]');
@@ -984,6 +1232,14 @@
     }
     var abrirCarrito = cerrable('carrito', 'carrito-cerrar');
     cerrable('buscador', null);
+    var abrirFavoritos = cerrable('favoritos', 'favoritos-cerrar');
+    $('btn-favs').addEventListener('click', function () { pintarFavoritos(); abrirFavoritos(); });
+    var abrirTest = $('test') ? cerrable('test', 'test-cerrar') : null;
+    function abrirTestDesdeLink() {
+      if (!abrirTest) { root.location.href = 'index.html?test=1'; return; }
+      paso = 0; respuestas = {}; pintarTest(); abrirTest();
+    }
+    if (abrirTest && /[?&]test=1/.test(root.location.search)) setTimeout(abrirTestDesdeLink, 300);
     $('btn-carrito').addEventListener('click', function () { abrirCarrito(); });
 
     // Atajo: tecla / abre el buscador. Escape cierra el menú.
