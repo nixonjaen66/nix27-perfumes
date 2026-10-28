@@ -631,3 +631,27 @@ dialog::backdrop{background:var(--velo)}
 .link-compartir{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;background:none;color:var(--azul);font-weight:600;font-size:.92rem;padding:4px 0;cursor:pointer;justify-self:center}
 .link-compartir .ico{width:18px;height:18px}
 .link-compartir:hover{text-decoration:underline}
+
+/* Compra con confianza */
+.confianza{padding:84px 0;background:var(--fondo)}
+.confianza__cab{max-width:640px;margin-bottom:34px}
+.confianza__cab p{color:var(--suave);margin-top:12px}
+.confianza__grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.confianza__item{padding:24px 22px;border:1px solid var(--linea);border-radius:18px;background:var(--superficie)}
+.confianza__ico{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--bruma);color:var(--oro-texto);margin-bottom:14px}
+.confianza__ico .ico{width:24px;height:24px}
+.confianza__item h3{font-size:1.3rem;margin-bottom:8px}
+.confianza__item p{color:var(--suave);font-size:.95rem}
+.confianza__pie{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* Sobre nosotros */
+.nosotros{display:grid;gap:34px;align-items:center;margin-bottom:64px;padding-bottom:56px;border-bottom:1px solid var(--linea)}
+.nosotros__eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--oro-texto);margin-bottom:10px}
+.nosotros__texto h2{margin-bottom:16px}
+.nosotros__texto p:not(.nosotros__eyebrow){color:var(--suave);max-width:60ch;margin-top:12px}
+.nosotros__datos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.nosotros__datos li{padding:22px 18px;border-radius:18px;background:var(--bruma);border:1px solid var(--linea);display:grid;gap:4px}
+.nosotros__datos b{font-family:var(--display);font-size:2.4rem;font-weight:500;line-height:1;color:var(--azul)}
+.nosotros__datos span{color:var(--suave);font-size:.92rem}
+@media (min-width:900px){.nosotros{grid-template-columns:1.3fr 1fr;gap:56px}}
+.nosotros__texto p.nosotros__firma{font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--oro-texto);margin-top:18px}

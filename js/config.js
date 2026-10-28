@@ -26,7 +26,7 @@ window.CONFIG = {
   // Agrega, quita o cambia preguntas. Cada una lleva "p" (pregunta) y "r" (respuesta).
   faq: [
     { p: "¿Cómo hago mi pedido?", r: "Elige tus perfumes y pulsa Agregar. Cuando termines, abre Mi pedido y pulsa Enviar pedido por WhatsApp. Te llega el mensaje ya escrito con tu lista y el total; solo lo envías y coordinamos contigo." },
-    { p: "¿Cómo pago y cómo recibo mi pedido?", r: "Puedes pagar en efectivo, por SINPE Móvil al 7214 0221 o por transferencia bancaria. Confirmamos el método de pago y la entrega contigo por WhatsApp." },
+    { p: "¿Cómo pago y cómo recibo mi pedido?", r: "Puedes pagar en efectivo, por SINPE Móvil al 7214 0221 o por transferencia bancaria. Normalmente entregamos en persona en un punto que acordamos; si estás lejos, lo enviamos por Correos de Costa Rica. Lo coordinamos contigo por WhatsApp." },
     { p: "¿Los perfumes siempre están disponibles?", r: "Los precios del catálogo son siempre los mismos, pero la disponibilidad puede cambiar. Por eso confirmamos por WhatsApp que tengamos tu perfume antes de que pagues." },
     { p: "¿Qué diferencia hay entre sellado y tester?", r: "Sellado es el perfume nuevo en su caja de venta. Tester es el mismo perfume en presentación sencilla, sin caja de venta. En el catálogo, cada tester lleva una etiqueta que lo indica." },
     { p: "¿Qué es un perfume árabe?", r: "Son perfumes de casas del Medio Oriente, como Lattafa, Armaf o Afnan. Suelen tener aromas más intensos y dulces, con notas como oud, ámbar, vainilla y especias, y muchos destacan por su duración en la piel." },

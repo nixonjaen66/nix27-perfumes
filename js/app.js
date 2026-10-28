@@ -605,6 +605,9 @@
       var nMarcas = marcasPorCantidad(todos).length;
       var nPerfumes = todos.filter(noCorporal).length;
       $('hero-dato').textContent = 'El catálogo reúne ' + nPerfumes + ' perfumes de ' + nMarcas + ' marcas.';
+      var redondo = function (n) { return n >= 100 ? '+' + Math.floor(n / 50) * 50 : n >= 10 ? '+' + Math.floor(n / 10) * 10 : String(n); };
+      doc.querySelectorAll('[data-dato="perfumes"]').forEach(function (e) { e.textContent = redondo(nPerfumes); });
+      doc.querySelectorAll('[data-dato="marcas"]').forEach(function (e) { e.textContent = redondo(nMarcas); });
     }
     function cinta(id, htmlUnaVez, segundosPorItem, n) {
       $(id).innerHTML = '<div class="cinta__pista" style="--dur:' + Math.max(30, Math.round(n * segundosPorItem)) + 's">' +
