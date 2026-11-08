@@ -19,9 +19,15 @@ PUBLICAR
   Haz commit y push a GitHub; Cloudflare Pages la publica sola en 1-2 minutos.
 
 NUEVOS LANZAMIENTOS  (data/catalogo.json)
-  Para perfumes recién lanzados al mercado (no solo nuevos en tu tienda), agrega  "nuevo": true
-  Salen con la etiqueta "Nuevo" y en la sección "Nuevos lanzamientos" hasta que borres esa línea.
-  (Opcional: "nuevoDesde": "2026-11-15" lo muestra como nuevo solo por los días de diasNuevo en js/config.js)
+  Agrega la fecha en que lo subes:  "nuevoDesde": "2026-11-15"
+  Sale con la etiqueta "Nuevo" y en la sección "Nuevos" solo por los días de diasNuevo
+  (js/config.js, hoy 30). Después pasa solo al catálogo normal; no hay que borrar nada.
+  ("nuevo": true ya no se usa, para que nada se quede en Nuevos para siempre.)
+
+TEST: DÍA O NOCHE  (data/catalogo.json)
+  El test decide si un perfume es de día o de noche leyendo su descripción (ligero/fresco = día;
+  oud, ámbar, tabaco, intenso = noche). Ser dulce ya no lo manda a la noche.
+  Si alguno sale mal clasificado, fuérzalo con  "momento": "dia"  o  "noche"  o  "ambos"
 
 OFERTAS  (data/catalogo.json)
   Pon el precio rebajado en "precio" y el precio anterior en "precioAntes":
@@ -95,3 +101,8 @@ GOOGLE (SEO)
 - Cada perfume lleva sus datos para Google (marca, precio en colones, foto) y su enlace oficial.
 - Para pedirle a Google que la revise: Google Search Console > Agregar propiedad > Prefijo de URL
   > https://nix27-perfumes.pages.dev/ y luego en "Sitemaps" enviar: sitemap.xml
+
+NAVIDAD  (css/navidad.css y js/navidad.js)
+  Se enciende sola del 1 de diciembre al 6 de enero y se apaga sola. No hay que tocar nada.
+  Para verla antes: abre la página con ?navidad=1  (ej. nix27-perfumes.pages.dev/?navidad=1)
+  Las fechas se cambian al inicio de js/navidad.js.

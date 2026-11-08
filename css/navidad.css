@@ -1,0 +1,65 @@
+/* Temporada de Navidad: solo actúa cuando <html> tiene la clase "navidad" (la pone js/navidad.js por fecha).
+   Mismos colores de la tienda: azul marino, dorado y blanco. Fuera de temporada este archivo no cambia nada. */
+
+/* Saludo en la barra azul de arriba */
+.nav-saludo{display:inline-flex;align-items:center;gap:6px;color:var(--oro);font-weight:700;letter-spacing:.06em;margin-right:6px}
+.nav-saludo svg{width:12px;height:12px;fill:var(--oro)}
+/* Cinta superior (solo si la página no tiene barra azul) */
+.nav-cinta{display:none}
+.navidad .nav-cinta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--noche);color:var(--oro-claro);
+  font:600 .78rem/1 var(--texto);letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;text-align:center}
+.navidad .nav-cinta a{color:#fff;text-decoration:underline;text-underline-offset:3px;letter-spacing:.08em}
+.nav-cinta svg{width:14px;height:14px;flex:none;fill:var(--oro)}
+
+/* Estrellita dorada sobre el logo */
+.navidad .logo{position:relative}
+.navidad .logo::before{content:"";position:absolute;left:12px;top:-4px;width:16px;height:16px;background:var(--oro);
+  clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
+  animation:nav-brillo 2.6s ease-in-out infinite}
+@keyframes nav-brillo{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.8)}}
+
+/* Guirnalda de esferas colgando en la portada */
+.nav-adornos{display:none}
+.navidad .nav-adornos{display:block;position:absolute;inset:0 0 auto 0;height:150px;pointer-events:none;z-index:1}
+.nav-adornos span{position:absolute;top:0;width:1px;background:linear-gradient(var(--oro),rgba(205,154,51,.4));transform-origin:top center;animation:nav-vaiven 5s ease-in-out infinite}
+.nav-adornos span::after{content:"";position:absolute;left:50%;bottom:-22px;width:22px;height:22px;margin-left:-11px;border-radius:50%;
+  background:radial-gradient(circle at 32% 30%,#fff 0 8%,var(--oro-claro) 16%,var(--oro) 55%,#8A6410 100%);box-shadow:0 4px 10px rgba(5,26,58,.18)}
+.nav-adornos span.azul::after{background:radial-gradient(circle at 32% 30%,#fff 0 8%,#4E79B8 18%,var(--noche-2) 60%,var(--noche) 100%)}
+.nav-adornos span::before{content:"";position:absolute;left:50%;bottom:-2px;width:8px;height:5px;margin-left:-4px;background:var(--oro);border-radius:2px}
+@keyframes nav-vaiven{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+
+/* Nieve dorada y blanca que cae suave */
+.nav-nieve{display:none}
+.navidad .nav-nieve{display:block;position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.nav-nieve i{position:absolute;top:-12px;border-radius:50%;background:var(--oro);opacity:.55;animation:nav-cae linear infinite}
+.nav-nieve i:nth-child(3n){background:#9DB4D8}
+@keyframes nav-cae{to{transform:translate3d(30px,620px,0)}}
+@media (prefers-reduced-motion:reduce){.nav-nieve,.nav-adornos span{animation:none}.nav-nieve{display:none!important}}
+
+/* Ramita de pino bajo los títulos de sección */
+.navidad .fila__cab h2::after{content:"";display:block;width:84px;height:14px;margin-top:8px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 14'%3E%3Cpath d='M2 7h80' stroke='%23CD9A33' stroke-width='1.2'/%3E%3Cg fill='%23CD9A33'%3E%3Ccircle cx='42' cy='7' r='3.2'/%3E%3Ccircle cx='34' cy='7' r='1.6'/%3E%3Ccircle cx='50' cy='7' r='1.6'/%3E%3C/g%3E%3Cg stroke='%23051A3A' stroke-width='1.1' fill='none'%3E%3Cpath d='M10 7l4-4M16 7l4-4M22 7l4-4M10 7l4 4M16 7l4 4M22 7l4 4M74 7l-4-4M68 7l-4-4M62 7l-4-4M74 7l-4 4M68 7l-4 4M62 7l-4 4'/%3E%3C/g%3E%3C/svg%3E") no-repeat left center/contain}
+
+/* Moño en las tarjetas de la sección de regalos */
+.navidad .regalos .foto{position:relative}
+.navidad .regalos .foto::after{content:"";position:absolute;left:10px;top:10px;width:38px;height:28px;z-index:3;filter:drop-shadow(0 2px 3px rgba(5,26,58,.25));
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 22'%3E%3Cg fill='%23CD9A33'%3E%3Cpath d='M15 11C9 2 2 2 2 7s7 6 13 4zM15 11c6-9 13-9 13-4s-7 6-13 4z'/%3E%3Cpath d='M13 11l-5 10 3-1 2 2 2-11zM17 11l5 10-3-1-2 2-2-11z'/%3E%3C/g%3E%3Ccircle cx='15' cy='11' r='3' fill='%238A6410'/%3E%3C/svg%3E") no-repeat center/contain}
+
+/* Pie de página con guirnalda */
+.navidad .pie{border-top:0;position:relative}
+.navidad .pie::before{content:"";position:absolute;left:0;right:0;top:0;height:18px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 18'%3E%3Cpath d='M0 2q15 14 30 0t30 0' stroke='%23CD9A33' stroke-width='2' fill='none'/%3E%3Ccircle cx='15' cy='10' r='3.5' fill='%23CD9A33'/%3E%3Ccircle cx='45' cy='10' r='3.5' fill='%23051A3A'/%3E%3C/svg%3E") repeat-x left top/60px 18px}
+
+/* Modo oscuro: los adornos azules se aclaran para que se vean */
+@media (prefers-color-scheme:dark){
+  .nav-adornos span.azul::after{background:radial-gradient(circle at 32% 30%,#fff 0 8%,#9DB4D8 20%,#4E79B8 70%)}
+  .nav-nieve i{background:var(--oro-claro)}
+}
+.navidad .hero__grid{position:relative;z-index:2}
+/* Celular: adornos más cortos y con espacio para que no tapen el título */
+@media (max-width:760px){
+  .navidad .hero{padding-top:84px}
+  .nav-adornos span{height:26px!important}
+  .nav-adornos span:nth-child(2),.nav-adornos span:nth-child(5){height:44px!important}
+  .nav-adornos span::after{width:16px;height:16px;margin-left:-8px;bottom:-16px}
+}

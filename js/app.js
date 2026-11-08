@@ -32,8 +32,7 @@
   function enOferta(p) { return p.precio != null && p.precioAntes != null && p.precioAntes > p.precio; }
   // "Nuevo" = recién agregado a la página: sale como nuevo los días indicados en config.js desde "nuevoDesde"
   function esNuevo(p, ahora) {
-    if (p.nuevo === true) return true;
-    if (!p.nuevoDesde) return false;
+    if (!p.nuevoDesde) return false; // "nuevo": true ya no se usa: así nada se queda en Nuevos para siempre
     var t = Date.parse(p.nuevoDesde + 'T00:00:00');
     return !isNaN(t) && ((ahora || Date.now()) - t) < DIAS_NUEVO * 86400000;
   }
@@ -314,29 +313,61 @@
     }
     return 'defecto';
   }
+  // Fotos reales de las notas (assets/notas/<nombre>.jpg, de Wikimedia Commons; ver creditos-notas.html)
+  var FOTOS_NOTA = {};
+  ('abedul absenta albahaca alcaravea algodon almendra almizcle ambar-gris ambar anis avellana azafran azahar azucar-morena bambu bayas-de-enebro benjui bergamota cacao cachemira cafe camelia canela caramelo cardamomo cedro cereza champana chicle ciclamen cilantro cipres ciruela clavo coco cuero datil davana durazno elemi enebro especias flor-de-loto flor-de-naranjo flor-de-olivo flores-blancas frambuesa fresa fresia frutas-tropicales frutas frutos-rojos gamuza gardenia geranio goji granada grosella-blanca grosella-negra guayaba haba-tonka heliotropo hibisco hinojo hoja-de-laurel hojas-verdes incienso iris jacinto jazmin jengibre kiwi ladano lavanda leche lichi lila lima limon lirio-del-valle loto madera-de-guayaco madera magnolia malvavisco mandarina mango maninka manzana-verde manzana maracuya melon membrillo menta miel mimosa mirra mirto mora musgo-de-roble naranja-amarga naranja narciso nardo nenufar neroli notas-acuaticas notas-marinas notas-verdes nuez-moscada orquidea oud pachuli papaya peonia pera petitgrain pimienta-blanca pimienta-negra pimienta-rosa pimienta pina pino pitahaya pomelo praline regaliz resinas romero ron rosa ruibarbo sal salvia sandalo sandia tabaco te tilo toronja vainilla-negra vainilla vetiver violeta ylang-ylang yuzu').split(' ').forEach(function (k) { FOTOS_NOTA[k] = 1; });
+  function slugNota(n) { return normalizar(n).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
   function iconoNota(nombre) {
+    var sl = slugNota(nombre);
+    if (FOTOS_NOTA[sl]) return '<span class="nota__foto"><img src="assets/notas/' + sl + '.jpg" alt="" loading="lazy" width="64" height="64"></span>';
     var ico = ICONOS[familiaNota(nombre)] || ICONOS.defecto;
     return '<span class="nota__ico" style="--n-bg:' + ico[0] + '"><svg viewBox="0 0 40 40" aria-hidden="true">' + ico[1] + '</svg></span>';
   }
 
   // Familias olfativas aproximadas a partir de la descripción (para el test)
   var FAMILIAS = {
-    fresco: /fresc|citric|acuat|marin|limon|bergamot|verde|menta|lavand|aromatic|limpi|ocean|brisa|agua|azul/,
-    dulce: /dulce|vainill|gourmand|caramel|chocolat|azucar|algodon|pralin|cafe|miel|golosin|malvavisco|tonka|cereza|pistach|coco|frutal|tropical/,
+    fresco: /fresc|citric|acuat|marin|limon|bergamot|verde|menta|lavand|aromatic|limpi|ocean|brisa|agua|azul|tropical|verano|veranieg/,
+    dulce: /dulce|vainill|gourmand|caramel|chocolat|azucar|algodon|pralin|cafe|miel|golosin|malvavisco|tonka|cereza|pistach|candy|cremos/,
     floral: /floral|flor|rosa|jazmin|peoni|nardo|azahar|iris|violeta|orquide/,
     intenso: /amader|madera|oud|cuero|tabaco|ambar|especi|intens|oscur|ahumad|cedro|incienso|almizcl|nocturn|seductor|calid/
   };
   function familiasDe(p) {
-    var t = normalizar((p.descripcion || '') + ' ' + p.nombre);
+    var t = normalizar((p.descripcion || '') + ' ' + p.nombre + ' ' + (p._notas || ''));
     return Object.keys(FAMILIAS).filter(function (k) { return FAMILIAS[k].test(t); });
+  }
+  // Día o noche: no depende de si es dulce, sino de qué tan ligero o pesado es.
+  // Se puede forzar en el catálogo con "momento": "dia" | "noche" | "ambos"
+  var SENALES_DIA = [
+    [/fresc|citric|acuat|marin|limon|bergamot|menta|ocean|brisa|helad|frio/, 2],
+    [/verano|veranieg|playa|calor|tropical|deportiv|energ/, 2],
+    [/ligera?|limpi|luminos|jabon|verde|lavand|te verde|matcha|agua/, 1],
+    [/alegre|juvenil|frutal|mango|coco|divertid/, 0.5]
+  ];
+  var SENALES_NOCHE = [
+    [/oud|cuero|tabaco|incienso|ahumad|nocturn|noche|oscur|misterio/, 2],
+    [/ambar|ambarad|especiad|seduc|sensual|licor|alcohol|ron |whisk|cafe|chocolat|elixir|extrait|intens|profund/, 1.5],
+    [/calid|envolvente|gourmand|vainill|caramel|pralin|tonka|almizcl|amader|potente/, 0.75]
+  ];
+  // > 0 = de día, < 0 = de noche, cerca de 0 = sirve para todo
+  function momentoDe(p) {
+    if (p.momento === 'dia') return 3;
+    if (p.momento === 'noche') return -3;
+    if (p.momento === 'ambos') return 0;
+    var t = ' ' + normalizar((p.descripcion || '') + ' ' + p.nombre + ' ' + (p._notas || '')) + ' ';
+    var s = 0;
+    SENALES_DIA.forEach(function (x) { if (x[0].test(t)) s += x[1]; });
+    SENALES_NOCHE.forEach(function (x) { if (x[0].test(t)) s -= x[1]; });
+    return s;
   }
   // r = { para: 'mujer'|'hombre'|'todos', momento: 'dia'|'noche'|'siempre', estilo: 'fresco'|'dulce'|'floral'|'intenso', tope: número o 0 }
   function puntajeTest(p, r) {
     var fam = familiasDe(p);
+    var m = Math.max(-3, Math.min(3, momentoDe(p)));
     var s = 0;
     if (fam.indexOf(r.estilo) !== -1) s += 4 - (fam.length - 1) * 0.5;
-    if (r.momento === 'dia' && (fam.indexOf('fresco') !== -1 || fam.indexOf('floral') !== -1)) s += 1.5;
-    if (r.momento === 'noche' && (fam.indexOf('intenso') !== -1 || fam.indexOf('dulce') !== -1)) s += 1.5;
+    if (r.momento === 'dia') s += m > 0 ? m * 0.7 : m * 1.2;      // premia lo ligero, castiga lo pesado
+    if (r.momento === 'noche') s += m < 0 ? -m * 0.7 : -m * 1.2;  // premia lo pesado, castiga lo playero
+    if (r.momento === 'siempre') s += 1 - Math.abs(m) * 0.3;      // versátiles al frente
     if (r.para !== 'todos') s += p.genero === 'Unisex' ? 0.5 : 1;
     if (p.tipo === 'Sellado') s += 0.6;
     return s;
@@ -361,7 +392,7 @@
     mensajeWhatsApp: mensajeWhatsApp, enlaceWhatsApp: enlaceWhatsApp, elegirAlAzar: elegirAlAzar,
     marcasPorCantidad: marcasPorCantidad, atajoAEstado: atajoAEstado, resumenResenas: resumenResenas, estrellasHTML: estrellasHTML,
     slug: slug, esNuevo: esNuevo, claveFicha: claveFicha, claveGrupo: claveGrupo, esSet: esSet, esCorporal: esCorporal, esCombo: esCombo, enOferta: enOferta, descuento: descuento, relacionados: relacionados,
-    familiaNota: familiaNota, familiasDe: familiasDe, recomendar: recomendar, colorAcorde: colorAcorde, relevancia: relevancia
+    familiaNota: familiaNota, familiasDe: familiasDe, momentoDe: momentoDe, recomendar: recomendar, colorAcorde: colorAcorde, relevancia: relevancia
   };
   if (typeof module !== 'undefined' && module.exports) module.exports = puro;
 
@@ -476,6 +507,7 @@
           p._slug = s; porSlug[s] = p;
           var ins = inspirados[claveGrupo(p)];
           if (ins && ins.original) p._inspirado = ins.original;
+          p._notas = textoFicha(fichas[claveFicha(p)]); // el test usa las notas reales
         });
         // Al revés: en el perfume original, cuáles son sus alternativas
         todos.forEach(function (p) {
@@ -936,7 +968,7 @@
       }
       var pie = [p.marca, p.categoria, p.genero, f.anio].filter(Boolean).map(escapar).join(' · ');
       if (esSet(p) && p.ficha) pie = 'Ficha del perfume principal del set · ' + pie;
-      bloques.push('<p class="ficha-olf__pie">' + pie + '</p>');
+      bloques.push('<p class="ficha-olf__pie">' + pie + (filas.length ? '<br><a class="ficha-olf__creditos" href="creditos-notas.html">Fotos de notas: Wikimedia Commons</a>' : '') + '</p>');
       return '<section class="ficha-olf" aria-label="Ficha olfativa">' + bloques.join('') + '</section>';
     }
     function htmlMasPerfumes(p) {

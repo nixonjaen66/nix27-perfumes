@@ -1890,7 +1890,7 @@
     "precio": 92000,
     "imagen": "/perfumes/femenino/disenador/chanel-coco-mademoiselle-crush-absolu.jpg",
     "descripcion": "Edición especial de Coco Mademoiselle, más intensa y envolvente.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 173,
@@ -2639,7 +2639,7 @@
     "precio": 67000,
     "imagen": "/perfumes/masculino/disenador/valentino-uomo-vendetta.jpg",
     "descripcion": "Fragancia masculina atrevida y cálida, de carácter fuerte.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 241,
@@ -3282,7 +3282,7 @@
     "precio": 38000,
     "imagen": "/perfumes/masculino/arabes/hawas-majestic.jpg",
     "descripcion": "Fragancia señorial, cálida y especiada. Elegante y de buena presencia.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 299,
@@ -3316,7 +3316,7 @@
     "precio": 34000,
     "imagen": "/perfumes/masculino/arabes/hawas-overdose.jpg",
     "descripcion": "Intensa y potente, con carácter especiado y llamativo.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 302,
@@ -3350,7 +3350,7 @@
     "precio": 35000,
     "imagen": "/perfumes/masculino/arabes/hawas-venom.jpg",
     "descripcion": "Oscura e intensa, de carácter seductor y peligroso.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 305,
@@ -4189,7 +4189,7 @@
     "imagen": null,
     "descripcion": "Extracto de Sauvage: profundo, amaderado y ambarado. Lujoso y de gran duración.",
     "activo": false,
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 379,
@@ -4838,7 +4838,7 @@
     "precio": 26500,
     "imagen": "/perfumes/femenino/arabes/armaf-odyssey-pink-pop.jpg",
     "descripcion": "Floral frutal con fresa y notas dulces de caramelo. Alegre, coqueto y llamativo.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 426,
@@ -5108,7 +5108,7 @@
     "precio": 41000,
     "imagen": "/perfumes/masculino/arabes/armaf-club-de-nuit-elite.jpg",
     "descripcion": "Fresco aromático con cítricos y maderas. Elegante y versátil para el día.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 450,
@@ -5165,7 +5165,7 @@
     "precio": 32500,
     "imagen": "/perfumes/unisex/arabes/lattafa-bade-e-al-oud-amethyst-fusion.jpg",
     "descripcion": "Frutal floral con oud y notas dulces. Elegante, exótico y con presencia.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 455,
@@ -5177,7 +5177,7 @@
     "precio": 66000,
     "imagen": "/perfumes/masculino/disenador/giorgio-armani-i-will.jpg",
     "descripcion": "Amaderado elegante con notas especiadas. Sofisticado y masculino.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 456,
@@ -5289,7 +5289,7 @@
     "precio": 32000,
     "imagen": "/perfumes/femenino/arabes/hawas-reina.jpg",
     "descripcion": "Floral frutal dulce. Femenino, seductor y con presencia.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 466,
@@ -5745,7 +5745,7 @@
     "precio": 41000,
     "imagen": "/perfumes/masculino/arabes/armaf-club-de-nuit-intenso-fuego.jpg",
     "descripcion": "Especiado cálido con notas frutales y amaderadas. Intenso y masculino.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 507,
@@ -5792,7 +5792,7 @@
     "precio": 70000,
     "imagen": "/perfumes/masculino/disenador/yves-saint-laurent-y-iced-cologne.jpg",
     "descripcion": "Fresco aromático con notas heladas y especiadas. Moderno y refrescante.",
-    "nuevo": true
+    "nuevoDesde": "2026-10-25"
   },
   {
     "id": 511,

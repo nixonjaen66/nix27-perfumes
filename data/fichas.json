@@ -1,1 +1,2914 @@
-{}
+{
+ "Afnan|9AM Dive": {
+  "notas": {
+   "salida": [
+    "menta",
+    "limón",
+    "grosella negra",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "incienso",
+    "notas acuáticas",
+    "lavanda"
+   ],
+   "fondo": [
+    "ámbar",
+    "cedro",
+    "pachulí",
+    "almizcle"
+   ]
+  }
+ },
+ "Afnan|9PM": {
+  "notas": {
+   "salida": [
+    "manzana",
+    "canela",
+    "lavanda",
+    "bergamota"
+   ],
+   "corazon": [
+    "azahar",
+    "lirio del valle"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka",
+    "ámbar",
+    "pachulí"
+   ]
+  }
+ },
+ "Al Haramain|Amber Oud Gold Edition": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "notas verdes"
+   ],
+   "corazon": [
+    "melón",
+    "piña"
+   ],
+   "fondo": [
+    "ámbar",
+    "almizcle",
+    "vainilla",
+    "madera"
+   ]
+  }
+ },
+ "Antonio Banderas|Blue Seduction": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "menta",
+    "melón"
+   ],
+   "corazon": [
+    "cardamomo",
+    "notas acuáticas"
+   ],
+   "fondo": [
+    "almizcle",
+    "madera"
+   ]
+  }
+ },
+ "Antonio Banderas|King of Seduction": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "toronja",
+    "limón"
+   ],
+   "corazon": [
+    "notas marinas",
+    "cardamomo"
+   ],
+   "fondo": [
+    "cedro",
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Ariana Grande|Ari": {
+  "notas": {
+   "salida": [
+    "pera",
+    "frambuesa",
+    "pomelo"
+   ],
+   "corazon": [
+    "peonía",
+    "orquídea",
+    "rosa"
+   ],
+   "fondo": [
+    "malvavisco",
+    "almizcle",
+    "madera"
+   ]
+  }
+ },
+ "Ariana Grande|Cloud": {
+  "notas": {
+   "salida": [
+    "pera",
+    "lavanda",
+    "bergamota"
+   ],
+   "corazon": [
+    "coco",
+    "praliné",
+    "vainilla"
+   ],
+   "fondo": [
+    "almizcle",
+    "madera"
+   ]
+  }
+ },
+ "Ariana Grande|Moonlight": {
+  "notas": {
+   "salida": [
+    "ciruela",
+    "mora"
+   ],
+   "corazon": [
+    "orquídea",
+    "peonía"
+   ],
+   "fondo": [
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Ariana Grande|R.E.M.": {
+  "notas": {
+   "salida": [
+    "pera",
+    "lavanda"
+   ],
+   "corazon": [
+    "malvavisco",
+    "haba tonka"
+   ],
+   "fondo": [
+    "almizcle",
+    "sándalo"
+   ]
+  }
+ },
+ "Ariana Grande|Thank U Next": {
+  "notas": {
+   "salida": [
+    "pera",
+    "frambuesa"
+   ],
+   "corazon": [
+    "coco",
+    "rosa"
+   ],
+   "fondo": [
+    "almizcle",
+    "malvavisco"
+   ]
+  }
+ },
+ "Armaf|Club de Nuit Iconic": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "menta",
+    "limón"
+   ],
+   "corazon": [
+    "jengibre",
+    "jazmín"
+   ],
+   "fondo": [
+    "incienso",
+    "cedro",
+    "sándalo"
+   ]
+  }
+ },
+ "Armaf|Club de Nuit Intense Man": {
+  "notas": {
+   "salida": [
+    "limón",
+    "piña",
+    "bergamota",
+    "grosella negra",
+    "manzana"
+   ],
+   "corazon": [
+    "abedul",
+    "jazmín",
+    "rosa"
+   ],
+   "fondo": [
+    "almizcle",
+    "ámbar gris",
+    "pachulí",
+    "vainilla"
+   ]
+  }
+ },
+ "Armaf|Club de Nuit Man": {
+  "notas": {
+   "salida": [
+    "limón",
+    "piña",
+    "bergamota",
+    "grosella negra",
+    "manzana"
+   ],
+   "corazon": [
+    "abedul",
+    "jazmín",
+    "rosa"
+   ],
+   "fondo": [
+    "almizcle",
+    "ámbar gris",
+    "pachulí",
+    "vainilla"
+   ]
+  }
+ },
+ "Armaf|Club de Nuit Sillage": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "limón",
+    "grosella negra"
+   ],
+   "corazon": [
+    "violeta",
+    "rosa",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "sándalo",
+    "cedro"
+   ]
+  }
+ },
+ "Armaf|Club de Nuit Untold": {
+  "notas": {
+   "salida": [
+    "azafrán",
+    "jazmín"
+   ],
+   "corazon": [
+    "ámbar gris",
+    "cedro"
+   ],
+   "fondo": [
+    "resinas",
+    "almizcle"
+   ]
+  }
+ },
+ "Armaf|Club de Nuit Urban Man": {
+  "notas": {
+   "salida": [
+    "pimienta",
+    "bergamota",
+    "pomelo"
+   ],
+   "corazon": [
+    "lavanda",
+    "vetiver",
+    "salvia"
+   ],
+   "fondo": [
+    "cedro",
+    "ámbar gris",
+    "incienso"
+   ]
+  }
+ },
+ "Armaf|Club de Nuit Urban Man Elixir": {
+  "notas": {
+   "salida": [
+    "pimienta",
+    "bergamota"
+   ],
+   "corazon": [
+    "lavanda",
+    "geranio",
+    "jengibre"
+   ],
+   "fondo": [
+    "ámbar gris",
+    "vetiver",
+    "cedro"
+   ]
+  }
+ },
+ "Armaf|Club de Nuit Woman Extrait": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "naranja"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín"
+   ],
+   "fondo": [
+    "pachulí",
+    "vainilla",
+    "almizcle"
+   ]
+  }
+ },
+ "Armaf|Odyssey Homme": {
+  "notas": {
+   "salida": [
+    "pimienta",
+    "cardamomo",
+    "bergamota"
+   ],
+   "corazon": [
+    "lavanda",
+    "geranio",
+    "naranja"
+   ],
+   "fondo": [
+    "ámbar",
+    "vainilla",
+    "cedro"
+   ]
+  }
+ },
+ "Armaf|Odyssey Mandarin Sky": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "naranja amarga",
+    "cardamomo"
+   ],
+   "corazon": [
+    "caramelo",
+    "haba tonka",
+    "salvia"
+   ],
+   "fondo": [
+    "ámbar",
+    "vetiver",
+    "cedro"
+   ]
+  }
+ },
+ "Burberry|Her": {
+  "notas": {
+   "salida": [
+    "fresa",
+    "frambuesa",
+    "mora",
+    "cereza",
+    "grosella negra",
+    "limón"
+   ],
+   "corazon": [
+    "violeta",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "vainilla",
+    "ámbar",
+    "cachemira"
+   ]
+  }
+ },
+ "Burberry|Her Elixir de Parfum": {
+  "notas": {
+   "salida": [
+    "fresa"
+   ],
+   "corazon": [
+    "jazmín"
+   ],
+   "fondo": [
+    "vainilla",
+    "ámbar",
+    "sándalo"
+   ]
+  }
+ },
+ "Bvlgari|Aqva Pour Homme": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "petitgrain"
+   ],
+   "corazon": [
+    "algodón",
+    "notas marinas"
+   ],
+   "fondo": [
+    "cedro",
+    "ámbar"
+   ]
+  }
+ },
+ "Bvlgari|Man Wood Neroli": {
+  "notas": {
+   "salida": [
+    "neroli",
+    "limón"
+   ],
+   "corazon": [
+    "cedro"
+   ],
+   "fondo": [
+    "vetiver",
+    "almizcle"
+   ]
+  }
+ },
+ "Bvlgari|Man in Black": {
+  "notas": {
+   "salida": [
+    "especias",
+    "ron"
+   ],
+   "corazon": [
+    "cuero",
+    "iris",
+    "nardo"
+   ],
+   "fondo": [
+    "haba tonka",
+    "benjuí",
+    "madera de guayaco"
+   ]
+  }
+ },
+ "Bvlgari|Omnia Coral": {
+  "notas": {
+   "salida": [
+    "goji",
+    "granada",
+    "naranja"
+   ],
+   "corazon": [
+    "nenúfar",
+    "hibisco"
+   ],
+   "fondo": [
+    "almizcle",
+    "madera"
+   ]
+  }
+ },
+ "Bvlgari|Omnia Crystalline": {
+  "notas": {
+   "salida": [
+    "bambú",
+    "pera"
+   ],
+   "corazon": [
+    "flor de loto"
+   ],
+   "fondo": [
+    "té",
+    "madera",
+    "almizcle"
+   ]
+  }
+ },
+ "Calvin Klein|CK IN2U Him": {
+  "notas": {
+   "salida": [
+    "lima",
+    "bergamota",
+    "pomelo"
+   ],
+   "corazon": [
+    "cacao",
+    "cedro"
+   ],
+   "fondo": [
+    "vetiver",
+    "ámbar",
+    "almizcle"
+   ]
+  }
+ },
+ "Calvin Klein|CK One": {
+  "notas": {
+   "salida": [
+    "limón",
+    "bergamota",
+    "piña",
+    "papaya",
+    "cardamomo"
+   ],
+   "corazon": [
+    "jazmín",
+    "lirio del valle",
+    "violeta",
+    "rosa"
+   ],
+   "fondo": [
+    "almizcle",
+    "cedro",
+    "sándalo",
+    "ámbar",
+    "musgo de roble"
+   ]
+  }
+ },
+ "Calvin Klein|Escape": {
+  "notas": {
+   "salida": [
+    "manzana",
+    "melón",
+    "mandarina"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín",
+    "durazno"
+   ],
+   "fondo": [
+    "almizcle",
+    "sándalo"
+   ]
+  }
+ },
+ "Calvin Klein|Eternity for Men": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "limón",
+    "mandarina",
+    "bergamota"
+   ],
+   "corazon": [
+    "salvia",
+    "albahaca",
+    "jazmín",
+    "geranio"
+   ],
+   "fondo": [
+    "vetiver",
+    "sándalo",
+    "ámbar",
+    "almizcle"
+   ]
+  }
+ },
+ "Carolina Herrera|212 Men NYC": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "pomelo",
+    "lavanda"
+   ],
+   "corazon": [
+    "jengibre",
+    "salvia",
+    "violeta"
+   ],
+   "fondo": [
+    "incienso",
+    "almizcle",
+    "vetiver",
+    "sándalo"
+   ]
+  }
+ },
+ "Carolina Herrera|212 VIP": {
+  "notas": {
+   "salida": [
+    "maracuyá",
+    "ron"
+   ],
+   "corazon": [
+    "gardenia"
+   ],
+   "fondo": [
+    "almizcle",
+    "vainilla",
+    "haba tonka"
+   ]
+  }
+ },
+ "Carolina Herrera|212 VIP Black": {
+  "notas": {
+   "salida": [
+    "absenta",
+    "anís",
+    "hinojo"
+   ],
+   "corazon": [
+    "lavanda"
+   ],
+   "fondo": [
+    "vainilla negra",
+    "almizcle"
+   ]
+  }
+ },
+ "Carolina Herrera|212 VIP Black NYC": {
+  "notas": {
+   "salida": [
+    "absenta",
+    "anís",
+    "hinojo"
+   ],
+   "corazon": [
+    "lavanda"
+   ],
+   "fondo": [
+    "vainilla negra",
+    "almizcle"
+   ]
+  }
+ },
+ "Carolina Herrera|212 VIP Rosé": {
+  "notas": {
+   "salida": [
+    "champaña",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "rosa"
+   ],
+   "fondo": [
+    "ámbar",
+    "madera"
+   ]
+  }
+ },
+ "Carolina Herrera|212 VIP Rosé NYC": {
+  "notas": {
+   "salida": [
+    "champaña",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "rosa"
+   ],
+   "fondo": [
+    "ámbar",
+    "madera"
+   ]
+  }
+ },
+ "Carolina Herrera|Bad Boy": {
+  "notas": {
+   "salida": [
+    "pimienta blanca",
+    "bergamota",
+    "pimienta negra"
+   ],
+   "corazon": [
+    "salvia",
+    "cedro"
+   ],
+   "fondo": [
+    "haba tonka",
+    "cacao",
+    "ámbar"
+   ]
+  }
+ },
+ "Carolina Herrera|Bad Boy Cobalt": {
+  "notas": {
+   "salida": [
+    "pimienta",
+    "ciruela"
+   ],
+   "corazon": [
+    "lavanda",
+    "geranio"
+   ],
+   "fondo": [
+    "vetiver",
+    "madera"
+   ]
+  }
+ },
+ "Carolina Herrera|CH Men": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "bergamota",
+    "toronja"
+   ],
+   "corazon": [
+    "azafrán",
+    "violeta"
+   ],
+   "fondo": [
+    "cuero",
+    "sándalo"
+   ]
+  }
+ },
+ "Carolina Herrera|CH Privee": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "mandarina"
+   ],
+   "corazon": [
+    "jazmín",
+    "rosa"
+   ],
+   "fondo": [
+    "cuero",
+    "almizcle"
+   ]
+  }
+ },
+ "Carolina Herrera|Good Girl": {
+  "notas": {
+   "salida": [
+    "almendra",
+    "café",
+    "bergamota",
+    "limón"
+   ],
+   "corazon": [
+    "nardo",
+    "jazmín",
+    "rosa",
+    "flor de naranjo"
+   ],
+   "fondo": [
+    "haba tonka",
+    "cacao",
+    "vainilla",
+    "sándalo",
+    "almizcle"
+   ]
+  }
+ },
+ "Carolina Herrera|Good Girl Blush": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "almendra"
+   ],
+   "corazon": [
+    "peonía",
+    "rosa",
+    "ylang-ylang"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka"
+   ]
+  }
+ },
+ "Carolina Herrera|Good Girl Blush Crystal Class": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "almendra"
+   ],
+   "corazon": [
+    "peonía",
+    "rosa",
+    "ylang-ylang"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka"
+   ]
+  }
+ },
+ "Carolina Herrera|Good Girl Bowtastic": {
+  "notas": {
+   "salida": [
+    "almendra",
+    "café",
+    "bergamota"
+   ],
+   "corazon": [
+    "nardo",
+    "jazmín"
+   ],
+   "fondo": [
+    "haba tonka",
+    "cacao",
+    "vainilla"
+   ]
+  }
+ },
+ "Carolina Herrera|Good Girl Crystal Class": {
+  "notas": {
+   "salida": [
+    "almendra",
+    "café",
+    "bergamota"
+   ],
+   "corazon": [
+    "nardo",
+    "jazmín"
+   ],
+   "fondo": [
+    "haba tonka",
+    "cacao",
+    "vainilla"
+   ]
+  }
+ },
+ "Carolina Herrera|La Bomba": {
+  "notas": {
+   "salida": [
+    "pitahaya",
+    "frambuesa"
+   ],
+   "corazon": [
+    "peonía",
+    "jazmín"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle"
+   ]
+  }
+ },
+ "Chanel|Allure Homme": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "bergamota",
+    "limón"
+   ],
+   "corazon": [
+    "cedro",
+    "pimienta",
+    "jazmín"
+   ],
+   "fondo": [
+    "vainilla",
+    "vetiver",
+    "haba tonka",
+    "cuero"
+   ]
+  }
+ },
+ "Chanel|Allure Homme Sport Cologne": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "limón",
+    "bergamota"
+   ],
+   "corazon": [
+    "neroli",
+    "petitgrain"
+   ],
+   "fondo": [
+    "almizcle",
+    "cedro",
+    "vetiver"
+   ]
+  }
+ },
+ "Chanel|Allure Homme Sport Eau Extrême": {
+  "notas": {
+   "salida": [
+    "menta",
+    "mandarina",
+    "pimienta"
+   ],
+   "corazon": [
+    "salvia",
+    "enebro"
+   ],
+   "fondo": [
+    "haba tonka",
+    "cedro",
+    "almizcle",
+    "sándalo"
+   ]
+  }
+ },
+ "Chanel|Allure Homme Sport Superleggera": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "menta"
+   ],
+   "corazon": [
+    "cedro",
+    "notas marinas"
+   ],
+   "fondo": [
+    "haba tonka",
+    "almizcle"
+   ]
+  }
+ },
+ "Chanel|Bleu de Chanel Parfum": {
+  "notas": {
+   "salida": [
+    "limón",
+    "bergamota",
+    "menta"
+   ],
+   "corazon": [
+    "lavanda",
+    "pino"
+   ],
+   "fondo": [
+    "sándalo",
+    "cedro",
+    "ámbar"
+   ]
+  }
+ },
+ "Chanel|Chance Eau Fraîche": {
+  "notas": {
+   "salida": [
+    "limón",
+    "cedro"
+   ],
+   "corazon": [
+    "jazmín",
+    "jacinto"
+   ],
+   "fondo": [
+    "pachulí",
+    "vetiver",
+    "almizcle"
+   ]
+  }
+ },
+ "Chanel|Chance Eau Splendide": {
+  "notas": {
+   "salida": [
+    "frambuesa",
+    "frutos rojos"
+   ],
+   "corazon": [
+    "rosa",
+    "violeta"
+   ],
+   "fondo": [
+    "almizcle",
+    "cedro"
+   ]
+  }
+ },
+ "Chanel|Chance Eau Tendre": {
+  "notas": {
+   "salida": [
+    "membrillo",
+    "pomelo"
+   ],
+   "corazon": [
+    "jacinto",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "iris",
+    "ámbar"
+   ]
+  }
+ },
+ "Chanel|Chance Eau Tendre Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "pomelo"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "cedro"
+   ]
+  }
+ },
+ "Chanel|Chance Eau Tendre Eau de Toilette": {
+  "notas": {
+   "salida": [
+    "membrillo",
+    "pomelo"
+   ],
+   "corazon": [
+    "jacinto",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "iris",
+    "ámbar"
+   ]
+  }
+ },
+ "Chanel|Chance Eau de Toilette": {
+  "notas": {
+   "salida": [
+    "pimienta rosa",
+    "limón"
+   ],
+   "corazon": [
+    "jazmín",
+    "jacinto"
+   ],
+   "fondo": [
+    "pachulí",
+    "almizcle",
+    "vainilla"
+   ]
+  }
+ },
+ "Chanel|Coco Mademoiselle": {
+  "notas": {
+   "salida": [
+    "naranja",
+    "bergamota",
+    "mandarina"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín",
+    "lichi"
+   ],
+   "fondo": [
+    "pachulí",
+    "vainilla",
+    "almizcle",
+    "vetiver"
+   ]
+  }
+ },
+ "Clinique|Aromatics Elixir": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "cilantro"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín",
+    "ylang-ylang"
+   ],
+   "fondo": [
+    "pachulí",
+    "musgo de roble",
+    "vetiver",
+    "almizcle"
+   ]
+  }
+ },
+ "Clinique|Happy for Men": {
+  "notas": {
+   "salida": [
+    "lima",
+    "mandarina",
+    "bergamota",
+    "naranja"
+   ],
+   "corazon": [
+    "jengibre",
+    "menta"
+   ],
+   "fondo": [
+    "cedro",
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Coach|Floral": {
+  "notas": {
+   "salida": [
+    "piña",
+    "pomelo",
+    "frambuesa"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín",
+    "peonía"
+   ],
+   "fondo": [
+    "almizcle",
+    "pachulí"
+   ]
+  }
+ },
+ "Davidoff|Cool Water": {
+  "notas": {
+   "salida": [
+    "menta",
+    "lavanda",
+    "notas marinas",
+    "cilantro"
+   ],
+   "corazon": [
+    "geranio",
+    "jazmín",
+    "sándalo"
+   ],
+   "fondo": [
+    "almizcle",
+    "ámbar",
+    "cedro",
+    "tabaco"
+   ]
+  }
+ },
+ "Dior|Homme": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "salvia",
+    "bergamota"
+   ],
+   "corazon": [
+    "iris",
+    "cacao",
+    "ámbar"
+   ],
+   "fondo": [
+    "cuero",
+    "vetiver",
+    "pachulí"
+   ]
+  }
+ },
+ "Dior|Sauvage Elixir": {
+  "notas": {
+   "salida": [
+    "canela",
+    "nuez moscada",
+    "cardamomo",
+    "pomelo"
+   ],
+   "corazon": [
+    "lavanda"
+   ],
+   "fondo": [
+    "regaliz",
+    "sándalo",
+    "ámbar",
+    "pachulí",
+    "vetiver"
+   ]
+  }
+ },
+ "Dior|Sauvage Parfum": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "mandarina"
+   ],
+   "corazon": [
+    "elemi",
+    "nuez moscada"
+   ],
+   "fondo": [
+    "sándalo",
+    "vainilla",
+    "haba tonka"
+   ]
+  }
+ },
+ "Dolce & Gabbana|Devotion": {
+  "notas": {
+   "salida": [
+    "limón",
+    "naranja"
+   ],
+   "corazon": [
+    "azahar"
+   ],
+   "fondo": [
+    "vainilla",
+    "madera"
+   ]
+  }
+ },
+ "Dolce & Gabbana|Intenso": {
+  "notas": {
+   "salida": [
+    "albahaca",
+    "lavanda"
+   ],
+   "corazon": [
+    "geranio",
+    "tabaco"
+   ],
+   "fondo": [
+    "sándalo",
+    "cedro",
+    "ámbar"
+   ]
+  }
+ },
+ "Dolce & Gabbana|K": {
+  "notas": {
+   "salida": [
+    "naranja",
+    "limón",
+    "bayas de enebro"
+   ],
+   "corazon": [
+    "salvia",
+    "lavanda",
+    "geranio"
+   ],
+   "fondo": [
+    "cedro",
+    "vetiver",
+    "pachulí"
+   ]
+  }
+ },
+ "Dolce & Gabbana|L'Impératrice": {
+  "notas": {
+   "salida": [
+    "kiwi",
+    "sandía",
+    "ruibarbo"
+   ],
+   "corazon": [
+    "ciclamen",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "sándalo"
+   ]
+  }
+ },
+ "Dolce & Gabbana|Light Blue": {
+  "notas": {
+   "salida": [
+    "limón",
+    "manzana",
+    "cedro"
+   ],
+   "corazon": [
+    "bambú",
+    "jazmín",
+    "rosa"
+   ],
+   "fondo": [
+    "cedro",
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Dolce & Gabbana|Light Blue Pour Homme": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "mandarina",
+    "bayas de enebro"
+   ],
+   "corazon": [
+    "romero",
+    "pimienta"
+   ],
+   "fondo": [
+    "almizcle",
+    "incienso",
+    "musgo de roble"
+   ]
+  }
+ },
+ "Dolce & Gabbana|Pour Homme": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "mandarina",
+    "naranja"
+   ],
+   "corazon": [
+    "lavanda",
+    "salvia",
+    "pimienta"
+   ],
+   "fondo": [
+    "tabaco",
+    "cedro"
+   ]
+  }
+ },
+ "Dolce & Gabbana|The One Pour Homme": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "cilantro",
+    "albahaca"
+   ],
+   "corazon": [
+    "jengibre",
+    "cardamomo",
+    "azahar"
+   ],
+   "fondo": [
+    "tabaco",
+    "ámbar",
+    "cedro"
+   ]
+  }
+ },
+ "Elizabeth Arden|5th Avenue": {
+  "notas": {
+   "salida": [
+    "lila",
+    "tilo",
+    "bergamota",
+    "mandarina"
+   ],
+   "corazon": [
+    "violeta",
+    "nuez moscada",
+    "jazmín",
+    "rosa"
+   ],
+   "fondo": [
+    "ámbar",
+    "almizcle",
+    "sándalo",
+    "vainilla"
+   ]
+  }
+ },
+ "Emporio Armani|Because It's You": {
+  "notas": {
+   "salida": [
+    "frambuesa",
+    "limón"
+   ],
+   "corazon": [
+    "rosa",
+    "neroli"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle"
+   ]
+  }
+ },
+ "Emporio Armani|Diamonds for Men": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "limón"
+   ],
+   "corazon": [
+    "cacao",
+    "cedro"
+   ],
+   "fondo": [
+    "vetiver",
+    "haba tonka",
+    "almizcle"
+   ]
+  }
+ },
+ "Emporio Armani|Stronger with You Absolutely": {
+  "notas": {
+   "salida": [
+    "ron",
+    "bergamota"
+   ],
+   "corazon": [
+    "lavanda",
+    "davana"
+   ],
+   "fondo": [
+    "vainilla",
+    "madera de guayaco"
+   ]
+  }
+ },
+ "Emporio Armani|Stronger with You Intensely": {
+  "notas": {
+   "salida": [
+    "pimienta rosa",
+    "mandarina"
+   ],
+   "corazon": [
+    "lavanda",
+    "canela"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka",
+    "ámbar"
+   ]
+  }
+ },
+ "Giardini di Toscana|Bianco Latte": {
+  "notas": {
+   "salida": [
+    "caramelo",
+    "haba tonka"
+   ],
+   "corazon": [
+    "miel",
+    "leche"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle"
+   ]
+  }
+ },
+ "Giorgio Armani|Acqua di Gioia": {
+  "notas": {
+   "salida": [
+    "menta",
+    "limón"
+   ],
+   "corazon": [
+    "jazmín",
+    "notas acuáticas"
+   ],
+   "fondo": [
+    "cedro",
+    "azúcar morena"
+   ]
+  }
+ },
+ "Giorgio Armani|Acqua di Giò Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "notas marinas",
+    "bergamota"
+   ],
+   "corazon": [
+    "salvia",
+    "geranio"
+   ],
+   "fondo": [
+    "pachulí",
+    "vetiver",
+    "ámbar"
+   ]
+  }
+ },
+ "Giorgio Armani|Acqua di Giò Parfum": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "notas marinas"
+   ],
+   "corazon": [
+    "romero",
+    "salvia",
+    "geranio"
+   ],
+   "fondo": [
+    "incienso",
+    "pachulí"
+   ]
+  }
+ },
+ "Giorgio Armani|Acqua di Giò Pour Homme": {
+  "notas": {
+   "salida": [
+    "lima",
+    "limón",
+    "bergamota",
+    "jazmín",
+    "naranja",
+    "mandarina"
+   ],
+   "corazon": [
+    "notas marinas",
+    "romero",
+    "jazmín",
+    "durazno"
+   ],
+   "fondo": [
+    "almizcle",
+    "cedro",
+    "pachulí",
+    "ámbar"
+   ]
+  }
+ },
+ "Giorgio Armani|Acqua di Giò Profondo": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "mandarina",
+    "notas marinas"
+   ],
+   "corazon": [
+    "romero",
+    "lavanda",
+    "ciprés"
+   ],
+   "fondo": [
+    "almizcle",
+    "pachulí",
+    "ámbar"
+   ]
+  }
+ },
+ "Giorgio Armani|Acqua di Giò Profondo Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "mandarina",
+    "notas marinas"
+   ],
+   "corazon": [
+    "romero",
+    "lavanda",
+    "ciprés"
+   ],
+   "fondo": [
+    "almizcle",
+    "pachulí",
+    "ámbar"
+   ]
+  }
+ },
+ "Giorgio Armani|Armani Eau Pour Homme": {
+  "notas": {
+   "salida": [
+    "limón",
+    "bergamota",
+    "naranja",
+    "mandarina"
+   ],
+   "corazon": [
+    "clavo",
+    "nuez moscada",
+    "petitgrain"
+   ],
+   "fondo": [
+    "vetiver",
+    "sándalo",
+    "musgo de roble"
+   ]
+  }
+ },
+ "Giorgio Armani|Code Eau de Toilette": {
+  "notas": {
+   "salida": [
+    "limón",
+    "bergamota"
+   ],
+   "corazon": [
+    "anís",
+    "flor de olivo"
+   ],
+   "fondo": [
+    "cuero",
+    "haba tonka",
+    "tabaco"
+   ]
+  }
+ },
+ "Giorgio Armani|My Way": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "azahar"
+   ],
+   "corazon": [
+    "nardo",
+    "jazmín"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle",
+    "cedro"
+   ]
+  }
+ },
+ "Giorgio Armani|Sì": {
+  "notas": {
+   "salida": [
+    "grosella negra"
+   ],
+   "corazon": [
+    "rosa",
+    "fresia"
+   ],
+   "fondo": [
+    "vainilla",
+    "pachulí",
+    "madera"
+   ]
+  }
+ },
+ "Giorgio Armani|Sì Passione": {
+  "notas": {
+   "salida": [
+    "grosella negra",
+    "pera",
+    "pomelo",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín",
+    "heliotropo"
+   ],
+   "fondo": [
+    "vainilla",
+    "cedro",
+    "pachulí"
+   ]
+  }
+ },
+ "Givenchy|Gentleman Society": {
+  "notas": {
+   "salida": [
+    "salvia",
+    "cardamomo"
+   ],
+   "corazon": [
+    "narciso",
+    "iris"
+   ],
+   "fondo": [
+    "vetiver",
+    "sándalo",
+    "vainilla"
+   ]
+  }
+ },
+ "Gucci|Flora Gorgeous Jasmine": {
+  "notas": {
+   "salida": [
+    "mandarina"
+   ],
+   "corazon": [
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "madera"
+   ]
+  }
+ },
+ "Guess|1981": {
+  "notas": {
+   "salida": [
+    "violeta",
+    "pimienta"
+   ],
+   "corazon": [
+    "iris",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "cedro",
+    "vetiver"
+   ]
+  }
+ },
+ "Hawas|For Him": {
+  "notas": {
+   "salida": [
+    "manzana",
+    "bergamota",
+    "limón",
+    "canela"
+   ],
+   "corazon": [
+    "notas acuáticas",
+    "ciruela",
+    "azahar",
+    "cardamomo"
+   ],
+   "fondo": [
+    "ámbar gris",
+    "almizcle",
+    "pachulí",
+    "madera"
+   ]
+  }
+ },
+ "Hugo Boss|Boss Bottled": {
+  "notas": {
+   "salida": [
+    "manzana",
+    "ciruela",
+    "limón",
+    "bergamota"
+   ],
+   "corazon": [
+    "canela",
+    "geranio",
+    "clavo"
+   ],
+   "fondo": [
+    "vainilla",
+    "sándalo",
+    "cedro",
+    "vetiver"
+   ]
+  }
+ },
+ "Hugo Boss|Boss Bottled Elixir": {
+  "notas": {
+   "salida": [
+    "incienso",
+    "cardamomo"
+   ],
+   "corazon": [
+    "pachulí",
+    "vetiver"
+   ],
+   "fondo": [
+    "ládano",
+    "cedro"
+   ]
+  }
+ },
+ "Hugo Boss|Boss Bottled Infinite": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "manzana"
+   ],
+   "corazon": [
+    "lavanda",
+    "salvia"
+   ],
+   "fondo": [
+    "sándalo",
+    "pachulí"
+   ]
+  }
+ },
+ "Hugo Boss|Boss The Scent Intense": {
+  "notas": {
+   "salida": [
+    "jengibre",
+    "bergamota"
+   ],
+   "corazon": [
+    "maninka",
+    "lavanda"
+   ],
+   "fondo": [
+    "cuero",
+    "madera"
+   ]
+  }
+ },
+ "Hugo Boss|Hugo Deep Red": {
+  "notas": {
+   "salida": [
+    "pera",
+    "mandarina",
+    "naranja"
+   ],
+   "corazon": [
+    "fresia",
+    "jengibre",
+    "heliotropo"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle",
+    "sándalo"
+   ]
+  }
+ },
+ "Initio|Side Effect": {
+  "notas": {
+   "salida": [
+    "ron",
+    "azafrán"
+   ],
+   "corazon": [
+    "canela",
+    "tabaco"
+   ],
+   "fondo": [
+    "vainilla"
+   ]
+  }
+ },
+ "Issey Miyake|L'Eau d'Issey Pour Homme": {
+  "notas": {
+   "salida": [
+    "yuzu",
+    "limón",
+    "bergamota",
+    "mandarina"
+   ],
+   "corazon": [
+    "loto",
+    "canela",
+    "nuez moscada"
+   ],
+   "fondo": [
+    "vetiver",
+    "sándalo",
+    "cedro",
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Jean Paul Gaultier|Le Beau Le Parfum": {
+  "notas": {
+   "salida": [
+    "piña",
+    "iris"
+   ],
+   "corazon": [
+    "coco",
+    "haba tonka"
+   ],
+   "fondo": [
+    "sándalo",
+    "ámbar"
+   ]
+  }
+ },
+ "Jean Paul Gaultier|Le Male": {
+  "notas": {
+   "salida": [
+    "menta",
+    "lavanda",
+    "cardamomo",
+    "bergamota"
+   ],
+   "corazon": [
+    "canela",
+    "azahar"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka",
+    "sándalo",
+    "cedro"
+   ]
+  }
+ },
+ "Jean Paul Gaultier|Le Male Elixir": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "menta"
+   ],
+   "corazon": [
+    "vainilla",
+    "benjuí"
+   ],
+   "fondo": [
+    "miel",
+    "haba tonka",
+    "tabaco"
+   ]
+  }
+ },
+ "Jean Paul Gaultier|Le Male Le Parfum": {
+  "notas": {
+   "salida": [
+    "cardamomo"
+   ],
+   "corazon": [
+    "lavanda",
+    "iris"
+   ],
+   "fondo": [
+    "vainilla",
+    "madera"
+   ]
+  }
+ },
+ "Jean Paul Gaultier|Scandal Pour Homme": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "salvia"
+   ],
+   "corazon": [
+    "caramelo",
+    "haba tonka"
+   ],
+   "fondo": [
+    "vetiver"
+   ]
+  }
+ },
+ "Jean Paul Gaultier|Ultra Male": {
+  "notas": {
+   "salida": [
+    "pera",
+    "menta",
+    "lavanda",
+    "bergamota",
+    "limón"
+   ],
+   "corazon": [
+    "canela",
+    "salvia",
+    "alcaravea"
+   ],
+   "fondo": [
+    "vainilla",
+    "ámbar",
+    "cedro"
+   ]
+  }
+ },
+ "Jesús del Pozo|Halloween": {
+  "notas": {
+   "salida": [
+    "violeta",
+    "limón"
+   ],
+   "corazon": [
+    "nardo",
+    "magnolia",
+    "pimienta"
+   ],
+   "fondo": [
+    "mirra",
+    "vainilla"
+   ]
+  }
+ },
+ "Lacoste|L.12.12 Blanc": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "cardamomo",
+    "romero"
+   ],
+   "corazon": [
+    "nardo",
+    "ylang-ylang"
+   ],
+   "fondo": [
+    "cedro",
+    "gamuza"
+   ]
+  }
+ },
+ "Lancôme|Idôle": {
+  "notas": {
+   "salida": [
+    "pera",
+    "bergamota"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "vainilla"
+   ]
+  }
+ },
+ "Lancôme|La Vie Est Belle": {
+  "notas": {
+   "salida": [
+    "grosella negra",
+    "pera"
+   ],
+   "corazon": [
+    "iris",
+    "jazmín",
+    "azahar"
+   ],
+   "fondo": [
+    "praliné",
+    "vainilla",
+    "pachulí",
+    "haba tonka"
+   ]
+  }
+ },
+ "Lancôme|La Vie Est Belle Intensément": {
+  "notas": {
+   "salida": [
+    "frambuesa",
+    "bergamota"
+   ],
+   "corazon": [
+    "iris",
+    "jazmín",
+    "rosa"
+   ],
+   "fondo": [
+    "vainilla",
+    "pachulí",
+    "benjuí"
+   ]
+  }
+ },
+ "Lattafa|Asad": {
+  "notas": {
+   "salida": [
+    "pimienta negra",
+    "piña",
+    "tabaco"
+   ],
+   "corazon": [
+    "café",
+    "iris",
+    "pachulí"
+   ],
+   "fondo": [
+    "ámbar",
+    "vainilla",
+    "benjuí"
+   ]
+  }
+ },
+ "Lattafa|Bade'e Al Oud Amethyst": {
+  "notas": {
+   "salida": [
+    "rosa",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "oud",
+    "jazmín"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Lattafa|Khamrah": {
+  "notas": {
+   "salida": [
+    "canela",
+    "nuez moscada",
+    "bergamota"
+   ],
+   "corazon": [
+    "dátil",
+    "praliné",
+    "nardo"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka",
+    "ámbar",
+    "mirra",
+    "benjuí"
+   ]
+  }
+ },
+ "Lattafa|Khamrah Qahwa": {
+  "notas": {
+   "salida": [
+    "canela",
+    "cardamomo",
+    "jengibre"
+   ],
+   "corazon": [
+    "praliné",
+    "flores blancas"
+   ],
+   "fondo": [
+    "café",
+    "vainilla",
+    "haba tonka",
+    "almizcle"
+   ]
+  }
+ },
+ "Lattafa|Oud for Glory": {
+  "notas": {
+   "salida": [
+    "azafrán",
+    "nuez moscada",
+    "lavanda"
+   ],
+   "corazon": [
+    "oud",
+    "pachulí"
+   ],
+   "fondo": [
+    "oud",
+    "almizcle"
+   ]
+  }
+ },
+ "Lattafa|Yara": {
+  "notas": {
+   "salida": [
+    "orquídea",
+    "heliotropo",
+    "mandarina"
+   ],
+   "corazon": [
+    "frutas tropicales"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle",
+    "sándalo"
+   ]
+  }
+ },
+ "Lattafa|Yara Tous": {
+  "notas": {
+   "salida": [
+    "mango",
+    "coco",
+    "maracuyá"
+   ],
+   "corazon": [
+    "jazmín",
+    "azahar"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle"
+   ]
+  }
+ },
+ "Mancera|Red Tobacco": {
+  "notas": {
+   "salida": [
+    "canela",
+    "nuez moscada",
+    "azafrán",
+    "oud",
+    "incienso",
+    "manzana"
+   ],
+   "corazon": [
+    "pachulí",
+    "jazmín"
+   ],
+   "fondo": [
+    "tabaco",
+    "vainilla",
+    "ámbar",
+    "sándalo"
+   ]
+  }
+ },
+ "Montale|Arabians Tonka": {
+  "notas": {
+   "salida": [
+    "azafrán",
+    "bergamota"
+   ],
+   "corazon": [
+    "rosa",
+    "oud"
+   ],
+   "fondo": [
+    "haba tonka",
+    "ámbar",
+    "almizcle"
+   ]
+  }
+ },
+ "Montale|Chocolate Greedy": {
+  "notas": {
+   "salida": [
+    "café",
+    "naranja amarga"
+   ],
+   "corazon": [
+    "cacao",
+    "haba tonka"
+   ],
+   "fondo": [
+    "vainilla",
+    "almendra"
+   ]
+  }
+ },
+ "Montblanc|Explorer": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "vetiver",
+    "cuero"
+   ],
+   "fondo": [
+    "pachulí",
+    "ámbar"
+   ]
+  }
+ },
+ "Montblanc|Legend": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "piña",
+    "bergamota"
+   ],
+   "corazon": [
+    "manzana",
+    "rosa",
+    "geranio"
+   ],
+   "fondo": [
+    "haba tonka",
+    "sándalo",
+    "musgo de roble"
+   ]
+  }
+ },
+ "Montblanc|Legend Spirit": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "bergamota",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "lavanda",
+    "cardamomo"
+   ],
+   "fondo": [
+    "almizcle",
+    "cedro"
+   ]
+  }
+ },
+ "Moschino|I Love Love": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "naranja",
+    "limón",
+    "grosella negra"
+   ],
+   "corazon": [
+    "canela",
+    "rosa"
+   ],
+   "fondo": [
+    "cedro",
+    "almizcle"
+   ]
+  }
+ },
+ "Moschino|Toy 2": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "magnolia",
+    "manzana"
+   ],
+   "corazon": [
+    "peonía",
+    "jazmín",
+    "grosella blanca"
+   ],
+   "fondo": [
+    "almizcle",
+    "sándalo",
+    "ámbar"
+   ]
+  }
+ },
+ "Moschino|Toy 2 Bubble Gum": {
+  "notas": {
+   "salida": [
+    "limón",
+    "mandarina",
+    "naranja",
+    "menta"
+   ],
+   "corazon": [
+    "chicle",
+    "rosa",
+    "durazno"
+   ],
+   "fondo": [
+    "almizcle",
+    "vainilla"
+   ]
+  }
+ },
+ "Moschino|Toy Boy": {
+  "notas": {
+   "salida": [
+    "pera",
+    "bergamota",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "rosa",
+    "nuez moscada"
+   ],
+   "fondo": [
+    "vetiver",
+    "cachemira"
+   ]
+  }
+ },
+ "Narciso Rodriguez|Narciso": {
+  "notas": {
+   "salida": [
+    "gardenia",
+    "flor de naranjo"
+   ],
+   "corazon": [
+    "rosa",
+    "almizcle"
+   ],
+   "fondo": [
+    "cedro",
+    "vetiver"
+   ]
+  }
+ },
+ "Nautica|Voyage": {
+  "notas": {
+   "salida": [
+    "manzana",
+    "hojas verdes"
+   ],
+   "corazon": [
+    "flor de loto",
+    "mimosa"
+   ],
+   "fondo": [
+    "almizcle",
+    "cedro",
+    "musgo de roble"
+   ]
+  }
+ },
+ "Paco Rabanne|1 Million Lucky": {
+  "notas": {
+   "salida": [
+    "ciruela",
+    "pomelo",
+    "bergamota"
+   ],
+   "corazon": [
+    "avellana",
+    "cedro",
+    "miel"
+   ],
+   "fondo": [
+    "ámbar",
+    "pachulí",
+    "vetiver"
+   ]
+  }
+ },
+ "Paco Rabanne|Invictus": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "notas marinas",
+    "mandarina"
+   ],
+   "corazon": [
+    "hoja de laurel",
+    "jazmín"
+   ],
+   "fondo": [
+    "madera de guayaco",
+    "musgo de roble",
+    "pachulí",
+    "ámbar gris"
+   ]
+  }
+ },
+ "Paco Rabanne|Olympea": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "jengibre"
+   ],
+   "corazon": [
+    "vainilla",
+    "jazmín"
+   ],
+   "fondo": [
+    "sándalo",
+    "ámbar gris"
+   ]
+  }
+ },
+ "Paco Rabanne|Phantom": {
+  "notas": {
+   "salida": [
+    "limón",
+    "lavanda"
+   ],
+   "corazon": [
+    "vainilla",
+    "manzana"
+   ],
+   "fondo": [
+    "vetiver",
+    "pachulí"
+   ]
+  }
+ },
+ "Paco Rabanne|Pour Homme": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "romero",
+    "bergamota"
+   ],
+   "corazon": [
+    "geranio",
+    "clavo",
+    "salvia"
+   ],
+   "fondo": [
+    "musgo de roble",
+    "ámbar",
+    "almizcle",
+    "haba tonka"
+   ]
+  }
+ },
+ "Parfums de Marly|Althaïr": {
+  "notas": {
+   "salida": [
+    "cardamomo",
+    "canela",
+    "bergamota"
+   ],
+   "corazon": [
+    "azahar",
+    "elemi"
+   ],
+   "fondo": [
+    "vainilla",
+    "praliné",
+    "almizcle",
+    "madera de guayaco"
+   ]
+  }
+ },
+ "Parfums de Marly|Delina": {
+  "notas": {
+   "salida": [
+    "lichi",
+    "ruibarbo",
+    "bergamota",
+    "nuez moscada"
+   ],
+   "corazon": [
+    "rosa",
+    "peonía"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle",
+    "cachemira",
+    "incienso"
+   ]
+  }
+ },
+ "Parfums de Marly|Delina Exclusif": {
+  "notas": {
+   "salida": [
+    "lichi",
+    "pomelo",
+    "bergamota"
+   ],
+   "corazon": [
+    "rosa",
+    "incienso"
+   ],
+   "fondo": [
+    "oud",
+    "vainilla",
+    "ámbar"
+   ]
+  }
+ },
+ "Parfums de Marly|Delina La Rosée": {
+  "notas": {
+   "salida": [
+    "pera",
+    "lichi"
+   ],
+   "corazon": [
+    "rosa",
+    "peonía"
+   ],
+   "fondo": [
+    "almizcle",
+    "vetiver"
+   ]
+  }
+ },
+ "Parfums de Marly|Haltane": {
+  "notas": {
+   "salida": [
+    "salvia",
+    "bergamota"
+   ],
+   "corazon": [
+    "lavanda",
+    "azafrán"
+   ],
+   "fondo": [
+    "oud",
+    "praliné",
+    "musgo de roble"
+   ]
+  }
+ },
+ "Parfums de Marly|Layton": {
+  "notas": {
+   "salida": [
+    "manzana",
+    "lavanda",
+    "bergamota",
+    "mandarina"
+   ],
+   "corazon": [
+    "geranio",
+    "violeta",
+    "jazmín"
+   ],
+   "fondo": [
+    "vainilla",
+    "cardamomo",
+    "sándalo",
+    "pachulí"
+   ]
+  }
+ },
+ "Parfums de Marly|Oajan": {
+  "notas": {
+   "salida": [
+    "canela"
+   ],
+   "corazon": [
+    "miel"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka",
+    "ámbar",
+    "benjuí"
+   ]
+  }
+ },
+ "Parfums de Marly|Percival": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "mandarina",
+    "bergamota"
+   ],
+   "corazon": [
+    "cardamomo",
+    "geranio"
+   ],
+   "fondo": [
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Parfums de Marly|Sedley": {
+  "notas": {
+   "salida": [
+    "menta",
+    "bergamota"
+   ],
+   "corazon": [
+    "lavanda",
+    "geranio",
+    "romero"
+   ],
+   "fondo": [
+    "sándalo",
+    "almizcle"
+   ]
+  }
+ },
+ "Prada|Paradoxe": {
+  "notas": {
+   "salida": [
+    "pera",
+    "mandarina",
+    "bergamota"
+   ],
+   "corazon": [
+    "neroli",
+    "jazmín"
+   ],
+   "fondo": [
+    "ámbar",
+    "almizcle",
+    "vainilla"
+   ]
+  }
+ },
+ "Ralph Lauren|Polo Blue Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "bergamota"
+   ],
+   "corazon": [
+    "salvia",
+    "lavanda"
+   ],
+   "fondo": [
+    "vetiver",
+    "ámbar",
+    "gamuza"
+   ]
+  }
+ },
+ "Tommy Hilfiger|Tommy": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "menta",
+    "bergamota",
+    "pomelo"
+   ],
+   "corazon": [
+    "manzana",
+    "rosa"
+   ],
+   "fondo": [
+    "algodón",
+    "ámbar",
+    "almizcle"
+   ]
+  }
+ },
+ "Tommy Hilfiger|Tommy Girl": {
+  "notas": {
+   "salida": [
+    "té",
+    "manzana",
+    "mandarina"
+   ],
+   "corazon": [
+    "camelia",
+    "rosa",
+    "jazmín"
+   ],
+   "fondo": [
+    "sándalo",
+    "cedro"
+   ]
+  }
+ },
+ "Valentino|Donna": {
+  "notas": {
+   "salida": [
+    "bergamota"
+   ],
+   "corazon": [
+    "rosa",
+    "iris"
+   ],
+   "fondo": [
+    "vainilla",
+    "cuero",
+    "pachulí"
+   ]
+  }
+ },
+ "Valentino|Uomo": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "mirto"
+   ],
+   "corazon": [
+    "avellana",
+    "cacao"
+   ],
+   "fondo": [
+    "cuero",
+    "madera"
+   ]
+  }
+ },
+ "Valentino|Uomo Born in Roma": {
+  "notas": {
+   "salida": [
+    "sal",
+    "salvia",
+    "jengibre"
+   ],
+   "corazon": [
+    "vetiver",
+    "cachemira"
+   ],
+   "fondo": []
+  }
+ },
+ "Valentino|Uomo Born in Roma Intense": {
+  "notas": {
+   "salida": [
+    "vainilla"
+   ],
+   "corazon": [
+    "lavanda"
+   ],
+   "fondo": [
+    "vetiver"
+   ]
+  }
+ },
+ "Versace|Bright Crystal": {
+  "notas": {
+   "salida": [
+    "granada",
+    "yuzu"
+   ],
+   "corazon": [
+    "peonía",
+    "magnolia",
+    "flor de loto"
+   ],
+   "fondo": [
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Versace|Dylan Turquoise": {
+  "notas": {
+   "salida": [
+    "limón",
+    "mandarina",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "guayaba",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "madera"
+   ]
+  }
+ },
+ "Versace|Eros": {
+  "notas": {
+   "salida": [
+    "menta",
+    "manzana verde",
+    "limón"
+   ],
+   "corazon": [
+    "haba tonka",
+    "geranio"
+   ],
+   "fondo": [
+    "vainilla",
+    "vetiver",
+    "cedro",
+    "musgo de roble"
+   ]
+  }
+ },
+ "Versace|Eros Flame": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "pimienta negra",
+    "limón",
+    "romero"
+   ],
+   "corazon": [
+    "pimienta",
+    "rosa",
+    "geranio"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka",
+    "pachulí",
+    "sándalo"
+   ]
+  }
+ },
+ "Versace|Pour Homme": {
+  "notas": {
+   "salida": [
+    "limón",
+    "bergamota",
+    "neroli"
+   ],
+   "corazon": [
+    "jacinto",
+    "salvia",
+    "cedro",
+    "geranio"
+   ],
+   "fondo": [
+    "haba tonka",
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Versace|Yellow Diamond": {
+  "notas": {
+   "salida": [
+    "pera",
+    "limón",
+    "bergamota"
+   ],
+   "corazon": [
+    "mimosa",
+    "azahar",
+    "fresia"
+   ],
+   "fondo": [
+    "ámbar",
+    "almizcle",
+    "madera"
+   ]
+  }
+ },
+ "Xerjoff|Erba Pura": {
+  "notas": {
+   "salida": [
+    "naranja",
+    "limón",
+    "bergamota"
+   ],
+   "corazon": [
+    "frutas"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle",
+    "ámbar"
+   ]
+  }
+ },
+ "Yves Saint Laurent|Mon Paris": {
+  "notas": {
+   "salida": [
+    "fresa",
+    "frambuesa",
+    "pera",
+    "bergamota"
+   ],
+   "corazon": [
+    "peonía",
+    "jazmín",
+    "azahar"
+   ],
+   "fondo": [
+    "pachulí",
+    "almizcle",
+    "vainilla"
+   ]
+  }
+ },
+ "Yves Saint Laurent|Y Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "manzana",
+    "jengibre",
+    "bergamota"
+   ],
+   "corazon": [
+    "salvia",
+    "enebro",
+    "geranio"
+   ],
+   "fondo": [
+    "ámbar",
+    "haba tonka",
+    "cedro",
+    "vetiver"
+   ]
+  }
+ }
+}
