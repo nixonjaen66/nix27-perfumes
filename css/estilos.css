@@ -667,3 +667,4 @@ dialog::backdrop{background:var(--velo)}
 .black .aviso-top a{color:var(--oro-claro)}
 .black .menu .menu__bn{background:#000;color:var(--oro-claro);border-radius:999px;padding:6px 14px;font-weight:700}
 .black .precio--oferta{font-weight:800}
+.black .producto__ahorro{display:none}
