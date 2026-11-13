@@ -660,3 +660,10 @@ dialog::backdrop{background:var(--velo)}
 .nosotros__datos span{color:var(--suave);font-size:.92rem}
 @media (min-width:900px){.nosotros{grid-template-columns:1.3fr 1fr;gap:56px}}
 .nosotros__texto p.nosotros__firma{font-family:var(--display);font-style:italic;font-size:1.15rem;color:var(--oro-texto);margin-top:18px}
+
+/* Black November (js/blackfriday.js) */
+.black .aviso-top{background:#000;color:#fff;font-weight:600}
+.black .aviso-top .bn-franja{background:var(--oro);color:#000;font-weight:800;letter-spacing:.08em;padding:2px 8px;border-radius:4px;margin-right:6px}
+.black .aviso-top a{color:var(--oro-claro)}
+.black .menu .menu__bn{background:#000;color:var(--oro-claro);border-radius:999px;padding:6px 14px;font-weight:700}
+.black .precio--oferta{font-weight:800}

@@ -500,6 +500,7 @@
         inspirados = res[3] && typeof res[3] === 'object' ? res[3] : {};
         fichas = res[1] && typeof res[1] === 'object' ? res[1] : {};
         todos = res[0].filter(esVisible);
+        if (root.NIX_BLACK) root.NIX_BLACK.aplicar(todos); // Black November (js/blackfriday.js)
         todos.forEach(function (p) {
           porId[p.id] = p;
           var s = slug(p);
@@ -582,7 +583,7 @@
       else if (esCorporal(p)) etiquetas += '<span class="etiqueta etiqueta--corporal">' + escapar(p.linea || 'Cuidado corporal') + '</span>';
       else if (p.ml) etiquetas += '<span class="etiqueta">' + p.ml + ' ml</span>';
       var sellos = (esNuevo(p) ? '<span class="sello sello--nuevo">Nuevo</span>' : '') +
-        (enOferta(p) ? '<span class="sello sello--oferta">-' + descuento(p) + '%</span>' : '');
+        (enOferta(p) && !p.bn ? '<span class="sello sello--oferta">-' + descuento(p) + '%</span>' : '');
       return '<article class="tarjeta">' +
         '<a class="abrir" href="' + enlacePerfume(p) + '">' +
           '<span class="foto">' + (sellos ? '<span class="foto__sellos">' + sellos + '</span>' : '') +

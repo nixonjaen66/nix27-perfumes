@@ -8293,5 +8293,765 @@
    "corazon": [],
    "fondo": []
   }
+ },
+ "Arabiyat|Prestige Marwa": {
+  "notas": {
+   "salida": [
+    "bergamota de Calabria",
+    "limón",
+    "naranja siciliana"
+   ],
+   "corazon": [
+    "jengibre nigeriano",
+    "canela de Ceilán",
+    "neroli tunecino"
+   ],
+   "fondo": [
+    "ambroxan",
+    "madera de guayaco",
+    "olíbano",
+    "té negro chino"
+   ]
+  }
+ },
+ "Afnan|9AM": {
+  "notas": {
+   "salida": [
+    "limón",
+    "mandarina",
+    "cardamomo",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "lavanda",
+    "azahar",
+    "manzana verde",
+    "rosa"
+   ],
+   "fondo": [
+    "almizcle",
+    "musgo",
+    "cedro",
+    "pachulí"
+   ]
+  }
+ },
+ "Armaf|Dubai Nights Midnight": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "lavanda"
+   ],
+   "corazon": [
+    "azahar",
+    "geranio"
+   ],
+   "fondo": [
+    "pachulí",
+    "notas amaderadas"
+   ]
+  }
+ },
+ "Armaf|Odyssey Mandarin Sky Vintage Edition": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "cítricos"
+   ],
+   "corazon": [
+    "especias",
+    "notas florales"
+   ],
+   "fondo": [
+    "notas amaderadas",
+    "ámbar"
+   ]
+  }
+ },
+ "Armaf|Tag": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "cardamomo",
+    "notas aromáticas"
+   ],
+   "corazon": [
+    "notas especiadas",
+    "pimienta negra"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka",
+    "incienso",
+    "pachulí"
+   ]
+  }
+ },
+ "Carolina Herrera|Good Girl Absolue": {
+  "notas": {
+   "salida": [
+    "grosella negra",
+    "mandarina"
+   ],
+   "corazon": [
+    "jazmín",
+    "almendra amarga"
+   ],
+   "fondo": [
+    "toffee",
+    "haba tonka"
+   ]
+  }
+ },
+ "Hawas|For Her Pink": {
+  "notas": {
+   "salida": [
+    "canela",
+    "nuez moscada",
+    "neroli"
+   ],
+   "corazon": [
+    "malvavisco",
+    "tuberosa",
+    "azahar"
+   ],
+   "fondo": [
+    "algodón de azúcar",
+    "vainilla",
+    "haba tonka"
+   ]
+  }
+ },
+ "Lattafa|Art of Universe": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "jengibre",
+    "bergamota",
+    "menta"
+   ],
+   "corazon": [
+    "pera",
+    "azahar"
+   ],
+   "fondo": [
+    "almizcle",
+    "ámbar",
+    "cedro"
+   ]
+  }
+ },
+ "Mosi Perfume|Rome La Bomba": {
+  "notas": {
+   "salida": [
+    "pitaya"
+   ],
+   "corazon": [
+    "peonía",
+    "frangipani"
+   ],
+   "fondo": [
+    "vainilla",
+    "pachulí"
+   ]
+  }
+ },
+ "Zakat|Lause Pistachio": {
+  "notas": {
+   "salida": [
+    "pistacho",
+    "avellana",
+    "cassis"
+   ],
+   "corazon": [
+    "muguet",
+    "frambuesa",
+    "jazmín",
+    "lactonas"
+   ],
+   "fondo": [
+    "haba tonka",
+    "vainilla",
+    "leche"
+   ]
+  }
+ },
+ "BDK Parfums|Gris Charnel": {
+  "notas": {
+   "salida": [
+    "cardamomo",
+    "higo",
+    "té negro"
+   ],
+   "corazon": [
+    "iris",
+    "vetiver bourbon"
+   ],
+   "fondo": [
+    "sándalo",
+    "haba tonka"
+   ]
+  }
+ },
+ "BDK Parfums|Impadia": {
+  "notas": {
+   "salida": [
+    "pera",
+    "bergamota",
+    "mandarina"
+   ],
+   "corazon": [
+    "rosa búlgara",
+    "rosa turca",
+    "flor de azahar africana"
+   ],
+   "fondo": [
+    "akigalawood",
+    "absoluto de vainilla",
+    "sándalo"
+   ]
+  }
+ },
+ "Givenchy|Pi": {
+  "notas": {
+   "salida": [
+    "mandarina",
+    "estragón",
+    "romero",
+    "albahaca"
+   ],
+   "corazon": [
+    "anís",
+    "neroli",
+    "geranio",
+    "muguet"
+   ],
+   "fondo": [
+    "vainilla",
+    "almendra",
+    "haba tonka",
+    "benjuí",
+    "cedro"
+   ]
+  }
+ },
+ "Britney Spears|Midnight Fantasy": {
+  "notas": {
+   "salida": [
+    "cereza negra",
+    "ciruela"
+   ],
+   "corazon": [
+    "fresia",
+    "iris",
+    "orquídea"
+   ],
+   "fondo": [
+    "almizcle",
+    "ámbar",
+    "vainilla"
+   ]
+  }
+ },
+ "Bvlgari|Omnia Amethyste": {
+  "notas": {
+   "salida": [
+    "pomelo rosa",
+    "hojas verdes"
+   ],
+   "corazon": [
+    "iris",
+    "rosa búlgara"
+   ],
+   "fondo": [
+    "heliotropo",
+    "notas amaderadas"
+   ]
+  }
+ },
+ "Cacharel|Amor Amor": {
+  "notas": {
+   "salida": [
+    "grosella negra",
+    "mandarina",
+    "naranja",
+    "bergamota",
+    "pomelo",
+    "limón"
+   ],
+   "corazon": [
+    "rosa",
+    "jazmín",
+    "muguet",
+    "albaricoque"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle",
+    "haba tonka",
+    "ámbar"
+   ]
+  }
+ },
+ "Calvin Klein|Eternity Moment": {
+  "notas": {
+   "salida": [
+    "guayaba",
+    "lichi",
+    "frambuesa"
+   ],
+   "corazon": [
+    "pasionaria",
+    "peonía",
+    "lirio rosa"
+   ],
+   "fondo": [
+    "almizcle",
+    "madera de cachemira",
+    "sándalo"
+   ]
+  }
+ },
+ "Carolina Herrera|212 NYC": {
+  "notas": {
+   "salida": [
+    "cítricos",
+    "bergamota",
+    "mandarina",
+    "petitgrain",
+    "gardenia"
+   ],
+   "corazon": [
+    "almizcle",
+    "lirio",
+    "camelia",
+    "jengibre",
+    "peonía",
+    "violeta"
+   ],
+   "fondo": [
+    "sándalo",
+    "almizcle",
+    "ámbar",
+    "vetiver"
+   ]
+  }
+ },
+ "Carolina Herrera|Carolina Herrera": {
+  "notas": {
+   "salida": [
+    "azahar",
+    "bergamota",
+    "albaricoque",
+    "jazmín"
+   ],
+   "corazon": [
+    "jazmín",
+    "tuberosa",
+    "narciso",
+    "ylang ylang"
+   ],
+   "fondo": [
+    "sándalo",
+    "cedro",
+    "almizcle",
+    "algalia"
+   ]
+  }
+ },
+ "Creed|Millésime Impérial": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "limón",
+    "sal marina"
+   ],
+   "corazon": [
+    "notas marinas",
+    "iris",
+    "notas frutales"
+   ],
+   "fondo": [
+    "almizcle",
+    "sándalo"
+   ]
+  }
+ },
+ "Dior|Hypnotic Poison": {
+  "notas": {
+   "salida": [
+    "coco",
+    "ciruela",
+    "albaricoque"
+   ],
+   "corazon": [
+    "palo de rosa brasileño",
+    "jazmín",
+    "tuberosa",
+    "alcaravea",
+    "muguet",
+    "rosa"
+   ],
+   "fondo": [
+    "vainilla",
+    "almendra",
+    "sándalo",
+    "almizcle"
+   ]
+  }
+ },
+ "Dior|Miss Dior Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "muguet",
+    "iris",
+    "peonía"
+   ],
+   "corazon": [
+    "rosa de Grasse",
+    "albaricoque",
+    "durazno"
+   ],
+   "fondo": [
+    "vainilla",
+    "almizcle",
+    "haba tonka",
+    "benjuí"
+   ]
+  }
+ },
+ "Dior|Pure Poison": {
+  "notas": {
+   "salida": [
+    "naranja",
+    "bergamota",
+    "jazmín",
+    "mandarina"
+   ],
+   "corazon": [
+    "gardenia",
+    "azahar"
+   ],
+   "fondo": [
+    "ámbar blanco",
+    "sándalo",
+    "almizcle"
+   ]
+  }
+ },
+ "Dior|Sauvage Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "bergamota"
+   ],
+   "corazon": [
+    "pimienta de Sichuán",
+    "lavanda",
+    "anís estrellado",
+    "nuez moscada"
+   ],
+   "fondo": [
+    "ambroxan",
+    "vainilla"
+   ]
+  }
+ },
+ "Dior|Sauvage Eau de Toilette": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "pimienta"
+   ],
+   "corazon": [
+    "pimienta de Sichuán",
+    "lavanda",
+    "pimienta rosa",
+    "vetiver",
+    "pachulí",
+    "geranio",
+    "elemí"
+   ],
+   "fondo": [
+    "ambroxan",
+    "cedro",
+    "labdano"
+   ]
+  }
+ },
+ "Dolce & Gabbana|Pour Femme": {
+  "notas": {
+   "salida": [
+    "frambuesa",
+    "mandarina",
+    "neroli"
+   ],
+   "corazon": [
+    "azahar",
+    "malvavisco"
+   ],
+   "fondo": [
+    "heliotropo",
+    "vainilla",
+    "sándalo",
+    "almizcle"
+   ]
+  }
+ },
+ "Givenchy|Amarige": {
+  "notas": {
+   "salida": [
+    "mimosa",
+    "violeta",
+    "mandarina",
+    "neroli",
+    "palo de rosa"
+   ],
+   "corazon": [
+    "gardenia",
+    "ylang ylang",
+    "tuberosa",
+    "clavel"
+   ],
+   "fondo": [
+    "vainilla",
+    "haba tonka",
+    "almizcle",
+    "sándalo",
+    "ámbar"
+   ]
+  }
+ },
+ "Givenchy|L'Interdit Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "pera",
+    "bergamota"
+   ],
+   "corazon": [
+    "tuberosa",
+    "azahar",
+    "jazmín sambac"
+   ],
+   "fondo": [
+    "pachulí",
+    "vetiver",
+    "ambroxan",
+    "vainilla"
+   ]
+  }
+ },
+ "Givenchy|L'Interdit Eau de Parfum Rouge": {
+  "notas": {
+   "salida": [
+    "naranja sanguina",
+    "jengibre",
+    "pimiento"
+   ],
+   "corazon": [
+    "tuberosa",
+    "jazmín",
+    "azahar"
+   ],
+   "fondo": [
+    "sándalo",
+    "pachulí",
+    "vetiver"
+   ]
+  }
+ },
+ "Givenchy|Very Irresistible": {
+  "notas": {
+   "salida": [
+    "anís estrellado",
+    "verbena"
+   ],
+   "corazon": [
+    "rosa",
+    "peonía",
+    "magnolia"
+   ],
+   "fondo": [
+    "pachulí",
+    "vainilla",
+    "almizcle"
+   ]
+  }
+ },
+ "Gucci|Guilty Pour Homme": {
+  "notas": {
+   "salida": [
+    "limón",
+    "lavanda",
+    "pimienta rosa"
+   ],
+   "corazon": [
+    "neroli",
+    "azahar"
+   ],
+   "fondo": [
+    "pachulí",
+    "cedro"
+   ]
+  }
+ },
+ "Maison Francis Kurkdjian|Baccarat Rouge 540 Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "azafrán",
+    "jazmín"
+   ],
+   "corazon": [
+    "amberwood",
+    "ámbar gris"
+   ],
+   "fondo": [
+    "resina de abeto",
+    "cedro"
+   ]
+  }
+ },
+ "Nina Ricci|Nina": {
+  "notas": {
+   "salida": [
+    "lima",
+    "limón"
+   ],
+   "corazon": [
+    "manzana caramelizada",
+    "peonía",
+    "datura"
+   ],
+   "fondo": [
+    "manzano",
+    "cedro blanco",
+    "almizcle"
+   ]
+  }
+ },
+ "Paco Rabanne|1 Million": {
+  "notas": {
+   "salida": [
+    "pomelo",
+    "menta",
+    "mandarina sanguina"
+   ],
+   "corazon": [
+    "rosa",
+    "canela",
+    "especias"
+   ],
+   "fondo": [
+    "cuero",
+    "notas amaderadas",
+    "ámbar",
+    "pachulí"
+   ]
+  }
+ },
+ "Parfums de Marly|Carlisle": {
+  "notas": {
+   "salida": [
+    "manzana verde",
+    "nuez moscada",
+    "azafrán"
+   ],
+   "corazon": [
+    "haba tonka",
+    "osmanto",
+    "davana"
+   ],
+   "fondo": [
+    "vainilla",
+    "pachulí",
+    "opopanax",
+    "rosa"
+   ]
+  }
+ },
+ "Versace|Dylan Blue Pour Femme": {
+  "notas": {
+   "salida": [
+    "grosella negra",
+    "manzana verde",
+    "trébol",
+    "nomeolvides"
+   ],
+   "corazon": [
+    "rosa",
+    "durazno",
+    "jazmín"
+   ],
+   "fondo": [
+    "almizcle",
+    "pachulí",
+    "estoraque",
+    "notas amaderadas"
+   ]
+  }
+ },
+ "Versace|Dylan Blue Pour Homme": {
+  "notas": {
+   "salida": [
+    "bergamota",
+    "pomelo",
+    "hoja de higuera",
+    "notas acuáticas"
+   ],
+   "corazon": [
+    "hoja de violeta",
+    "pimienta negra",
+    "pachulí",
+    "papiro",
+    "ambroxan"
+   ],
+   "fondo": [
+    "notas minerales",
+    "incienso",
+    "haba tonka",
+    "azafrán",
+    "almizcle"
+   ]
+  }
+ },
+ "Versace|Eros Pour Femme": {
+  "notas": {
+   "salida": [
+    "limón",
+    "granada",
+    "bergamota"
+   ],
+   "corazon": [
+    "peonía",
+    "jazmín sambac",
+    "flor de limón"
+   ],
+   "fondo": [
+    "sándalo",
+    "ambroxan",
+    "notas amaderadas",
+    "almizcle"
+   ]
+  }
+ },
+ "Yves Saint Laurent|Libre Eau de Parfum": {
+  "notas": {
+   "salida": [
+    "lavanda",
+    "mandarina",
+    "grosella negra",
+    "petitgrain"
+   ],
+   "corazon": [
+    "lavanda",
+    "azahar",
+    "jazmín"
+   ],
+   "fondo": [
+    "vainilla de Madagascar",
+    "almizcle",
+    "cedro",
+    "ámbar gris"
+   ]
+  }
  }
 }
